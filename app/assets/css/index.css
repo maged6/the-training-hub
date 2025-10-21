@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* Optional: only if self-hosting fonts */
+@font-face {
+  font-family: "Host Grotesk";
+  src: url("/fonts/host-grotesk-latin-300.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Host Grotesk";
+  src: url("/fonts/host-grotesk-latin-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Host Grotesk";
+  src: url("/fonts/host-grotesk-latin-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Host Grotesk";
+  src: url("/fonts/host-grotesk-latin-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-primary-10: #10171f;
+  --color-primary-20: #b22726;
+  --color-secondary-10: #f9c80e;
+
+  --font-host: "Host Grotesk", sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-host);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-host);
+  }
+}
