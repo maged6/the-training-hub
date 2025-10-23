@@ -1,16 +1,23 @@
 <template>
-  <!-- Animated Section -->
-  <AnimatePresence>
-    <Motion
-      v-if="showSection"
-      tag="section"
-      :initial="{ opacity: 0, scale: 0.1 }"
-      :animate="{ opacity: 1, scale: 1 }"
-      :exit="{ opacity: 0, scale: 0.1 }"
-      :transition="{ duration: 0.6, ease: 'easeInOut' }"
-      class="absolute w-full bg-primary-10 text-white py-16 px-6 md:px-16 lg:px-[12vw]"
-    >
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+  <!-- Background motion wrapper -->
+  <Motion
+    tag="section"
+    :initial="{ opacity: 0 }"
+    :animate="showSection ? { opacity: 1 } : { opacity: 0 }"
+    :transition="{ duration: 0.6, ease: 'easeInOut' }"
+    class="absolute w-full py-16 px-6 md:px-16 lg:px-[12vw] bg-primary-10"
+  >
+    <!-- ✅ Content motion -->
+    <AnimatePresence>
+      <Motion
+        v-if="showSection"
+        tag="div"
+        :initial="{ opacity: 0, scale: 0.1 }"
+        :animate="{ opacity: 1, scale: 1 }"
+        :exit="{ opacity: 0, scale: 0.1}"
+        :transition="{ duration: 0.6, ease: 'easeInOut' }"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-white"
+      >
         <div
           v-for="(link, i) in subLinks.services"
           :key="i"
@@ -28,9 +35,9 @@
             </span>
           </NuxtLink>
         </div>
-      </div>
-    </Motion>
-  </AnimatePresence>
+      </Motion>
+    </AnimatePresence>
+  </Motion>
 
   <!-- Toggle Button -->
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
