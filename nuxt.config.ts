@@ -10,6 +10,9 @@ export default defineNuxtConfig({
       meta: [
         { name: "apple-mobile-web-app-title", content: "The Training Hub" },
       ],
+      htmlAttrs: {
+        lang: 'en', // or 'ar', 'fr', etc.
+      },
       link: [
         // 🔹 Favicon and icons
         { rel: "icon", type: "image/svg+xml", href: "/favicon.ico" },
@@ -44,7 +47,6 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   modules: [
-    // ...
     'motion-v/nuxt',
   ],
 });

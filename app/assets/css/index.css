@@ -37,6 +37,9 @@
   --color-primary-10: #10171f;
   --color-primary-20: #b22726;
   --color-secondary-10: #f9c80e;
+  --color-secondary-20: #e20700;
+  --color-secondary-30: #7c0400;
+  --color-tertiary-10: #40454c;
 
   --font-host: "Host Grotesk", sans-serif;
 }
