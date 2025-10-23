@@ -41,10 +41,10 @@
         </span>
       </NuxtLink>
       <SearchBtn />
-      <MainBtn :title="'My Account'" @click="showpopup = !showpopup"/>
+      <MainBtn :title="'My Account'" />
     </nav>
   </div>
-  <SubLinks v-if="showpopup"/>
+  <SubLinks/>
 </template>
 
 <script lang="ts">
