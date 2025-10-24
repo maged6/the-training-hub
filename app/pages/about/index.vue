@@ -1,8 +1,5 @@
 <template>
-  <HelloWorld name="Maged" />
+    <div class="p-4 border rounded-lg shadow-sm bg-white">
+    <h1 class="text-lg font-semibold mb-2">About</h1>
+  </div>
 </template>
-
-<script setup lang="ts">
-import HelloWorld from '~/components/HelloWorld.vue'
-
-</script>

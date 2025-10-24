@@ -2,16 +2,21 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  compatibilityDate: '2025-10-21',
+  compatibilityDate: "2025-10-21",
   devtools: { enabled: true },
   app: {
     head: {
       title: "The Training Hub",
       meta: [
         { name: "apple-mobile-web-app-title", content: "The Training Hub" },
+        {
+          name: "description",
+          content:
+            "The Training Hub provides professional training programs, e-learning, and experiential learning opportunities for personal and organizational growth."
+        }
       ],
       htmlAttrs: {
-        lang: 'en', // or 'ar', 'fr', etc.
+        lang: "en" // or 'ar', 'fr', etc.
       },
       link: [
         // 🔹 Favicon and icons
@@ -21,10 +26,15 @@ export default defineNuxtConfig({
 
         // 🔹 Google Fonts (still okay if not self-hosting)
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
-        { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
+        {
+          rel: "preconnect",
+          href: "https://fonts.gstatic.com",
+          crossorigin: ""
+        },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700&display=swap",
+          href:
+            "https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700&display=swap"
         },
 
         // 🔹 Preload self-hosted font (works only if font file exists in /public or /assets/fonts/)
@@ -33,10 +43,10 @@ export default defineNuxtConfig({
           as: "font",
           type: "font/woff2",
           href: "/fonts/host-grotesk-latin-700.woff2",
-          crossorigin: "",
-        },
-      ],
-    },
+          crossorigin: ""
+        }
+      ]
+    }
   },
 
   // ✅ Global CSS
@@ -44,9 +54,7 @@ export default defineNuxtConfig({
 
   // ✅ Tailwind with Vite plugin
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss()]
   },
-  modules: [
-    'motion-v/nuxt',
-  ],
+  modules: ["motion-v/nuxt"]
 });

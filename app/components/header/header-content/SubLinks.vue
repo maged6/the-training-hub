@@ -41,6 +41,14 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue'
+
+interface LinkItem {
+  name: string
+  to: string
+  rotate?: number
+}
+
 
 export default {
   props: {
@@ -49,7 +57,7 @@ export default {
       default: false,
     },
     subLinks: {
-      type: Array,
+      type: Array as PropType<LinkItem[]>,
       default: () => ([]),
     }
   }

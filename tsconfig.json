@@ -2,24 +2,25 @@
   // https://nuxt.com/docs/guide/concepts/typescript
   "files": [],
   "references": [
-    {
-      "path": "./.nuxt/tsconfig.app.json"
-    },
-    {
-      "path": "./.nuxt/tsconfig.server.json"
-    },
-    {
-      "path": "./.nuxt/tsconfig.shared.json"
-    },
-    {
-      "path": "./.nuxt/tsconfig.node.json"
-    }
+    { "path": "./.nuxt/tsconfig.app.json" },
+    { "path": "./.nuxt/tsconfig.server.json" },
+    { "path": "./.nuxt/tsconfig.shared.json" },
+    { "path": "./.nuxt/tsconfig.node.json" }
   ],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "~/*": ["./app/*"],
-      "@/*": ["./app/*"]
-    }
+      "@/*": ["./app/*"],
+
+      // 👇 Add these Nuxt aliases to fix the “#components” error
+      "#app": ["./.nuxt/types/app"],
+      "#build": ["./.nuxt/types/build"],
+      "#imports": ["./.nuxt/types/imports"],
+      "#components": ["./.nuxt/types/components"],
+      "#vue": ["./.nuxt/types/vue"],
+      "#internal/*": ["./.nuxt/*"]
+    },
+    "types": ["@types/node", "nuxt"]
   }
 }

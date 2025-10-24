@@ -5,55 +5,83 @@
     <NuxtLink to="/" aria-label="Go to homepage of The Training Hub">
       <LogoHeader />
     </NuxtLink>
+
     <nav aria-label="Main Navigation of The Training Hub">
       <ul class="flex flex-wrap gap-[2px] relative">
         <li
-          v-for="(link, i) in links"
+          v-for="(link, i) in AllLinks"
           :key="i"
-          class="relative group overflow-hidden inline-block"
-          @click="toggleSection(link)"
+          class="relative group overflow-hidden inline-block cursor-pointer "
+          @click="toggleSection(link, i)"
         >
-          <NuxtLink :to="link.to">
-            <!-- White button (outer stays fixed) -->
+          <component
+            :is="link.icon ? 'button' : 'NuxtLink'"
+            :to="!link.icon ? link.to : undefined"
+            class="focus:outline-none"
+          >
             <div
-              class="text-[16px] bg-white text-primary-10 px-[16px] py-[10px] rounded-[100px] font-[500] inline-block relative group-hover:bg-primary-10 transition-colors duration-300 delay-100"
+              :class="[
+                'text-[16px] px-[16px] py-[10px] rounded-[100px] font-[500] inline-block relative transition-colors duration-300 delay-100',
+                activeIndex === i && link.icon
+                  ? 'bg-primary-20 text-white absolute'
+                  : 'bg-white text-primary-10 group-hover:bg-primary-10 group-hover:text-white'
+              ]"
             >
-              <!-- Animate only text -->
               <span
-                class="flex items-center transition-transform duration-300 ease-in-out group-hover:-translate-y-[40px]"
+                class="flex items-center"
+                :class="
+                  activeIndex === i && link.icon
+                  ? ''
+                  : ' transition-transform duration-300 ease-in-out group-hover:-translate-y-[40px]'"
               >
                 {{ link.name }}
                 <span v-if="link.icon" class="px-[5px] py-[5px]">
-                  <ChevronDown color="#10171f" />
+                  <Minus v-if="activeIndex === i && link.icon" />
+                  <ChevronDown v-else color="'#10171f'" />
                 </span>
               </span>
             </div>
 
-            <!-- primary-10 hover button -->
             <span
-              class="flex items-center absolute top-[40px] left-0 text-[16px] bg-primary-10 text-white px-[16px] py-[10px] rounded-[100px] font-[500] transition-all duration-300 ease-in-out opacity-0 group-hover:top-0 group-hover:opacity-100"
+              class="flex items-center absolute top-[40px] left-0 text-[16px] bg-primary-10 text-white px-[16px] py-[10px] rounded-[100px] font-[500] transition-all duration-300 ease-in-out opacity-0 "
+              :class="[
+                activeIndex === i && link.icon
+                  ? 'group-hover:opacity-0'
+                  : 'group-hover:opacity-100 group-hover:top-0'
+              ]"
             >
               {{ link.name }}
               <span v-if="link.icon" class="px-[5px] py-[5px]">
                 <ChevronDown color="white" />
               </span>
             </span>
-          </NuxtLink>
+          </component>
         </li>
-        <SearchBtn />
-        <MainBtn :title="'My Account'" />
+        <li><SearchBtn /></li>
+        <li><MainBtn :title="'My Account'" /></li>
       </ul>
     </nav>
   </div>
-  <SubLinks :showSection="showSection" :subLinks="subLinks" />
+
+  <!-- SubLinks popup -->
+  <SubLinks
+    :showSection="showSection"
+    :subLinks="subLinks"
+    @close="closeSection"
+  />
 </template>
 
 <script lang="ts">
+// @ts-ignore
+import { NuxtLink } from '#components'
+
 import LogoHeader from '@/components/svg/LogoHeader.vue'
 import ChevronDown from '@/components/svg/ChevronDown.vue'
-import MainBtn from '../buttons/MainBtn.vue';
-import SearchBtn from '../buttons/SearchBtn.vue';
-import SubLinks from './header-content/SubLinks.vue';
+import Minus from '@/components/svg/Minus.vue'
+import MainBtn from '../buttons/MainBtn.vue'
+import SearchBtn from '../buttons/SearchBtn.vue'
+import SubLinks from './header-content/SubLinks.vue'
+
 type NavLink = {
   name: string
   to: string
@@ -68,41 +96,71 @@ type SubLinkType = {
 }
 
 export default {
-  components: { LogoHeader, MainBtn, ChevronDown, SearchBtn,SubLinks },
-  
+  components: { LogoHeader, MainBtn, ChevronDown, SearchBtn, SubLinks, Minus, NuxtLink },
+
   data() {
     return {
       showSection: false,
       subLinks: [] as SubLinkType[],
-      links: [
+      activeIndex: null as number | null,
+      AllLinks: [
         { name: 'About', to: '/about', icon: false },
-        { name: 'Services', to: '', icon: true , links: [
-          { name: 'Training Programs', to: '/about', rotate: -4.25 },
-          { name: 'E learning', to: '/about', rotate: 4.25 },
-          { name: 'Experiential Learning', to: '/about', rotate: -4.25 },
-          { name: 'Consultation', to: '/about', rotate: 4.25 },
-          { name: 'Learn & Explore Egypt', to: '/about', rotate: -4.25 },
-          { name: 'Business Simulation', to: '/about', rotate: 4.25 },
-        ],
-      },
+        {
+          name: 'Services',
+          to: '',
+          icon: true,
+          links: [
+            { name: 'Training Programs', to: '/services/training-programs', rotate: -4.25 },
+            { name: 'E learning', to: '/services/e-learning', rotate: 4.25 },
+            { name: 'Experiential Learning', to: '/services/experiential-learning', rotate: -4.25 },
+            { name: 'Consultation', to: '/services/consultation', rotate: 4.25 },
+            { name: 'Learn & Explore Egypt', to: '/services/learn-explore-egypt', rotate: -4.25 },
+            { name: 'Business Simulation', to: '/services/business-simulation', rotate: 4.25 },
+          ],
+        },
         { name: 'Training Calendar', to: '/training-calendar', icon: false },
-        { name: 'Hub Facilities', to: '/hub-facilities', icon: false  },
-        { name: 'Media Center', to: '' , icon: true , links: [
-          { name: 'Blog', to: '/blog', rotate: -4.25 },
-          { name: 'Gallery', to: '/gallery', rotate: 4.25 },
-          { name: 'Videos', to: '/videos', rotate: -4.25 },
-        ],},
-        { name: 'Careers', to: '/careers' , icon: false},
+        { name: 'Hub Facilities', to: '/hub-facilities', icon: false },
+        {
+          name: 'Media Center',
+          to: '',
+          icon: true,
+          links: [
+            { name: 'Blog', to: '/media-center/blog', rotate: -4.25 },
+            { name: 'Gallery', to: '/media-center/gallery', rotate: 4.25 },
+            { name: 'Videos', to: '/media-center/videos', rotate: -4.25 },
+          ],
+        },
+        { name: 'Careers', to: '/careers', icon: false },
         { name: 'FAQs', to: '/faqs', icon: false },
-        { name: 'Contact Us', to: '/contact' , icon: false},
+        { name: 'Contact Us', to: '/contact-us', icon: false },
       ],
     }
   },
+
   methods: {
-    toggleSection(data: NavLink) {
-      if (!data.icon) return
-      this.showSection = !this.showSection
-      this.subLinks = data.links || []
+    toggleSection(link: NavLink, index: number) {
+      if (!link.icon) return
+
+      if (this.activeIndex === index) {
+        this.showSection = false
+        this.activeIndex = null
+        this.subLinks = []
+      } else {
+        this.activeIndex = index
+        this.showSection = true
+        this.subLinks = link.links || []
+      }
+    },
+
+    closeSection() {
+      this.showSection = false
+      this.activeIndex = null
+      this.subLinks = []
+    },
+  },
+  watch: {
+    $route() {
+      this.closeSection()
     },
   },
 }
