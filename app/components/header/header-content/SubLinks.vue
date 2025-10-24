@@ -19,7 +19,7 @@
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-white"
       >
         <div
-          v-for="(link, i) in subLinks.services"
+          v-for="(link, i) in subLinks"
           :key="i"
           class="flex justify-center mb-6"
         >
@@ -38,38 +38,20 @@
       </Motion>
     </AnimatePresence>
   </Motion>
-
-  <!-- Toggle Button -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
-    <Motion
-      tag="button"
-      @click="toggleSection"
-      :whileHover="{ scale: 1.1 }"
-      :whileTap="{ scale: 0.95 }"
-      class="bg-white text-primary-10 font-semibold px-6 py-3 rounded-full shadow-md"
-    >
-      {{ showSection ? 'Close Section' : 'Open Section' }}
-    </Motion>
-  </div>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue'
-import { Motion, AnimatePresence } from 'motion-v'
+<script lang="ts">
 
-const showSection = ref(false)
-const toggleSection = () => {
-  showSection.value = !showSection.value
-}
-
-const subLinks = {
-  services: [
-    { name: 'Training Programs', to: '/about', rotate: -4.25 },
-    { name: 'E learning', to: '/about', rotate: 4.25 },
-    { name: 'Experiential Learning', to: '/about', rotate: -4.25 },
-    { name: 'Consultation', to: '/about', rotate: 4.25 },
-    { name: 'Learn & Explore Egypt', to: '/about', rotate: -4.25 },
-    { name: 'Business Simulation', to: '/about', rotate: 4.25 },
-  ],
-}
+export default {
+  props: {
+    showSection: {
+      type: Boolean,
+      default: false,
+    },
+    subLinks: {
+      type: Array,
+      default: () => ([]),
+    }
+  }
+  }
 </script>
