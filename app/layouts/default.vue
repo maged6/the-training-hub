@@ -2,7 +2,7 @@
     <!-- Header -->
    <HeaderIndex />
 
-    <main class="p-6">
+    <main>
       <slot /> <!-- Page content renders here -->
     </main>
 

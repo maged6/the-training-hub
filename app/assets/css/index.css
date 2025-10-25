@@ -40,6 +40,7 @@
   --color-secondary-20: #e20700;
   --color-secondary-30: #7c0400;
   --color-tertiary-10: #40454c;
+  --color-tertiary-20: #cfd1d2;
 
   --font-host: "Host Grotesk", sans-serif;
 }
@@ -54,7 +55,9 @@
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  p {
     font-family: var(--font-host);
+    line-height: 130%;
   }
 }
