@@ -1,5 +1,5 @@
 <template>
-    <button class="bg-tertiary-10 text-white px-3 py-3 rounded-[50%] mx-[6px]"
+    <button class="bg-tertiary-gray-80 text-white px-3 py-3 rounded-[50%] mx-[6px]"
      aria-label="Search">
         <Search />
     </button>

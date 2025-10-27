@@ -39,6 +39,13 @@
               loop
             >
               <source :src="videoSection" type="video/mp4" />
+              <track
+                src="/captions/home-training-hub.vtt"
+                kind="captions"
+                srclang="en"
+                label="English"
+                default
+              />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -50,7 +57,7 @@
 </template>
 
 <script lang="ts">
-import IntroSection from '../main/IntroSection.vue';
+import IntroSection from '../main/IntroLeftSection.vue';
 
 export default {
   components: { IntroSection },
