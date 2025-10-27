@@ -2,7 +2,6 @@
   <button
     class="group flex gap-2 justify-center items-center 
     bg-gradient-to-t
- 
     text-white 
     font-bold 
     py-2 
@@ -10,11 +9,13 @@
     rounded-full
     cursor-pointer
     transition-all duration-300 ease-in-out"
-    :class="
-    `from-${colorFrom}
-    to-${colorTo}
-    hover:from-${colorTo}
-    hover:to-${colorFrom}`"
+    :class="[
+      `from-${colorFrom}`,
+      `to-${colorTo}`,
+      `hover:from-${colorTo}`,
+      `hover:to-${colorFrom}`,
+      colorBorder ? `border border-${colorBorder}` : ''
+    ]"
   >
     <span>{{ title }}</span>
     <ArrowRightTop
@@ -48,6 +49,10 @@ export default defineComponent({
     colorFrom: {
       type: String,
       default: 'secondary-20',
+    },
+    colorBorder: {
+      type: String,
+      default: '',
     },
   },
 })

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <!-- Left section -->
     <div class="flex flex-col items-center justify-start bg-tertiary-gray-10 py-[80px]">
       <IntroSection
@@ -36,7 +36,7 @@
         <MainBtn :title="'Explore All Programs'" />
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">

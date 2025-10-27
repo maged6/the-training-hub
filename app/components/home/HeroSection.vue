@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-home">
+  <section class="bg-home">
     <div class="grid grid-cols-1 md:grid-cols-5 gap-[22px] px-[20px] md:px-[60px] py-[36px]">
       
       <!-- Left section -->
@@ -53,7 +53,7 @@
       </div>
 
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">
