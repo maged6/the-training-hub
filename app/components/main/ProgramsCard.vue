@@ -75,8 +75,8 @@ import ArrowRightTop from '~/components/svg/ArrowRightTopBtn.vue'
 export default {
   components: { ArrowRightTop },
   props: {
-    imgSection: { type: String, default: '/imges/image-1.jpg' },
-    hoverImgSection: { type: String, default: '/imges/image-2.jpg' },
+    imgSection: { type: String, default: '/images/image-1.jpg' },
+    hoverImgSection: { type: String, default: '/images/image-2.jpg' },
     lableText: { type: String, default: '2 SEATS LEFT' },
     lableColor: { type: String, default: 'primary-20' },
     programName: { type: String, default: 'Soft Skills' },

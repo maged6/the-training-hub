@@ -76,11 +76,11 @@ export default {
     },
     imageSection: {
       type: String,
-      default: 'imges/layout-hero.jpg',
+      default: 'images/layout-hero.jpg',
     },
     videoSection: {
       type: String,
-      default: 'imges/home-the-training-hub.mp4',
+      default: 'images/home-the-training-hub.mp4',
     }
   }
 };
@@ -88,7 +88,7 @@ export default {
 
 <style scoped>
 .bg-home {
-  background-image: url('@/assets/imges/background-home.gif');
+  background-image: url('@/assets/images/background-home.gif');
   background-size: cover;
   background-position: center;
   height: auto;
@@ -96,8 +96,8 @@ export default {
 }
 
 .mask1 {
-  -webkit-mask-image: url('@/assets/imges/layout-mask.svg');
-  mask-image: url('@/assets/imges/layout-mask.svg');
+  -webkit-mask-image: url('@/assets/images/layout-mask.svg');
+  mask-image: url('@/assets/images/layout-mask.svg');
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: contain;

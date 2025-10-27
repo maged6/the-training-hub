@@ -19,8 +19,8 @@
         >
           <div v-for="(program, index) in 4" :key="index" class="flex-shrink-0">
             <ProgramsCard
-              :imgSection="'/imges/image-1.jpg'"
-              :hoverImgSection="'/imges/image-2.jpg'"
+              :imgSection="'/images/image-1.jpg'"
+              :hoverImgSection="'/images/image-2.jpg'"
               :lableText="'2 SEATS LEFT'"
               :lableColor="'primary-20'"
               :programName="'Soft Skills'"

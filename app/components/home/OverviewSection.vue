@@ -9,17 +9,23 @@
         class="text-tertiary-gray-50 text-[32px] md:text-[38px] font-light leading-[1.5] md:w-[58vw] mx-auto pb-[80px]"
       >
         <strong class="text-white">{{ subtitle1Section }}</strong>
-        <img
+        <NuxtImg
           :src="image1Section"
           alt="training"
-          class="inline-block w-[60px] h-[40px] object-cover rounded-full mx-2 align-middle"
+          sizes="(max-width: 600px) 75px, 1000px"
+          width="60"
+          height="40"
+          class="inline-block object-cover rounded-full mx-2 align-middle"
         />
         <strong class="text-white">{{ subtitle2Section }}</strong>
         {{ subtitle3Section }}
-        <img
+        <NuxtImg
           :src="image2Section"
           alt="training session"
-          class="inline-block w-[60px] h-[40px] object-cover rounded-full mx-2 align-middle"
+          sizes="(max-width: 600px) 75px, 1000px"
+          width="60"
+          height="40"
+          class="inline-block object-cover rounded-full mx-2 align-middle"
         />
         {{ subtitle4Section }}
       </p>
@@ -41,7 +47,6 @@
                  transition-transform duration-[15s] ease-linear group-hover:animate-scroll-x-bounce"
         >
           <li v-for="(list, index) in listSection" :key="index">{{ list }}</li>
-          <li v-for="(list, index) in listSection" :key="index">{{ list }}</li>
         </ul>
       </div>
     </div>
@@ -59,9 +64,9 @@ export default {
     subtitle2Section: { type: String, default: 'mentor-led training rooted in real world experience.' },
     subtitle3Section: { type: String, default: 'Our approach goes beyond theory, equipping professionals with applicable skills, added value, and the confidence to succeed' },
     subtitle4Section: { type: String, default: 'and excel in their careers.' },
-    image1Section: { type: String, default: '/imges/image-1.jpg' },
-    image2Section: { type: String, default: '/imges/image-2.jpg' },
-    listSection: { type: Array, default: () => ['Learn', "Grow", "Achieve", "Lead", "Succeed", "Innovate"] },
+    image1Section: { type: String, default: '/images/image-1-small.jpg' },
+    image2Section: { type: String, default: '/images/image-2-small.jpg' },
+    listSection: { type: Array, default: () => ['Learn', "Grow", "Achieve", "Lead", "Succeed", "Innovate",'Learn', "Grow", "Achieve", "Lead", "Succeed", "Innovate"] },
   },
 }
 </script>
