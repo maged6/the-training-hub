@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import ArrowRightTop from '@/components/svg/ArrowRightTopBlack.vue'
+import ArrowRightTop from '~/components/svg/ArrowRightTopBtn.vue'
 
 export default {
   components: { ArrowRightTop },

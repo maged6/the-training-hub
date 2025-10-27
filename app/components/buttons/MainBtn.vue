@@ -2,10 +2,7 @@
   <button
     class="group flex gap-2 justify-center items-center 
     bg-gradient-to-t
-    from-secondary-20
-    to-secondary-30
-    hover:from-secondary-30
-    hover:to-secondary-20
+ 
     text-white 
     font-bold 
     py-2 
@@ -13,10 +10,16 @@
     rounded-full
     cursor-pointer
     transition-all duration-300 ease-in-out"
+    :class="
+    `from-${colorFrom}
+    to-${colorTo}
+    hover:from-${colorTo}
+    hover:to-${colorFrom}`"
   >
     <span>{{ title }}</span>
     <ArrowRightTop
       class="transform transition-transform duration-500 ease-in-out group-hover:rotate-45"
+      :colorIcon="colorIcon"
     />
   </button>
 </template>
@@ -33,6 +36,18 @@ export default defineComponent({
       type: String,
       default: 'My Account',
       required: true,
+    },
+    colorIcon: {
+      type: String,
+      default: '#B22726',
+    },
+    colorTo: {
+      type: String,
+      default: 'secondary-30',
+    },  
+    colorFrom: {
+      type: String,
+      default: 'secondary-20',
     },
   },
 })
