@@ -5,7 +5,7 @@
     :initial="{ opacity: 0 }"
     :animate="showSection ? { opacity: 1 } : { opacity: 0 }"
     :transition="{ duration: 0.6, ease: 'easeInOut' }"
-    class="absolute w-full py-16 px-6 md:px-16 lg:px-[12vw] bg-primary-10"
+    class="absolute w-full py-16 px-6 md:px-16 lg:px-[12vw] bg-primary-10 z-50"
   >
     <!-- ✅ Content motion -->
     <AnimatePresence>

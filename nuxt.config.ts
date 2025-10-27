@@ -56,5 +56,5 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  modules: ["motion-v/nuxt"]
+  modules: ["motion-v/nuxt", "@nuxt/image"]
 });
