@@ -11,7 +11,7 @@
 
       <!-- Wrapper that centers the scrollable area -->
       <div ref="scrollSection" class="w-[95vw] mx-auto relative"
-      @mouseenter="enableHorizontalScroll"
+        @mouseenter="enableHorizontalScroll"
         @mouseleave="disableHorizontalScroll">
         <div
           ref="scrollContent"

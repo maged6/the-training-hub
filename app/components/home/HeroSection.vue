@@ -9,6 +9,7 @@
           :titleSection="titleSection"
           :subtitleSection="subtitleSection"
           :hasBtn="true"
+          :backgroundLable="'secondary-10'"
         />
       </div>
 
@@ -80,7 +81,7 @@ export default {
     },
     videoSection: {
       type: String,
-      default: 'images/home-the-training-hub.mp4',
+      default: 'captions/home-the-training-hub.mp4',
     }
   }
 };

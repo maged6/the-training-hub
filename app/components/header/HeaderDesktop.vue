@@ -58,7 +58,10 @@
           </component>
         </li>
         <li><SearchBtn /></li>
-        <li><MainBtn :title="'My Account'" /></li>
+        <li>
+          <MainBtn 
+          :title="'My Account'"
+           /></li>
       </ul>
     </nav>
   </div>
