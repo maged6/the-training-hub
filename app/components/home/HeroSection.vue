@@ -9,7 +9,7 @@
           :titleSection="titleSection"
           :subtitleSection="subtitleSection"
           :hasBtn="true"
-          :backgroundLable="'secondary-10'"
+          :backgroundLable="'bg-secondary-10'"
         />
       </div>
 

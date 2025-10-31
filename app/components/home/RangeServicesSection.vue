@@ -7,7 +7,7 @@
     <div class="bg-primary-10 pt-[60px] px-[60px] grid grid-cols-2 gap-[60px]">
       <div class="col-span-1">
         <IntroLeftSection 
-        :backgroundLable="'primary-20'"
+        :backgroundLable="'bg-primary-20'"
         :colorLable="'white'"
         :labelSection="labelSection"
           :titleSection="titleSection"

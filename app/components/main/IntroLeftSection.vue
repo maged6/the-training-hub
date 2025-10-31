@@ -1,7 +1,7 @@
 <template>
     <div class="min-h-[644px] flex flex-col justify-center">
         <div class="rounded w-fit px-1 rotate-[-5deg] mb-2" 
-        :class="`bg-${backgroundLable}`" 
+        :class="backgroundLable"
         v-if="labelSection"> 
         <span class="font-[700] md:text-[14px]" :class="`text-${colorLable}`">{{ labelSection }}</span>
       </div>
@@ -15,7 +15,7 @@
     </div>  
 </template>
 
-<script>
+<script lang="ts">
 import MainBtn from '../buttons/MainBtn.vue';
 
 export default{
@@ -29,7 +29,7 @@ export default{
     },
     backgroundLable: {
       type: String,
-      default: 'secondary-10',
+      default: 'bg-secondary-10',
     },
     colorLable: {
       type: String,
