@@ -27,19 +27,27 @@
         </div>
 
         <div class="row-span-1 col-span-2">
-          <img
-            src="/images/image-2.jpg"
-            alt="Learning space"
-            class="rounded-2xl w-full h-full object-cover"
-          />
+             <NuxtImg
+          class="rounded-2xl w-full h-full object-cover"
+         src="/images/image-1-small.jpg"
+          alt="Leadership article"
+          width="400"
+          height="250"
+          format="webp"
+          loading="lazy"
+        />
         </div>
 
         <div class="row-span-1 col-span-4 ">
-          <img
-            src="/images/image-2.jpg"
-            alt="Classroom"
-            class="rounded-2xl w-full h-full object-cover"
-          />
+          <NuxtImg
+          class="rounded-2xl w-full h-full object-cover"
+         src="/images/image-2-small.jpg"
+          alt="Leadership article"
+          width="400"
+          height="250"
+          format="webp"
+          loading="lazy"
+        />
         </div>
 
         <!-- Card 2 -->

@@ -56,5 +56,19 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  modules: ["motion-v/nuxt", "@nuxt/image"]
+  modules: ["motion-v/nuxt", "@nuxt/image"],
+   // ✅ Nuxt Image configuration
+  image: {
+    // Use the static provider to optimize local images
+    format: ["webp", "jpg"], // Output optimized formats
+    screens: {
+      sm: 320,
+      md: 640,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+    },
+    quality: 80,
+    provider: "ipx", // default Nuxt image provider
+  },
 });

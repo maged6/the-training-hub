@@ -2,10 +2,10 @@
      <div 
      class=" rounded-2xl p-8 text-left shadow-md h-full w-full flex flex-col items-center justify-center"
      :class="`${backgroundColorCard} `">
-            <h3 class="text-[32px] font-[600] mb-3" :class="`text-${colorCard}`">
+            <p class="text-[32px] font-[600] mb-3" :class="`text-${colorCard}`">
              {{ titleCard }}
-            </h3>
-            <p class="text-gray-500 text-[20px] leading-relaxed font-[400]" >
+            </p>
+            <p class="text-gray-600 text-[20px] leading-relaxed font-[400]" >
               
               {{ contentCard }}
             </p>

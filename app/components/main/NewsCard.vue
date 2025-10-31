@@ -1,11 +1,18 @@
 <template>
 <div class="max-w-sm bg-transparent rounded-lg">
     <NuxtLink href="#">
-        <img class="rounded-lg" src="/images/image-1.jpg" alt="" />
+        <NuxtImg
+          class="rounded-lg"
+          src="/images/image-1.jpg"
+          alt="Leadership article"
+          width="400"
+          height="250"
+          format="webp"
+        />
         <div class="p-5">
 
         <p class="mb-3 mx-3 font-normal text-gray-500">Dec 22, 2023</p>
-        <h5 class="mb-2 mx-3 text-2xl font-[600] tracking-tight text-primary-10 ">5 Soft Skills Every Leader Should Master</h5>
+        <p class="mb-2 mx-3 text-2xl font-[600] tracking-tight text-primary-10 ">5 Soft Skills Every Leader Should Master</p>
        
         <MainBtn
         :title="'Know More'"
