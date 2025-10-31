@@ -1,12 +1,22 @@
 <template>
     <div class="min-h-[197px] flex flex-col justify-center items-center">
-        <div class="text-white rounded w-fit px-1 rotate-[-5deg] mb-2" :class="`bg-${labelColor}`" v-if="labelSection"> <span class="font-[700] md:text-[14px]">{{ labelSection }}</span></div>
-        <h1 class="max-w-[367px] text-center font-[600] md:text-[42px]" v-if="titleSection">{{ titleSection }}</h1>
+        <div class="rounded w-fit px-1 rotate-[-5deg] mb-2 " :class="`${labelBackgroundColor}`" v-if="labelSection">
+           <span class="font-[700] md:text-[14px]" :class="`text-${labelColor}`">
+            {{ labelSection }}
+           </span>
+          </div>
+        <h1 class="text-center font-[600] md:text-[42px]" 
+        :class="`text-${headerColor}`" 
+        :style="{ maxWidth: maxWidthofHeader + 'px' }"
+v-if="titleSection"
+>{{ titleSection }}</h1>
         <div class="max-w-[750px]">
             <p class="text-gray-600 font-[400] md:text-[20px]" v-if="subtitleSection">{{ subtitleSection }}</p>
         </div>
         <div class="mt-8" v-if="hasBtn">
-            <MainBtn :title="'Explore Programs'"/>
+            <MainBtn 
+            :title="'Explore Programs'"
+            />
         </div>
     </div>  
 </template>
@@ -23,9 +33,21 @@ export default{
       type: String,
       default: false,
     },
-    labelColor: {
+    labelBackgroundColor: {
       type: String,
-      default: 'primary-20',
+      default: 'bg-primary-20',
+    },
+    maxWidthofHeader: {
+      type: Number,
+      default: '367',
+    },
+    headerColor: {
+      type: String,
+      default: 'black',
+    },
+   labelColor: {
+      type: String,
+      default: 'white',
     },
     titleSection: {
       type: String,
