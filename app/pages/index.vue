@@ -8,6 +8,7 @@
   <SupportClientsSection />
   <ClientStories />
   <FrequentlyQuestions/>
+  <RequestTeam />
 </template>
 
 <script>
@@ -20,9 +21,7 @@ import OurNewsSection from '~/components/home/OurNewsSection.vue';
 import SupportClientsSection from '~/components/home/SupportClientsSection.vue';
 import ClientStories from '~/components/home/ClientStories.vue';
 import FrequentlyQuestions from '~/components/home/FrequentlyQuestions.vue';
-
-
-
+import RequestTeam from '~/components/home/RequestTeam.vue';
 
 export default{
   components: {
@@ -34,7 +33,8 @@ export default{
     OurNewsSection,
     SupportClientsSection,
     ClientStories,
-    FrequentlyQuestions
+    FrequentlyQuestions,
+    RequestTeam
   },
 }
 </script>

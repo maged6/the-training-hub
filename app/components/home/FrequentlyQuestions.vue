@@ -58,7 +58,7 @@
             </transition>
           </div>
 
-          <div class="mt-6">
+          <div class="mt-6 w-40">
            <MainBtn
         :title="'View All FAQs'"
         :colorIcon="'#b22726'"
