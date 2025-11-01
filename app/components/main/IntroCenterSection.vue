@@ -17,13 +17,15 @@
     >
       {{ titleSection }}
     </h1>
-    <div class="max-w-[750px]">
-      <p class="text-gray-600 font-[400] md:text-[20px]" v-if="subtitleSection">
+    <div :style="{ maxWidth: maxWidthofSubHeader + 'px' }">
+      <p class="font-[400] md:text-[20px]" v-if="subtitleSection">
+        <span :class="`text-${subtitleColor}`">
         {{ subtitleSection }}
+      </span>
       </p>
     </div>
     <div class="mt-8" v-if="hasBtn">
-      <MainBtn :title="'Explore Programs'" />
+      <MainBtn :title="buttonTitle" />
     </div>
   </div>
 </template>
@@ -48,6 +50,10 @@ export default{
       type: Number,
       default: '367',
     },
+    maxWidthofSubHeader: {
+      type: Number,
+      default: '750',
+    },
     headerColor: {
       type: String,
       default: 'black',
@@ -67,6 +73,14 @@ export default{
     hasBtn: {
       type: Boolean,
       default: false,
+    },
+    subtitleColor: {
+      type: String,
+      default: 'gray-600',
+    },
+    buttonTitle: {
+      type: String,
+      default: 'Explore Programs',
     },
   },
 }
