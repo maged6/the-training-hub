@@ -6,6 +6,7 @@
   <LearningAndCollaborationSection />
   <OurNewsSection /> 
   <SupportClientsSection />
+  <ClientStories />
 </template>
 
 <script>
@@ -16,6 +17,10 @@ import RangeServicesSection from '~/components/home/RangeServicesSection.vue';
 import LearningAndCollaborationSection from '~/components/home/LearningAndCollaborationSection.vue';
 import OurNewsSection from '~/components/home/OurNewsSection.vue';
 import SupportClientsSection from '~/components/home/SupportClientsSection.vue';
+import ClientStories from '~/components/home/ClientStories.vue';
+
+
+
 
 export default{
   components: {
@@ -26,6 +31,7 @@ export default{
     LearningAndCollaborationSection,
     OurNewsSection,
     SupportClientsSection,
+    ClientStories,
   },
 }
 </script>
