@@ -108,6 +108,12 @@
          <NuxtImg 
             class="absolute top-0 left-0 w-full h-full object-cover rounded-[16px]"
             :src="imageSection"
+            alt="the training hub team image"
+            width="100%"
+            height="100%"
+            format="webp"
+            quality="80"
+            loading="lazy"
          />
         </div>
       </div>

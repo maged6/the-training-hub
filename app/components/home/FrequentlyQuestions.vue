@@ -16,9 +16,11 @@
             :colorLable="'white'"
           />
           <NuxtImg
-            class="rounded-[16px] w-full object-cover"
+            class="rounded-[16px] w-full h-auto object-cover"
             :src="imageSection"
-            alt="the training hub image"
+            alt="the training hub faqs image"
+            width="800"
+            height="600"
             format="webp"
             quality="80"
             loading="lazy"
@@ -27,11 +29,7 @@
 
         <!-- Right Side -->
         <div class="flex flex-col text-white w-full gap-10 px-10">
-          <div
-            v-for="(faq, index) in faqsQuestion"
-            :key="index"
-            class="py-4 "
-          >
+          <div v-for="(faq, index) in faqsQuestion" :key="index" class="py-4 ">
             <button
               @click="toggleFAQ(index)"
               class="flex justify-start gap-3 items-start w-full text-left focus:outline-none"
@@ -58,16 +56,16 @@
             </transition>
           </div>
 
-          <div class="mt-6 w-40">
-           <MainBtn
-        :title="'View All FAQs'"
-        :colorIcon="'#b22726'"
-        :colorFrom="'transparent'"
-        :colorTo="'transparent'"
-        :colorBorder="'transparent'"
-        :backgroundIcon="'white'"
-      />
-                     </div>
+          <div class="mt-6 max-w-[156px]">
+            <MainBtn
+              :title="'View All FAQs'"
+              :colorIcon="'#b22726'"
+              :colorFrom="'transparent'"
+              :colorTo="'transparent'"
+              :colorBorder="'transparent'"
+              :backgroundIcon="'white'"
+            />
+          </div>
         </div>
       </div>
     </div>
