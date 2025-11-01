@@ -51,7 +51,7 @@
 
       <!-- Phone -->
       <div class="flex items-center border border-gray-300 rounded-lg px-4 py-3">
-        <span class="mr-2">🇪🇬 +20</span>
+        <span class="mr-2">+20</span>
         <input
           v-model="form.phone"
           type="text"
