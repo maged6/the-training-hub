@@ -5,7 +5,9 @@
             <p class="text-[32px] font-[600] mb-3" :class="`text-${colorCard}`">
              {{ titleCard }}
             </p>
-            <p class="text-gray-600 text-[20px] leading-relaxed font-[400]" >
+            <p class="text-[20px] leading-relaxed font-[400]" 
+             :class="backgroundColorCard === 'bg-white' ? 'text-gray-500' : 'text-gray-300'"
+            >
               
               {{ contentCard }}
             </p>
