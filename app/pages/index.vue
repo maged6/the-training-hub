@@ -7,6 +7,7 @@
   <OurNewsSection /> 
   <SupportClientsSection />
   <ClientStories />
+  <FrequentlyQuestions/>
 </template>
 
 <script>
@@ -18,6 +19,7 @@ import LearningAndCollaborationSection from '~/components/home/LearningAndCollab
 import OurNewsSection from '~/components/home/OurNewsSection.vue';
 import SupportClientsSection from '~/components/home/SupportClientsSection.vue';
 import ClientStories from '~/components/home/ClientStories.vue';
+import FrequentlyQuestions from '~/components/home/FrequentlyQuestions.vue';
 
 
 
@@ -32,6 +34,7 @@ export default{
     OurNewsSection,
     SupportClientsSection,
     ClientStories,
+    FrequentlyQuestions
   },
 }
 </script>

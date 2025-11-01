@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-[644px] flex flex-col justify-center">
+    <div class="flex flex-col justify-center">
         <div class="rounded w-fit px-1 rotate-[-5deg] mb-2" 
         :class="backgroundLable"
         v-if="labelSection"> 

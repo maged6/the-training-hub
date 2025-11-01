@@ -5,7 +5,7 @@
     @wheel="onSectionWheel"
   >
     <div class="bg-primary-10 pt-[60px] px-[60px] grid grid-cols-2 gap-[60px]">
-      <div class="col-span-1">
+      <div class="col-span-1 flex flex-col items-center justify-center gap-10 max-w-[600px] min-h-[40rem]">
         <IntroLeftSection 
         :backgroundLable="'bg-primary-20'"
         :colorLable="'white'"
