@@ -1,5 +1,26 @@
 <template>
-    <div class="p-4 border rounded-lg shadow-sm bg-white">
-    <h1 class="text-lg font-semibold mb-2">About</h1>
-  </div>
+  <InfoAboutUs />
 </template>
+
+<script>
+import { useGeneralStore } from '~/stores/general'
+
+import InfoAboutUs from '~/components/about-us/InfoAboutUs.vue';
+
+export default{
+  components: {
+    InfoAboutUs,
+  },
+
+  mounted() {
+    const generalStore = useGeneralStore()
+
+    if (!generalStore.about) {
+      generalStore.fetchAbout()
+    }
+
+    console.log('about data:', generalStore.about)
+  },
+
+}
+</script>
