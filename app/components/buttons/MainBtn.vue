@@ -1,6 +1,9 @@
 <template>
   <button
-    class="group flex gap-2 text-violet-950justify-center items-center  font-bold py-2 px-4 rounded-full cursor-pointer transition-all duration-300 ease-in-out"
+    class="group flex gap-2 text-violet-950 
+    justify-center items-center  font-bold 
+    xl:text-[16px] xl:px-[16px] xl:py-[10px] text-[11px] px-[10px] py-[6px]
+    rounded-full cursor-pointer transition-all duration-300 ease-in-out"
     :style="{
       background: hovered
         ? `linear-gradient(to top, ${colorTo}, ${colorFrom})`

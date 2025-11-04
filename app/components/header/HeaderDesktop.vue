@@ -21,7 +21,7 @@
           >
             <div
               :class="[
-                'text-[16px] px-[16px] py-[10px] rounded-[100px] font-[500] inline-block relative transition-colors duration-300 delay-100',
+                'xl:text-[16px] xl:px-[16px] xl:py-[10px] text-[11px] px-[10px] py-[6px] rounded-[100px] font-[500] inline-block relative transition-colors duration-300 delay-100',
                 activeIndex === i && link.icon
                   ? 'bg-primary-20 text-white absolute'
                   : 'bg-white text-primary-10 group-hover:bg-primary-10 group-hover:text-white'
@@ -35,7 +35,7 @@
                   : ' transition-transform duration-300 ease-in-out group-hover:-translate-y-[40px]'"
               >
                 {{ link.name }}
-                <span v-if="link.icon" class="px-[5px] py-[5px]">
+                <span v-if="link.icon" class="px-[5px] xl:py-[5px] py-[2px]">
                   <Minus v-if="activeIndex === i && link.icon" />
                   <ChevronDown v-else color="'#10171f'" />
                 </span>
@@ -43,7 +43,7 @@
             </div>
 
             <span
-              class="flex items-center absolute top-[40px] left-0 text-[16px] bg-primary-10 text-white px-[16px] py-[10px] rounded-[100px] font-[500] transition-all duration-300 ease-in-out opacity-0 "
+              class="xl:text-[16px] xl:px-[16px] xl:py-[10px] text-[11px] px-[10px] py-[6px] rounded-[100px] font-[500] flex items-center absolute top-[40px] left-0 bg-primary-10 text-white transition-all duration-300 ease-in-out opacity-0 "
               :class="[
                 activeIndex === i && link.icon
                   ? 'group-hover:opacity-0'
@@ -51,7 +51,7 @@
               ]"
             >
               {{ link.name }}
-              <span v-if="link.icon" class="px-[5px] py-[5px]">
+              <span v-if="link.icon" class="px-[5px] xl:py-[5px] py-[2px]">
                 <ChevronDown color="white" />
               </span>
             </span>
