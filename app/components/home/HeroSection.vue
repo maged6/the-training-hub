@@ -40,13 +40,6 @@
               loop
             >
               <source :src="videoSection || 'captions/home-the-training-hub.mp4'" type="video/mp4" />
-              <track
-                src="/captions/home-training-hub.vtt"
-                kind="captions"
-                srclang="en"
-                label="English"
-                default
-              />
               Your browser does not support the video tag.
             </video>
           </div>

@@ -48,11 +48,11 @@ export default{
     },
     maxWidthofHeader: {
       type: Number,
-      default: '367',
+      default: 367,
     },
     maxWidthofSubHeader: {
       type: Number,
-      default: '750',
+      default: 750,
     },
     headerColor: {
       type: String,

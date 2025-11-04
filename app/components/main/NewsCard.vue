@@ -1,6 +1,6 @@
 <template>
 <div class="max-w-sm bg-transparent rounded-lg">
-    <NuxtLink href="#">
+    <NuxtLink href="/">
         <NuxtImg
           class="rounded-lg"
           :src="ImageCard"
