@@ -12,6 +12,9 @@
 </template>
 
 <script>
+import { useGeneralStore } from '~/stores/general'
+
+
 import HeroSection from '~/components/home/HeroSection.vue';
 import ExploreSection from '~/components/home/ExploreSection.vue';
 import OverviewSection from '~/components/home/OverviewSection.vue';
@@ -36,5 +39,16 @@ export default{
     FrequentlyQuestions,
     RequestTeam
   },
+
+  mounted() {
+    const generalStore = useGeneralStore()
+
+    if (!generalStore.home) {
+      generalStore.fetchHomeData()
+    }
+
+    console.log('Home data:', generalStore.home)
+  },
+
 }
 </script>
