@@ -1,15 +1,23 @@
 <template>
   <InfoAboutUs />
+  <AboutVideo />
+  <AboutNumbers />
+ <ClientStories />
 </template>
 
 <script>
 import { useGeneralStore } from '~/stores/general'
 
 import InfoAboutUs from '~/components/about-us/InfoAboutUs.vue';
-
+import AboutVideo from '~/components/about-us/AboutVideo.vue';
+import AboutNumbers from '~/components/about-us/AboutNumbers.vue';
+import ClientStories from '~/components/home/ClientStories.vue';
 export default{
   components: {
     InfoAboutUs,
+    AboutVideo,
+    AboutNumbers,
+    ClientStories
   },
 
   mounted() {
