@@ -8,17 +8,19 @@
           :hasBtn="false"
         />
         <div class="grid grid-cols-7 gap-[52px]  px-[120px] py-[80px]">
+      
           <div
             v-for=" (client, index) in OurClients"
             :key="index"
-            class="w-full h-full max-w-[120px] max-h-[80px] "
+            class="flex items-center justify-center"
           >
+           <div class="relative w-[120px] h-[80px]">
             <NuxtImg
-              :src="client"
+              :src="client.image"
               alt="client"
-              sizes="(max-width: 120px) 60px, 120px"
-              class="container w-full h-full"
+              class="absolute inset-0 w-full h-full object-contain"
             />
+            </div>
           </div>
         </div>
       </div>
@@ -27,7 +29,12 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue'
 import IntroSection from '../main/IntroCenterSection.vue';
+
+interface OurClients {
+  image: string;
+}
 
 export default {
   components: { IntroSection},
@@ -41,17 +48,10 @@ export default {
       default: 'Proud to Support Our Valued Clients',
     },
     OurClients: {
-      type: Array as () => string[],
+      type: Array  as PropType<OurClients[]>,
         default: () => [
                 '/images/client-logo.png',
                 '/images/client-logo-2.png',
-                '/images/client-logo.png',
-                '/images/client-logo-2.png',
-                '/images/client-logo-2.png',
-                '/images/client-logo-2.png',
-                '/images/client-logo.png',
-                '/images/client-logo-2.png',
-                '/images/client-logo.png',
               ],
     }
   },

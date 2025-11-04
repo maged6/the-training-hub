@@ -1,6 +1,6 @@
 <template>
   <section class="bg-primary-20">
-    <div class="grid grid-cols-4 gap-[22px] px-[20px] md:px-[60px] py-[36px]">
+    <div class="grid grid-cols-4 gap-[22px] p-[60px]">
       
       <!-- Left section -->
       <div class="col-span-2 flex items-center justify-center md:justify-start">

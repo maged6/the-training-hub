@@ -15,24 +15,13 @@
 
       <!-- Grid Layout -->
       <div class="grid grid-cols-3 gap-3  max-w-[1200px] mb-8">
+        <div v-for="(post, index) in posts" :key="index">
           <NewsCard 
-          titleCard="Built for Collaboration"
-          contentCard="Each room is carefully arranged to enhance focus, encourage teamwork, and deliver an exceptional learning experience."
-          colorCard="primary-10"
-          backgroundColorCard="bg-white"
+            :ImageCard="post.image"
+            :DateCard="post.date"
+            :CardTitle="post.title"
           />
-            <NewsCard 
-          titleCard="Built for Collaboration"
-          contentCard="Each room is carefully arranged to enhance focus, encourage teamwork, and deliver an exceptional learning experience."
-          colorCard="primary-10"
-          backgroundColorCard="bg-white"
-          />
-            <NewsCard 
-          titleCard="Built for Collaboration"
-          contentCard="Each room is carefully arranged to enhance focus, encourage teamwork, and deliver an exceptional learning experience."
-          colorCard="primary-10"
-          backgroundColorCard="bg-white"
-          />
+          </div>
       </div>
 
       <MainBtn
@@ -49,6 +38,14 @@
 import IntroSection from '../main/IntroCenterSection.vue';
 import MainBtn from '../buttons/MainBtn.vue';
 import NewsCard from '../main/NewsCard.vue';
+import type { PropType } from 'vue'
+
+interface posts {
+  id: number;
+  title: string;
+  date: string;
+  image: string;
+}
 
 export default {
   components: { IntroSection, MainBtn, NewsCard },
@@ -61,8 +58,8 @@ export default {
       type: String,
       default: 'Stay Updated With Our News',
     },
-    programs: {
-      type: Array,
+    posts: {
+      type: Array as PropType<posts[]>,
       default: () => [],
     },
   },

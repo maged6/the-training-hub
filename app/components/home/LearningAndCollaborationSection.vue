@@ -14,59 +14,62 @@
       />
 
       <!-- Grid Layout -->
-      <div class="grid grid-flow-col grid-cols-6 gap-1 grid-rows-[200px_200px_200px] max-w-[1200px] mb-8 px-4">
-
+      <div
+        class="grid grid-flow-col grid-cols-6 gap-1 grid-rows-[200px_200px_200px] max-w-[1200px] mb-8 px-4"
+      >
         <!-- Card 1 -->
         <div class="row-span-2 col-span-2">
-          <BaseCard 
-          titleCard="Modern & Comfortable Spaces"
-          contentCard="Our purpose-built center combines style and comfort to create an inviting environment that supports productive learning."
-          colorCard="primary-10"
-          backgroundColorCard="bg-white"
+          <!-- 
+            -->
+          <BaseCard
+            :titleCard="facilities[0]?.title"
+            :contentCard="facilities[0]?.description"
+            colorCard="primary-10"
+            backgroundColorCard="bg-white"
           />
         </div>
 
         <div class="row-span-1 col-span-2">
-             <NuxtImg
-          class="rounded-2xl w-full h-full object-cover"
-         src="/images/image-1-small.jpg"
-          alt="Leadership article"
-          width="400"
-          height="250"
-          format="webp"
-          loading="lazy"
-        />
+          <NuxtImg
+            class="rounded-2xl w-full h-full object-cover"
+            :src="smallImage"
+            alt="Leadership article"
+            width="400"
+            height="250"
+            format="webp"
+            loading="lazy"
+          />
         </div>
 
         <div class="row-span-1 col-span-4 ">
           <NuxtImg
-          class="rounded-2xl w-full h-full object-cover"
-         src="/images/image-2-small.jpg"
-          alt="Leadership article"
-          width="400"
-          height="250"
-          format="webp"
-          loading="lazy"
-        />
+            class="rounded-2xl w-full h-full object-cover"
+            :src="largeImage"
+            alt="Leadership article"
+            width="400"
+            height="250"
+            format="webp"
+            loading="lazy"
+          />
         </div>
 
         <!-- Card 2 -->
         <div class="row-span-2 col-span-2 ">
-            <BaseCard 
-          titleCard="Fully Equipped Rooms"
-          contentCard="From spacious classrooms to advanced meeting rooms and flexible breakout areas, every space is designed to meet diverse training and event needs."
-          colorCard="white"
-          backgroundColorCard="bg-black"
+          <BaseCard
+            :titleCard="facilities[1]?.title"
+            :contentCard="facilities[1]?.description"
+            colorCard="white"
+            backgroundColorCard="bg-black"
           />
         </div>
 
         <!-- Card 3 -->
         <div class="row-span-2 col-span-2 ">
-           <BaseCard 
-          titleCard="Built for Collaboration"
-          contentCard="Each room is carefully arranged to enhance focus, encourage teamwork, and deliver an exceptional learning experience."
-          colorCard="primary-10"
-          backgroundColorCard="bg-white"
+          <BaseCard
+            :titleCard="facilities[2]?.title"
+            :contentCard="facilities[2]?.description"
+            colorCard="primary-10"
+            backgroundColorCard="bg-white"
           />
         </div>
       </div>
@@ -85,6 +88,12 @@
 import IntroSection from '../main/IntroCenterSection.vue';
 import MainBtn from '../buttons/MainBtn.vue';
 import BaseCard from '../main/BaseCard.vue';
+import type { PropType } from 'vue'
+
+interface Facility {
+  title: string;
+  description: string;
+}
 
 export default {
   components: { IntroSection, MainBtn, BaseCard },
@@ -97,9 +106,17 @@ export default {
       type: String,
       default: 'Designed to Inspire Learning and Collaboration',
     },
-    programs: {
-      type: Array,
+    facilities: {
+      type: Array as PropType<Facility[]>,
       default: () => [],
+    },
+    smallImage: {
+      type: String,
+      default: '/images/image-1.jpg',
+    },
+    largeImage: {
+      type: String,
+      default: '/images/image-2.jpg',
     },
   },
 

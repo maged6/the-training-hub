@@ -3,7 +3,7 @@
     <NuxtLink href="#">
         <NuxtImg
           class="rounded-lg"
-          src="/images/image-1.jpg"
+          :src="ImageCard"
           alt="Leadership article"
           width="400"
           height="250"
@@ -11,8 +11,12 @@
         />
         <div class="p-5">
 
-        <p class="mb-3 mx-3 font-normal text-gray-500">Dec 22, 2023</p>
-        <p class="mb-2 mx-3 text-2xl font-[600] tracking-tight text-primary-10 ">5 Soft Skills Every Leader Should Master</p>
+        <p class="mb-3 mx-3 font-normal text-gray-500">
+          {{ DateCard }}
+        </p>
+        <p class="mb-2 mx-3 text-2xl font-[600] tracking-tight text-primary-10 ">
+          {{ CardTitle }}
+        </p>
        
         <MainBtn
         :title="'Know More'"
@@ -35,17 +39,17 @@ import MainBtn from '../buttons/MainBtn.vue';
 export default {
   components: { MainBtn },
   props: {
-    labelSection: {
+    ImageCard: {
       type: String,
-      default: 'Hub Facilities',
+      default: '/images/image-1.jpg',
     },
-    titleSection: {
+    DateCard: {
       type: String,
-      default: 'Designed to Inspire Learning and Collaboration',
+      default: 'feb 21, 2026 ',
     },
-    programs: {
-      type: Array,
-      default: () => [],
+    CardTitle: {
+      type: String,
+      default: '5 Soft Skills Every Leader Should Master',
     },
   },
 

@@ -17,11 +17,11 @@
           ref="scrollContent"
           class="flex gap-4 my-[60px] inner-scrollbar w-full overflow-x-auto"
         >
-          <div v-for="(program, index) in 4" :key="index" class="flex-shrink-0">
+          <div v-for="(program, index) in programs" :key="index" class="flex-shrink-0">
             <ProgramsCard
-              :imgSection="'/images/image-1.jpg'"
+              :imgSection="program.permalink"
               :hoverImgSection="'/images/image-2.jpg'"
-              :lableText="'2 SEATS LEFT'"
+              :lableText="program.title"
               :lableColor="'primary-20'"
               :programName="'Soft Skills'"
               :titleProgram="'Emotional Intelligence '"
@@ -41,9 +41,16 @@
 
 <script lang="ts">
 import { ref } from 'vue';
+import type { PropType } from 'vue'
 import IntroSection from '../main/IntroCenterSection.vue';
 import ProgramsCard from '../main/ProgramsCard.vue';
 import MainBtn from '../buttons/MainBtn.vue';
+
+interface Program {
+  title: string;
+  permalink: string;
+
+}
 
 export default {
   components: { IntroSection, ProgramsCard, MainBtn },
@@ -62,7 +69,7 @@ export default {
         'From leadership workshops to technical certifications, our programs help you stay competitive. Browse our catalog to find the right course for your growth.',
     },
     programs: {
-      type: Array,
+      type: Array as PropType<Program[]>,
       default: () => [],
     },
   },

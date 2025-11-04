@@ -8,12 +8,21 @@ export const useGeneralStore = defineStore('general', {
     services: [],
     faqs: [],
     media: [],
+    loading: false,
   }),
 
   actions: {
     async fetchHomeData() {
-      const { data } = await api.get('/Homepage')
-      this.home = data
+       try {
+        this.loading = true // 👈 start loading
+        const { data } = await api.get('/Homepage')
+        this.home = data?.data
+      } catch (error) {
+        console.error('Error fetching home data:', error)
+      } finally {
+        this.loading = false // 👈 stop loading
+      }
+
     },
     async fetchAbout() {
       const { data } = await api.get('/about')
