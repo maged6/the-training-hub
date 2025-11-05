@@ -38,11 +38,9 @@
 
 <script lang="ts">
 import IntroSection from '../main/IntroLeftSection.vue';
-import DottedShape from '../svg/DottedShape.vue';
-import EllipseCircle from '../svg/EllipseCircle.vue';
 
 export default {
-  components: { IntroSection, DottedShape, EllipseCircle },
+  components: { IntroSection },
   props: {
     labelSection: {
       type: String,
