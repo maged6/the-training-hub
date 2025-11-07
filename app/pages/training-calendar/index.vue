@@ -1,5 +1,13 @@
 <template>
-  <div class="text-center">
-      <div>training-calendar</div>
-  </div>
+  <TrainingCalendar />
 </template>
+
+<script>
+import TrainingCalendar from '~/components/training-calendar/TrainingCalendar.vue';
+
+export default{
+  components: {
+    TrainingCalendar
+  },
+}
+</script>
