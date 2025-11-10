@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import HeaderOfSections from '../main/HeaderOfSections.vue';
-import CalendarPerMonth from './CalendarPerMonth.vue';
+import CalendarPerMonth from './calender-component/CalendarPerMonth.vue';
 
 export default {
   components: {
