@@ -25,10 +25,10 @@
        v-for="(card, index) in ServicesCard" 
           :key="index"> 
         <ServicesCard 
-          :cardImg="card.cardImg"
-          :cardTitle="card.cardTitle"
-          :cardSubtitle="card.cardSubtitle"
-          :cardButton="card.cardButton"
+          :cardImg="card.image"
+          :cardTitle="card.title"
+          :cardSubtitle="card.excerpt"
+          :cardButton="card.slug"
           />
       </div>
        
@@ -44,31 +44,29 @@ import IntroLeftSection from '../main/IntroLeftSection.vue'
 import ServicesCard from '../main/ServicesCard.vue'
 
 type ServiceCard = {
-  cardImg: string
-  cardTitle: string
-  cardSubtitle: string
-  cardButton: string
+  image: string
+  title: string
+  excerpt: string
+  slug: string
 }
 
 export default defineComponent({
   components: { IntroLeftSection, ServicesCard },
   props: {
-    labelSection: { type: String, default: 'Beyond Training Programs' },
-    titleSection: { type: String, default: 'Discover Our Full Range of Services' },
+    labelSection: { type: String, default: '' },
+    titleSection: { type: String, default: '' },
     subtitleSection: {
       type: String,
-      default:
-        'Discover flexible e-learning, immersive experiential learning, expert consultation, cultural journeys, and engaging business simulations—all designed to drive growth and real-world impact.',
+      default:'',
     },
     ServicesCard: {
       type: Array as PropType<ServiceCard[]>,
       default: () => [
         {
-          cardImg: '/images/image-service.png',
-          cardTitle: 'E - Learning',
-          cardSubtitle:
-            'Learn anytime, anywhere with interactive online courses designed for busy professionals seeking flexible, self-paced growth.',
-          cardButton: 'Explore',
+          image: '',
+          title: '',
+          excerpt:'',
+          slug: '',
         },
       ],
     },

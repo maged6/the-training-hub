@@ -18,8 +18,17 @@
     :programs="generalData.explore?.programs"
   />
   <OverviewSection 
+    :titleSection="generalData.overview?.title"
+    :descriptionSection="generalData.overview?.description"
+    :image1Section="generalData.overview?.first_small_image"
+    :image2Section="generalData.overview?.second_small_image"
+    :listSection="generalData.overview?.red_line_text"
     />
   <RangeServicesSection
+   :labelSection="generalData.discover?.label"
+   :titleSection="generalData.discover?.second_title"
+   :subtitleSection="generalData.discover?.second_description"
+   :ServicesCard="generalData.discover?.pages"
   />
   <LearningAndCollaborationSection 
     :labelSection="generalData.facilities?.label"
@@ -85,7 +94,7 @@ export default{
 
     const generalData = computed(() => generalStore.home)
     const isLoading = computed(() => generalStore.loading)
-
+    console.log('general data:', generalData.value)
     return { generalData, isLoading }
   },
 

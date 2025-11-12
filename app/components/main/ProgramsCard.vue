@@ -50,6 +50,8 @@
             </p>
             <p class="font-[400] text-[14px] text-white">
               {{ programDate }}
+
+              {{ daysPerWeek }} Days/ Week - {{ durationInWeeks }} Weeks - Start at {{ startFrom }}
             </p>
             <p class="font-[500] text-[20px] text-secondary-10">
               {{ programPrice }}
@@ -75,14 +77,16 @@ import ArrowRightTop from '~/components/svg/ArrowRightTopBtn.vue'
 export default {
   components: { ArrowRightTop },
   props: {
-    imgSection: { type: String, default: '/images/image-1.jpg' },
-    hoverImgSection: { type: String, default: '/images/image-2.jpg' },
-    lableText: { type: String, default: '2 SEATS LEFT' },
+    imgSection: { type: String, default: '' },
+    hoverImgSection: { type: String, default: '' },
+    lableText: { type: String, default: '' },
     lableColor: { type: String, default: 'primary-20' },
-    programName: { type: String, default: 'Soft Skills' },
-    titleProgram: { type: String, default: 'Emotional Intelligence ' },
-    programDate: { type: String, default: ' 2 Days/ Week - 6 Weeks - Start at 25th Oct 2025' },
-    programPrice: { type: String, default: '8,000 EGP' },
+    programName: { type: String, default: '' },
+    titleProgram: { type: String, default: '' },
+    daysPerWeek: { type: String, default: '' },
+    durationInWeeks: { type: String, default: '' },
+    startFrom: { type: String, default: '' },
+    programPrice: { type: String, default: '' },
   },
   data() {
     return {

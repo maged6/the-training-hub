@@ -19,13 +19,15 @@
         >
           <div v-for="(program, index) in programs" :key="index" class="flex-shrink-0">
             <ProgramsCard
-              :imgSection="program.permalink"
+              :imgSection="program.image"
               :hoverImgSection="'/images/image-2.jpg'"
               :lableText="program.title"
               :lableColor="'primary-20'"
-              :programName="'Soft Skills'"
-              :titleProgram="'Emotional Intelligence '"
-              :programDate="'2 Days/ Week - 6 Weeks - Start at 25th Oct 2025'"
+              :programName="''"
+              :titleProgram="''"
+              :daysPerWeek="program.days_per_week"
+              :durationInWeeks="program.duration_in_weeks"
+              :startFrom="program.start_from"
               :programPrice="'8,000 EGP'"
             />
           </div>
@@ -48,8 +50,13 @@ import MainBtn from '../buttons/MainBtn.vue';
 
 interface Program {
   title: string;
-  permalink: string;
-
+  slug: string;
+  days_per_week: string;
+  duration_in_weeks: string;
+  start_from: string;
+  image: string;
+  seats_available: number;
+  limited_offer: boolean;
 }
 
 export default {
