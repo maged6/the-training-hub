@@ -3,73 +3,75 @@
     <Loadingskeleton />
   </div>
   <div v-else>
-  <HeroSection 
-    :labelSection="generalData.hero?.label"
-    :titleSection="generalData.hero?.title"
-    :subtitleSection="generalData.hero?.subtitle"
-    :imageSection="generalData.hero?.image"
-    :videoSection="generalData.hero?.video"
-  />
-  
-  <ExploreSection
-    :labelSection="generalData.explore?.label"
-    :titleSection="generalData.explore?.title"
-    :subtitleSection="generalData.explore?.subtitle"
-    :programs="generalData.explore?.programs"
-  />
-  <OverviewSection 
-    :titleSection="generalData.overview?.title"
-    :descriptionSection="generalData.overview?.description"
-    :image1Section="generalData.overview?.first_small_image"
-    :image2Section="generalData.overview?.second_small_image"
-    :listSection="generalData.overview?.red_line_text"
+    <HeroSection
+      :labelSection="generalData.hero?.label"
+      :titleSection="generalData.hero?.title"
+      :subtitleSection="generalData.hero?.subtitle"
+      :imageSection="generalData.hero?.image"
+      :videoSection="generalData.hero?.video"
     />
-  <RangeServicesSection
-   :labelSection="generalData.discover?.label"
-   :titleSection="generalData.discover?.second_title"
-   :subtitleSection="generalData.discover?.second_description"
-   :ServicesCard="generalData.discover?.pages"
-  />
-  <LearningAndCollaborationSection 
-    :labelSection="generalData.facilities?.label"
-    :titleSection="generalData.facilities?.title"
-    :facilities="generalData.facilities?.facilities"
-    :smallImage="generalData.facilities?.small_image"
-    :largeImage="generalData.facilities?.large_image"
-  />
-  <OurNewsSection 
-    :labelSection="generalData.news?.label"
-    :titleSection="generalData.news?.title"
-    :posts="generalData.news?.posts"
-  /> 
-  <SupportClientsSection 
-    :labelSection="generalData.partners?.label"
-    :titleSection="generalData.partners?.title"
-    :OurClients="generalData.partners?.logos"
-  />
-  <ClientStories />
-  <FrequentlyQuestions/>
-  <RequestTeam />
+
+    <ExploreSection
+      :labelSection="generalData.explore?.label"
+      :titleSection="generalData.explore?.title"
+      :subtitleSection="generalData.explore?.subtitle"
+      :programs="generalData.explore?.programs"
+    />
+    <OverviewSection
+      :titleSection="generalData.overview?.title"
+      :descriptionSection="generalData.overview?.description"
+      :image1Section="generalData.overview?.first_small_image"
+      :image2Section="generalData.overview?.second_small_image"
+      :listSection="generalData.overview?.red_line_text"
+    />
+    <RangeServicesSection
+      :labelSection="generalData.discover?.label"
+      :titleSection="generalData.discover?.second_title"
+      :subtitleSection="generalData.discover?.second_description"
+      :ServicesCard="generalData.discover?.pages"
+    />
+    <LearningAndCollaborationSection
+      :labelSection="generalData.facilities?.label"
+      :titleSection="generalData.facilities?.title"
+      :facilities="generalData.facilities?.facilities"
+      :smallImage="generalData.facilities?.small_image"
+      :largeImage="generalData.facilities?.large_image"
+    />
+    <OurNewsSection
+      :labelSection="generalData.news?.label"
+      :titleSection="generalData.news?.title"
+      :posts="generalData.news?.posts"
+    />
+    <SupportClientsSection
+      :labelSection="generalData.partners?.label"
+      :titleSection="generalData.partners?.title"
+      :OurClients="generalData.partners?.logos"
+    />
+    <ClientStories 
+    :labelSection="successStoriesData?.title"
+    :userSection="successStoriesData?.stories"
+    />
+    <FrequentlyQuestions />
+    <RequestTeam />
   </div>
 </template>
 
 <script>
-import { useGeneralStore } from '~/stores/general'
+import { useGeneralStore } from "~/stores/general";
 
+import Loadingskeleton from "~/components/main/LoadingSkeleton.vue";
+import HeroSection from "~/components/home/HeroSection.vue";
+import ExploreSection from "~/components/home/ExploreSection.vue";
+import OverviewSection from "~/components/home/OverviewSection.vue";
+import RangeServicesSection from "~/components/home/RangeServicesSection.vue";
+import LearningAndCollaborationSection from "~/components/home/LearningAndCollaborationSection.vue";
+import OurNewsSection from "~/components/home/OurNewsSection.vue";
+import SupportClientsSection from "~/components/home/SupportClientsSection.vue";
+import ClientStories from "~/components/home/ClientStories.vue";
+import FrequentlyQuestions from "~/components/home/FrequentlyQuestions.vue";
+import RequestTeam from "~/components/home/RequestTeam.vue";
 
-import Loadingskeleton from '~/components/main/LoadingSkeleton.vue';
-import HeroSection from '~/components/home/HeroSection.vue';
-import ExploreSection from '~/components/home/ExploreSection.vue';
-import OverviewSection from '~/components/home/OverviewSection.vue';
-import RangeServicesSection from '~/components/home/RangeServicesSection.vue';
-import LearningAndCollaborationSection from '~/components/home/LearningAndCollaborationSection.vue';
-import OurNewsSection from '~/components/home/OurNewsSection.vue';
-import SupportClientsSection from '~/components/home/SupportClientsSection.vue';
-import ClientStories from '~/components/home/ClientStories.vue';
-import FrequentlyQuestions from '~/components/home/FrequentlyQuestions.vue';
-import RequestTeam from '~/components/home/RequestTeam.vue';
-
-export default{
+export default {
   components: {
     HeroSection,
     ExploreSection,
@@ -81,22 +83,22 @@ export default{
     ClientStories,
     FrequentlyQuestions,
     RequestTeam,
-    Loadingskeleton
+    Loadingskeleton,
   },
   setup() {
-    const generalStore = useGeneralStore()
+    const generalStore = useGeneralStore();
 
     onMounted(async () => {
       if (!generalStore.home || generalStore.home.length === 0) {
-        await generalStore.fetchHomeData()
+        await generalStore.fetchHomeData();
       }
-    })
+    });
 
-    const generalData = computed(() => generalStore.home)
-    const isLoading = computed(() => generalStore.loading)
-    console.log('general data:', generalData.value)
-    return { generalData, isLoading }
+    const generalData = computed(() => generalStore.home);
+    const successStoriesData = computed(() => generalStore.successStories);
+
+    const isLoading = computed(() => generalStore.loading);
+    return { generalData, successStoriesData, isLoading };
   },
-
-}
+};
 </script>

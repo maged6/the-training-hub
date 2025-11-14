@@ -12,7 +12,7 @@
       <NuxtImg
         class="rounded-full w-9 h-9"
         :src="userImg"
-        alt="Leadership article"
+        alt="user profile image"
         width="24"
         height="24"
         format="webp"
@@ -36,15 +36,15 @@ export default {
   props: {
     commentCard: {
       type: String,
-      default: 'Great experience! The trainer was knowledgeable and engaging.',
+      default: '',
     },
     userName: {
       type: String,
-      default: 'John Kenson',
+      default: '',
     },
         userImg: {
       type: String,
-      default: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png',
+      default: '',
     },
   }
 };

@@ -4,6 +4,7 @@ import api from '~/composables/useApi'
 export const useGeneralStore = defineStore('general', {
   state: () => ({
     home:[],
+    successStories: [],
     about: null,
     services: [],
     faqs: [],
@@ -12,23 +13,34 @@ export const useGeneralStore = defineStore('general', {
   }),
 
   actions: {
+
     async fetchHomeData() {
-       try {
-        this.loading = true // 👈 start loading
+  try {
+    this.loading = true
+
+    await Promise.all([
+      this.fetchHome(),
+      this.fetchSuccessStoriest()
+    ])
+  } catch (error) {
+    console.error("Error fetching homepage data:", error)
+  } finally {
+    this.loading = false
+  }
+},
+
+    async fetchHome() {
         const { data } = await api.get('/Homepage')
         this.home = data?.data
-      } catch (error) {
-        console.error('Error fetching home data:', error)
-      } finally {
-        this.loading = false // 👈 stop loading
-      }
-
+    },
+     async fetchSuccessStoriest() {
+      const { data } = await api.get('/success-stories')
+      this.successStories = data?.data
     },
     async fetchAbout() {
       const { data } = await api.get('/about')
       this.about = data
     },
-
     async fetchServices() {
       const { data } = await api.get('/services')
       this.services = data

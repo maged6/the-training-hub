@@ -50,7 +50,7 @@ export default {
       default:
         'Learn anytime, anywhere with interactive online courses designed for busy professionals seeking flexible, self-paced growth.'
     },
-    cardImg: { type: String, default: '/images/image-service.png' },
+    cardImg: { type: String, default: '' },
     cardButton: { type: String, default: 'Explore' }
   }
 }

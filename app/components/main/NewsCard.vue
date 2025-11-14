@@ -41,7 +41,7 @@ export default {
   props: {
     ImageCard: {
       type: String,
-      default: '/images/image-1.jpg',
+      default: '',
     },
     DateCard: {
       type: String,

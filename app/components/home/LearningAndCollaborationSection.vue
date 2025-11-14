@@ -112,11 +112,11 @@ export default {
     },
     smallImage: {
       type: String,
-      default: '/images/image-1.jpg',
+      default: '/images/learning-home-1.png',
     },
     largeImage: {
       type: String,
-      default: '/images/image-2.jpg',
+      default: '/images/learning-home-2.png',
     },
   },
 

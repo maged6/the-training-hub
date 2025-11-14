@@ -11,6 +11,7 @@
 
       <!-- Wrapper that centers the scrollable area -->
       <div ref="scrollSection" class="w-[95vw] mx-auto relative"
+        v-if="programs.length > 0"
         @mouseenter="enableHorizontalScroll"
         @mouseleave="disableHorizontalScroll">
         <div
@@ -20,7 +21,7 @@
           <div v-for="(program, index) in programs" :key="index" class="flex-shrink-0">
             <ProgramsCard
               :imgSection="program.image"
-              :hoverImgSection="'/images/image-2.jpg'"
+              :hoverImgSection="''"
               :lableText="program.title"
               :lableColor="'primary-20'"
               :programName="''"
@@ -34,7 +35,7 @@
         </div>
       </div>
 
-      <div class="flex justify-center">
+      <div class="flex justify-center mt-8">
         <MainBtn :title="'Explore All Programs'" />
       </div>
     </div>

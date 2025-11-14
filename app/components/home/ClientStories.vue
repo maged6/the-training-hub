@@ -17,9 +17,9 @@
         >
           <div v-for="(user, index) in userSection" :key="index" class="min-w-[360px] max-w-[360px]">
             <CommentCard 
-              :commentCard="user.commentCard"
-              :userName="user.userName"
-              :userImg="user.userImg"
+              :commentCard="user.text"
+              :userName="user.name"
+              :userImg="user.image"
             />
           </div>
         </div>
@@ -52,9 +52,9 @@ import CommentCard from '../main/CommentCard.vue'
 import ArrowRightTopBtn from '~/components/svg/ArrowRightTop.vue'
 
 interface UserSectionItem {
-  commentCard: string
-  userName: string
-  userImg: string
+  text: string
+  name: string
+  image: string
 }
 
 export default {
@@ -66,13 +66,7 @@ export default {
     },
     userSection: {
       type: Array as PropType<UserSectionItem[]>,
-      default: () => [
-        {
-          commentCard: 'Great experience! The trainer was knowledgeable and engaging.',
-          userName: 'John Kenson',
-          userImg: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png',
-        },
-      ],
+      default: () => [],
     },
   },
   setup(props) {

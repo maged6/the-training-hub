@@ -18,6 +18,7 @@
 
       <!-- Scrollable div -->
       <div
+       v-if="ServicesCard.length > 0"
         ref="scrollContainer"
         class="col-span-1 flex flex-col gap-[32px] max-h-[90vh] overflow-y-auto hide-scrollbar"
       >
@@ -53,22 +54,15 @@ type ServiceCard = {
 export default defineComponent({
   components: { IntroLeftSection, ServicesCard },
   props: {
-    labelSection: { type: String, default: '' },
-    titleSection: { type: String, default: '' },
+    labelSection: { type: String, default: 'Beyond Training Programs' },
+    titleSection: { type: String, default: 'Discover Our Full Range of Services' },
     subtitleSection: {
       type: String,
-      default:'',
+      default:'Discover flexible e-learning, immersive experiential learning, expert consultation, cultural journeys, and engaging business simulations—all designed to drive growth and real-world impact.',
     },
     ServicesCard: {
       type: Array as PropType<ServiceCard[]>,
-      default: () => [
-        {
-          image: '',
-          title: '',
-          excerpt:'',
-          slug: '',
-        },
-      ],
+      default: () => [],
     },
   },
   data() {

@@ -60,10 +60,10 @@ import type { PropType } from 'vue'
 export default {
   components: { MainBtn },
   props: {
-    titleSection: { type: String, default: '' },
-    descriptionSection: { type: String, default: '' },
-    image1Section: { type: String, default: '' },
-    image2Section: { type: String, default: '' },
+    titleSection: { type: String, default: 'Overview' },
+    descriptionSection: { type: String, default: 'We deliver practical, mentor-led training rooted in real world experience. Our approach goes beyond theory equipping professionals with applicable skills, added value, and the confidence to succeed and excel in their careers.' },
+    image1Section: { type: String, default: '/images/small-about-1.png' },
+    image2Section: { type: String, default: '/images/small-about-2.jpg' },
     listSection: {
       type: Array as PropType<{ word: string }[]>,
       default: () => [],

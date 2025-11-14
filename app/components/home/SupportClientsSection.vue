@@ -7,7 +7,7 @@
           :titleSection="titleSection"
           :hasBtn="false"
         />
-        <div class="grid grid-cols-7 gap-[52px]  px-[120px] py-[80px]">
+        <div v-if="OurClients.length > 0" class="grid grid-cols-7 gap-[52px]  px-[120px] py-[80px]">
       
           <div
             v-for=" (client, index) in OurClients"
@@ -49,10 +49,7 @@ export default {
     },
     OurClients: {
       type: Array  as PropType<OurClients[]>,
-        default: () => [
-                '/images/client-logo.png',
-                '/images/client-logo-2.png',
-              ],
+        default: () => [],
     }
   },
 };
