@@ -1,12 +1,11 @@
 <template>
   <section>
-    <div class="bg-tertiary-gray-5 py-[40px] px-[60px]">
+    <div class="bg-tertiary-gray-5 p-[60px]">
       <div
         class="w-full h-full bg-black rounded-[32px] grid grid-cols-2  p-[40px] gap-1"
       >
-        <!-- Left Side -->
         <div
-          class="flex flex-col items-center justify-center gap-10 w-full min-h-[40rem] text-white"
+          class="flex flex-col items-start justify-center gap-10 w-full min-h-[40rem] text-white"
         >
           <IntroSection
             :labelSection="labelSection"
@@ -16,11 +15,11 @@
             :colorLable="'white'"
           />
           <NuxtImg
-            class="rounded-[16px] w-full h-auto object-cover"
+            class="rounded-[16px] w-full h-auto object-contain object-top"
             :src="imageSection"
             alt="the training hub faqs image"
             width="800"
-            height="600"
+            height="300"
             format="webp"
             quality="80"
             loading="lazy"
@@ -32,7 +31,7 @@
           <div v-for="(faq, index) in faqsQuestion" :key="index" class="py-4 ">
             <button
               @click="toggleFAQ(index)"
-              class="flex justify-start gap-3 items-start w-full text-left focus:outline-none"
+              class="flex justify-start gap-3 items-start w-full text-left focus:outline-none cursor-pointer"
             >
               <span v-if="activeIndex === index">
                 <ChevronDown />
@@ -56,7 +55,7 @@
             </transition>
           </div>
 
-          <div class="mt-6 max-w-[156px]">
+          <div class="mt-6 max-w-[200px]">
             <MainBtn
               :title="'View All FAQs'"
               :colorIcon="'#b22726'"
@@ -78,6 +77,8 @@ import IntroSection from '../main/IntroLeftSection.vue';
 import ChevronDown from '../svg/ChevronDownRed.vue';
 import ChevronRight from '../svg/ChevronRight.vue';
 import MainBtn from '../buttons/MainBtn.vue';
+
+
 
 export default {
   components: { IntroSection, ChevronDown, ChevronRight, MainBtn },

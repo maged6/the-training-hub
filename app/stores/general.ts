@@ -5,9 +5,9 @@ export const useGeneralStore = defineStore('general', {
   state: () => ({
     home:[],
     successStories: [],
+    faqs: [],
     about: null,
     services: [],
-    faqs: [],
     media: [],
     loading: false,
   }),
@@ -20,7 +20,8 @@ export const useGeneralStore = defineStore('general', {
 
     await Promise.all([
       this.fetchHome(),
-      this.fetchSuccessStoriest()
+      this.fetchSuccessStoriest(),
+      this.fetchfaqs(),
     ])
   } catch (error) {
     console.error("Error fetching homepage data:", error)
@@ -37,6 +38,12 @@ export const useGeneralStore = defineStore('general', {
       const { data } = await api.get('/success-stories')
       this.successStories = data?.data
     },
+
+      async fetchfaqs() {
+      const { data } = await api.get('/faqs')
+      this.faqs = data?.data
+    },
+
     async fetchAbout() {
       const { data } = await api.get('/about')
       this.about = data

@@ -51,7 +51,12 @@
     :labelSection="successStoriesData?.title"
     :userSection="successStoriesData?.stories"
     />
-    <FrequentlyQuestions />
+    <FrequentlyQuestions 
+    :labelSection="faqsData?.red_label_text"
+    :titleSection="faqsData?.title"
+    :imageSection="faqsData?.image"
+    :faqsQuestion="faqsData?.faqs"
+    />
     <RequestTeam />
   </div>
 </template>
@@ -96,9 +101,10 @@ export default {
 
     const generalData = computed(() => generalStore.home);
     const successStoriesData = computed(() => generalStore.successStories);
+    const faqsData = computed(() => generalStore.faqs);
 
     const isLoading = computed(() => generalStore.loading);
-    return { generalData, successStoriesData, isLoading };
+    return { generalData, successStoriesData, faqsData, isLoading };
   },
 };
 </script>
