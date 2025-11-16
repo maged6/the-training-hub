@@ -80,7 +80,7 @@
 
           <!-- Current Month Days -->
           <div
-            v-for="date in no_of_days"
+            v-for="(date , index) in no_of_days"
             :key="'d'+date.date"
             class="h-28 px-2 py-2 border border-[#CFD1D2]"
           >
@@ -98,6 +98,7 @@
                 class="text-[16px] font-[900] bg-primary-20 text-white rounded-[21px] px-[16px] py-1 capitalize">
                {{  truncateWords("title event title event title event") }}
               </div> -->
+                <PopupCalendar v-if="index % 2" :dataToShow="date" />
             </div>
           </div>
 
@@ -113,8 +114,6 @@
         </div>
       </div>
        
-      <PopupCalendar />
-      <!-- Calendar popup  -->
     </div>
   </div>
 </template>
@@ -122,16 +121,10 @@
 <script>
 import ChevronLeft from '../../svg/ChevronLeft.vue';
 import ChevronRight from '../../svg/ChevronRight.vue';
-import { useTruncateWords } from "@/composables/useTruncateWords";
 import PopupCalendar from './PopupCalendar.vue';
 
 export default {
     components: { ChevronLeft, ChevronRight, PopupCalendar },
-      created() {
-    // ✅ Retrieve the function from the composable
-    const { truncateWords } = useTruncateWords();
-    this.truncateWords = truncateWords;
-  },
   data() {
     return {
       darkMode: false, 
@@ -150,7 +143,7 @@ export default {
     this.getNoOfDays();
   },
   methods: {
-     truncateWords(text) {},
+  
     isToday(date) {
       const today = new Date();
       return today.toDateString() === new Date(this.year, this.month, date.date).toDateString();

@@ -1,5 +1,5 @@
 export function useTruncateWords() {
-  const truncateWords = (text: string, limit: number = 3): string => {
+  const truncateWords = (text: string, limit: number = 2): string => {
     if (!text) return "";
 
     const words = text.split(" ");
