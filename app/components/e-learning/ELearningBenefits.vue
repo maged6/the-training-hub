@@ -20,11 +20,7 @@
             :key="index"
             :title="item.title"
             :subtitle="item.subtitle"
-        >
-            <template #icon>
-            <component :is="iconMap[item.title]" />
-            </template>
-        </BenefitsCard>
+        />
       </div>
 
     </div>
@@ -34,11 +30,7 @@
 <script lang="ts">
 import IntroSection from '../main-component/IntroCenterSection.vue';
 import BenefitsCard from '../cards/BenefitsCard.vue';
-import library from '../svg/library.vue';
-import VideoPlayback from '../svg/VideoPlayback.vue';
-import AnalyticsChat from '../svg/AnalyticsChat.vue';
-import TimerDesktop from '../svg/TimerDesktop.vue';
-import UserStar from '../svg/UserStar.vue';
+
 import type { PropType } from 'vue'
 
 interface BenefitCard {
@@ -46,12 +38,8 @@ interface BenefitCard {
   subtitle: string;
 }
 
-interface IconMap {
-  [key: string]: any // or DefineComponent if you want stronger typing
-}
-
 export default {
-  components: { IntroSection, BenefitsCard, library},
+  components: { IntroSection, BenefitsCard},
   props: {
     labelSection: {
       type: String,
@@ -74,17 +62,6 @@ export default {
 
     },
   },
-   computed: {
-    iconMap(): IconMap {
-      return {
-        'Wide Course Library': library,
-        'Interactive Experience': VideoPlayback,
-        'Progress Tracking': AnalyticsChat,
-        'Flexible Access': TimerDesktop,
-        'Expert-Led': UserStar,
-      }
-    }
-}
 
 };
 </script>

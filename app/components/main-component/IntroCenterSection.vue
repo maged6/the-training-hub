@@ -10,7 +10,7 @@
       </span>
     </div>
     <h1
-      class="text-center font-[600] md:text-[42px]"
+      class="text-center font-[900] md:text-[42px]"
       :class="`text-${headerColor}`"
       :style="{ maxWidth: maxWidthofHeader + 'px' }"
       v-if="titleSection"
