@@ -3,8 +3,8 @@
     <div>
       <HeaderOfSections 
       :labelSection="'Services'" 
-      :titleSection="'E-Learning Solutions'"
-        :subtitleSection="'Flexible online courses you can access anytime, anywhere—learn at your own pace.'" 
+      :titleSection="'Business Simulation'"
+        :subtitleSection="'Practice. Compete. Succeed.'" 
         :breadcrumbSection="breadcrumbSection"
         :maxWidthofSubHeader="602"
          />
@@ -12,9 +12,8 @@
    
     <div>
       <MainServicesSection 
-        :title="'Learn at Your Pace. Succeed on Your Terms.'"
-        :subTitle="'Whether you’re upskilling for a promotion, exploring new fields, or supporting your team’s development, our E-Learning solutions deliver the same high standards as our in-person training—accessible anytime on desktop or mobile.'"
-        :textButton="'Know More'"
+        :title="'Transform Learning into Real-World Action'"
+        :subTitle="'Business simulation is an interactive, game-based learning approach that replicates real market dynamics. It allows professionals and teams to apply theory to practical challenges—managing budgets, leading teams, analyzing competitors, and making high-stakes choices that drive measurable outcomes.'"
         :images="'images/layout-hero.jpg'"
       />
     </div>
@@ -37,7 +36,7 @@ export default {
     return {
       breadcrumbSection: [
         { name: 'Home', to: '/' },
-        { name: 'E-Learning', to: '/services/e-learning' },
+        { name: 'Business Simulation', to: '/services/business-simulation' },
       ]
     };
   },

@@ -3,8 +3,8 @@
     <div>
       <HeaderOfSections 
       :labelSection="'Services'" 
-      :titleSection="'E-Learning Solutions'"
-        :subtitleSection="'Flexible online courses you can access anytime, anywhere—learn at your own pace.'" 
+      :titleSection="'Learn & Explore Egypt'"
+        :subtitleSection="'Earn Recognized International Certifications'" 
         :breadcrumbSection="breadcrumbSection"
         :maxWidthofSubHeader="602"
          />
@@ -12,9 +12,8 @@
    
     <div>
       <MainServicesSection 
-        :title="'Learn at Your Pace. Succeed on Your Terms.'"
-        :subTitle="'Whether you’re upskilling for a promotion, exploring new fields, or supporting your team’s development, our E-Learning solutions deliver the same high standards as our in-person training—accessible anytime on desktop or mobile.'"
-        :textButton="'Know More'"
+        :title="'Learning Journeys Across Egypt'"
+        :subTitle="'Our program is designed for international participants and local professionals who want to gain new skills while experiencing Egypt’s rich heritage. We combine tailored training sessions with guided cultural tours, giving you the best of both worlds—personal growth and unforgettable memories.'"
         :images="'images/layout-hero.jpg'"
       />
     </div>
@@ -37,7 +36,7 @@ export default {
     return {
       breadcrumbSection: [
         { name: 'Home', to: '/' },
-        { name: 'E-Learning', to: '/services/e-learning' },
+        { name: 'Learn & Explore Egypt', to: '/services/learn-explore-egypt' },
       ]
     };
   },

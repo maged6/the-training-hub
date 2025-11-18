@@ -1,5 +1,15 @@
 <template>
-      <div class="p-4 border rounded-lg shadow-sm bg-white">
-    <h1 class="text-lg font-semibold mb-2">business-simulation</h1>
-  </div>
+    <BusinessSimulation
+    />
 </template>
+
+<script>
+import BusinessSimulation from "~/components/simulation-business/BusinessSimulation.vue";
+
+export default {
+  components: {
+    BusinessSimulation,
+  },
+
+};
+</script>

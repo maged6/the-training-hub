@@ -1,5 +1,15 @@
 <template>
-      <div class="p-4 border rounded-lg shadow-sm bg-white">
-    <h1 class="text-lg font-semibold mb-2">learn-explore-egypt</h1>
-  </div>
+    <LearnAndExplore
+    />
 </template>
+
+<script>
+import LearnAndExplore from "~/components/learn-and-explore/LearnAndExplore.vue";
+
+export default {
+  components: {
+    LearnAndExplore,
+  },
+
+};
+</script>

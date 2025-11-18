@@ -27,7 +27,7 @@
     <!-- //// sub title  -->
 
     <div :style="{ maxWidth: maxWidthofSubHeader + 'px' }" class="px-6">
-      <p class="font-[100] text-[20px] text-gray-200 py-[16px] " v-if="subtitleSection">
+      <p class="font-[100] text-[20px] text-gray-200 py-[16px] text-center" v-if="subtitleSection">
         {{ subtitleSection }}
       </p>
     </div>

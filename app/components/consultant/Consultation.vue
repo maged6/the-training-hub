@@ -3,8 +3,8 @@
     <div>
       <HeaderOfSections 
       :labelSection="'Services'" 
-      :titleSection="'E-Learning Solutions'"
-        :subtitleSection="'Flexible online courses you can access anytime, anywhere—learn at your own pace.'" 
+      :titleSection="'Consultation'"
+        :subtitleSection="'Your Partner in Organizational Transformation.'" 
         :breadcrumbSection="breadcrumbSection"
         :maxWidthofSubHeader="602"
          />
@@ -12,9 +12,8 @@
    
     <div>
       <MainServicesSection 
-        :title="'Learn at Your Pace. Succeed on Your Terms.'"
-        :subTitle="'Whether you’re upskilling for a promotion, exploring new fields, or supporting your team’s development, our E-Learning solutions deliver the same high standards as our in-person training—accessible anytime on desktop or mobile.'"
-        :textButton="'Know More'"
+        :title="'Strategic Guidance That Drives Change'"
+        :subTitle="'At The Training Hub, our consultation services go beyond advice—we become your collaborators in building stronger organizations. Whether you’re navigating culture change, performance challenges, or organizational alignment, our consultants bring deep industry experience and a practical focus to deliver lasting results.'"
         :images="'images/layout-hero.jpg'"
       />
     </div>
@@ -37,7 +36,7 @@ export default {
     return {
       breadcrumbSection: [
         { name: 'Home', to: '/' },
-        { name: 'E-Learning', to: '/services/e-learning' },
+        { name: 'Consultation', to: '/services/consultation' },
       ]
     };
   },
