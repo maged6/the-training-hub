@@ -44,7 +44,7 @@
 <script lang="ts">
 import CloseBtn from '~/components/svg/Close.vue'
 import { useTruncateWords } from "@/composables/useTruncateWords";
-import TrainingCard from "~/components/main/TrainingCard.vue";
+import TrainingCard from "~/components/cards/TrainingCard.vue";
 
 export default {
   components: { CloseBtn, TrainingCard},

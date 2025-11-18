@@ -48,7 +48,7 @@
 <script lang="ts">
 import { ref, computed } from 'vue'
 import type { PropType } from 'vue'
-import CommentCard from '../main/CommentCard.vue'
+import CommentCard from '../cards/CommentCard.vue'
 import ArrowRightTopBtn from '~/components/svg/ArrowRightTop.vue'
 
 interface UserSectionItem {

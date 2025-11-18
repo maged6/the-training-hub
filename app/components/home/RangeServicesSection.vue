@@ -41,8 +41,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import type { PropType } from 'vue'
-import IntroLeftSection from '../main/IntroLeftSection.vue'
-import ServicesCard from '../main/ServicesCard.vue'
+import IntroLeftSection from '../main-component/IntroLeftSection.vue'
+import ServicesCard from '../cards/ServicesCard.vue'
 
 type ServiceCard = {
   image: string

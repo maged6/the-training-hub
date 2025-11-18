@@ -57,7 +57,7 @@
 </template>
 
 <script lang="ts">
-import IntroSection from '../main/IntroCenterSection.vue';
+import IntroSection from '../main-component/IntroCenterSection.vue';
 import MainBtn from '../buttons/MainBtn.vue';
 import type { PropType } from 'vue'
 

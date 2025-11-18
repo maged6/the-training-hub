@@ -52,7 +52,7 @@
 </template>
 
 <script lang="ts">
-import IntroSection from '../main/IntroLeftSection.vue';
+import IntroSection from '../main-component/IntroLeftSection.vue';
 import DottedShape from '../svg/DottedShapeYeloow.vue';
 import EllipseCircle from '../svg/EllipseCircle.vue';
 

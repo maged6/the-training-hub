@@ -47,34 +47,37 @@
       :titleSection="generalData.partners?.title"
       :OurClients="generalData.partners?.logos"
     />
-    <ClientStories 
-    :labelSection="successStoriesData?.title"
-    :userSection="successStoriesData?.stories"
+    <ClientStories
+      :labelSection="successStoriesData?.title"
+      :userSection="successStoriesData?.stories"
     />
-    <FrequentlyQuestions 
-    :labelSection="faqsData?.red_label_text"
-    :titleSection="faqsData?.title"
-    :imageSection="faqsData?.image"
-    :faqsQuestion="faqsData?.faqs"
+    <FrequentlyQuestions
+      :labelSection="faqsData?.red_label_text"
+      :titleSection="faqsData?.title"
+      :imageSection="faqsData?.image"
+      :faqsQuestion="faqsData?.faqs"
     />
     <RequestTeam />
+    <TouchOurTeam />
   </div>
 </template>
 
 <script>
 import { useGeneralStore } from "~/stores/general";
 
-import Loadingskeleton from "~/components/main/LoadingSkeleton.vue";
+import Loadingskeleton from "~/components/main-component/LoadingSkeleton.vue";
 import HeroSection from "~/components/home/HeroSection.vue";
 import ExploreSection from "~/components/home/ExploreSection.vue";
 import OverviewSection from "~/components/home/OverviewSection.vue";
 import RangeServicesSection from "~/components/home/RangeServicesSection.vue";
 import LearningAndCollaborationSection from "~/components/home/LearningAndCollaborationSection.vue";
 import OurNewsSection from "~/components/home/OurNewsSection.vue";
-import SupportClientsSection from "~/components/home/SupportClientsSection.vue";
+import SupportClientsSection from "~/components/main-section/SupportClientsSection.vue";
 import ClientStories from "~/components/home/ClientStories.vue";
-import FrequentlyQuestions from "~/components/home/FrequentlyQuestions.vue";
+import FrequentlyQuestions from "~/components/main-section/FrequentlyQuestions.vue";
 import RequestTeam from "~/components/home/RequestTeam.vue";
+import TouchOurTeam from "~/components/main-section/TouchOurTeam.vue";
+
 
 export default {
   components: {
@@ -89,6 +92,7 @@ export default {
     FrequentlyQuestions,
     RequestTeam,
     Loadingskeleton,
+    TouchOurTeam,
   },
   setup() {
     const generalStore = useGeneralStore();

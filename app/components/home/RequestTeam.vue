@@ -123,7 +123,7 @@
 
 <script lang="ts">
 import type { PropType } from 'vue'
-import IntroSection from '../main/IntroLeftSection.vue';
+import IntroSection from '../main-component/IntroLeftSection.vue';
 import ChevronDown from '../svg/ChevronDownRed.vue';
 import ChevronRight from '../svg/ChevronRight.vue';
 import ArrowRightTop from '../svg/ArrowRightTop.vue';

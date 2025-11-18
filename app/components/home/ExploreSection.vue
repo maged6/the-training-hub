@@ -45,8 +45,8 @@
 <script lang="ts">
 import { ref } from 'vue';
 import type { PropType } from 'vue'
-import IntroSection from '../main/IntroCenterSection.vue';
-import ProgramsCard from '../main/ProgramsCard.vue';
+import IntroSection from '../main-component/IntroCenterSection.vue';
+import ProgramsCard from '../cards/ProgramsCard.vue';
 import MainBtn from '../buttons/MainBtn.vue';
 
 interface Program {

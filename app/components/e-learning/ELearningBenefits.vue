@@ -32,8 +32,8 @@
 </template>
 
 <script lang="ts">
-import IntroSection from '../main/IntroCenterSection.vue';
-import BenefitsCard from '../main/BenefitsCard.vue';
+import IntroSection from '../main-component/IntroCenterSection.vue';
+import BenefitsCard from '../cards/BenefitsCard.vue';
 import library from '../svg/library.vue';
 import VideoPlayback from '../svg/VideoPlayback.vue';
 import AnalyticsChat from '../svg/AnalyticsChat.vue';

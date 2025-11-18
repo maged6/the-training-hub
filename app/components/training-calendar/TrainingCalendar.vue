@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import HeaderOfSections from '../main/HeaderOfSections.vue';
+import HeaderOfSections from '../main-component/HeaderOfSections.vue';
 import CalendarPerMonth from './calender-component/CalendarPerMonth.vue';
 
 export default {

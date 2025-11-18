@@ -22,8 +22,8 @@
 </template>
 
 <script lang="ts">
-import HeaderOfSections from '../main/HeaderOfSections.vue';
-import MainServicesSection from '../main/MainServicesSection.vue';
+import HeaderOfSections from '../main-component/HeaderOfSections.vue';
+import MainServicesSection from '../main-component/MainServicesSection.vue';
 
 export default {
   components: {

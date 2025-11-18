@@ -51,7 +51,7 @@
 </template>
 
 <script lang="ts">
-import IntroSection from '../main/IntroLeftSection.vue';
+import IntroSection from '../main-component/IntroLeftSection.vue';
 
 export default {
   components: { IntroSection },
