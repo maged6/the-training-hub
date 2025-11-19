@@ -12,7 +12,7 @@
     </div>
 
     <div class="flex gap-[32px]">
-        <div class=" w-[45%]">
+        <div class="w-[45%]">
           <NuxtImg
             class="rounded-2xl object-cover w-full h-full"
             :src="'images/layout-hero.jpg'"

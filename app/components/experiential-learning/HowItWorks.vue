@@ -11,7 +11,7 @@
       />
     </div>
 
-    <div class="flex justify-center">
+    <div class="flex justify-center pb-[80px]">
       <div
         class="absolute left-1/2 transform -translate-x-1/2 h-full w-[3px] bg-white"
       ></div>
