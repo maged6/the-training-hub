@@ -11,26 +11,29 @@
       />
     </div>
 
-    <div class="flex gap-[32px]">
-        <div class="w-[45%]">
-          <NuxtImg
-            class="rounded-2xl object-cover w-full h-full"
-            :src="'images/layout-hero.jpg'"
-            alt="Our Vision and Mission"
-            width="250"
-            height="150"
-            format="webp"
-            loading="lazy"
-          />
+    <div class="grid grid-cols-7 gap-[32px]">
+      <div class="col-span-3">
+        <NuxtImg
+          class="rounded-2xl object-cover w-full h-full"
+          :src="'images/layout-hero.jpg'"
+          alt="Our Vision and Mission"
+          width="250"
+          height="150"
+          format="webp"
+          loading="lazy"
+        />
+      </div>
+      <div
+        class="col-span-4 flex flex-wrap items-stretch gap-[32px]"
+      >
+        <div
+          class="w-[calc(50%-16px)] "
+          v-for="(item, index) in BenefitsCardSection"
+          :key="index"
+        >
+          <BenefitsCard :title="item.title" :subtitle="item.subtitle" />
         </div>
-          <div  class="flex flex-wrap items-stretch gap-[32px] w-[70%]">
-             <BenefitsCard
-                    v-for="(item, index) in BenefitsCardSection"
-                    :key="index"
-                    :title="item.title"
-                    :subtitle="item.subtitle"
-                />
-          </div>
+      </div>
     </div>
   </section>
 </template>

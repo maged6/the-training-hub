@@ -14,15 +14,11 @@
       />
 
       <!-- Grid Layout -->
-      <div class="flex flex-wrap justify-center gap-[32px] px-[53px]"> 
-      <BenefitsCard
-            v-for="(item, index) in BenefitsCardSection"
-            :key="index"
-            :title="item.title"
-            :subtitle="item.subtitle"
-        />
+      <div class="flex flex-wrap justify-center gap-[32px] px-[53px]">
+        <div v-for="(item, index) in BenefitsCardSection" :key="index" class="max-w-[392px]">
+          <BenefitsCard :title="item.title" :subtitle="item.subtitle" />
+        </div>
       </div>
-
     </div>
   </section>
 </template>

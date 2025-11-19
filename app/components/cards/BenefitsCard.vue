@@ -1,7 +1,7 @@
 <template>
     
 
-<div class="block max-w-[392px] w-full p-[32px] bg-white rounded-[16px] shadow-md">
+<div class="block h-full w-full p-[32px] bg-white rounded-[16px] shadow-md">
    <component :is="iconMap[title]" aria-hidden="true" />
       <h2 class="mb-[12px] mt-[32px] font-[900] text-[28px] tracking-tight text-primary-10">
             {{ title }}</h2>
