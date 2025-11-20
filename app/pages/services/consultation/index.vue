@@ -18,7 +18,7 @@
 <script>
 import Consultation from "~/components/consultant/Consultation.vue";
 import ConsultationBenefits from "~/components/consultant/ConsultationBenefits.vue";
-import ImgAndFourCard from "~/components/main-section/ImgAndFourCard.vue";
+import ImgAndFourCard from "~/components/main-section/ImgAndFourRedCard.vue";
 import FrequentlyQuestions from "~/components/main-section/FrequentlyQuestions.vue"; 
 
 export default {

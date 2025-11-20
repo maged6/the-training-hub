@@ -17,8 +17,9 @@ import AboutNumbers from '~/components/about-us/AboutNumbers.vue';
 import OurVisionAndMission from '~/components/about-us/OurVisionAndMission.vue';
 import OurCommitment from '~/components/about-us/OurCommitment.vue';
 import TouchOurTeam from "~/components/main-section/TouchOurTeam.vue";
+import ClientStories from '~/components/main-section/ClientStories.vue';
 
-import ClientStories from '~/components/home/ClientStories.vue';
+
 export default{
   components: {
     InfoAboutUs,
