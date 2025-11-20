@@ -24,12 +24,14 @@
       :image2Section="generalData.overview?.second_small_image"
       :listSection="generalData.overview?.red_line_text"
     />
+
     <RangeServicesSection
       :labelSection="generalData.discover?.label"
       :titleSection="generalData.discover?.second_title"
       :subtitleSection="generalData.discover?.second_description"
       :ServicesCard="generalData.discover?.pages"
     />
+
     <LearningAndCollaborationSection
       :labelSection="generalData.facilities?.label"
       :titleSection="generalData.facilities?.title"
@@ -37,28 +39,34 @@
       :smallImage="generalData.facilities?.small_image"
       :largeImage="generalData.facilities?.large_image"
     />
+
     <OurNewsSection
       :labelSection="generalData.news?.label"
       :titleSection="generalData.news?.title"
       :posts="generalData.news?.posts"
     />
+
     <SupportClientsSection
       :labelSection="generalData.partners?.label"
       :titleSection="generalData.partners?.title"
       :OurClients="generalData.partners?.logos"
     />
+
     <ClientStories
       :labelSection="successStoriesData?.title"
       :userSection="successStoriesData?.stories"
     />
+
     <FrequentlyQuestions
       :labelSection="faqsData?.red_label_text"
       :titleSection="faqsData?.title"
       :imageSection="faqsData?.image"
       :faqsQuestion="faqsData?.faqs"
     />
+
     <RequestTeam />
     <TouchOurTeam />
+    
   </div>
 </template>
 

@@ -37,7 +37,7 @@
   />
 </template>
 
-<script>
+<script lang="ts">
 import MainSection from "~/components/main-section/MainSection.vue";
 import FiveBenefitsCardSection from "~/components/main-section/FiveBenefitsCardSection.vue";
 import ImgAndFourCard from "~/components/main-section/ImgAndFourRedCard.vue";
