@@ -63,6 +63,7 @@ export default {
     IntroCenterSection,
     Circle,
   },
+
   data() {
     return {
       processSteps: [

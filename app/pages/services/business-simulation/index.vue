@@ -25,17 +25,29 @@
         { title: 'Engaging & Memorable', subtitle: 'Interactive and fun activities that enhance retention and motivation.' },
        ]"
   />
+    <ImgAndFourCard
+    :LableSection="'Ideal For'"
+    :TitleSection="'Who Can Join'"
+    :ImgSection="'/services/captions/request-team.png'"
+    :AltSection="'the training hub Learn & Explore Egypt image'"
+    :BoxOne="'Simulations boost corporate teamwork by improving collaboration, communication, and problem-solving.'"
+    :BoxTwo="'Managers and emerging leaders will build confidence in high-stakes decision-making and learn to handle complex scenarios under pressure.'"
+    :BoxThree="'Students and graduates encounter real business challenges that ready them for the workforce, connecting theory with practice.'"
+    :BoxFour="'Entrepreneurs will refine their strategic thinking, resource management, and leadership skills to effectively grow their businesses.'"
+  />
 </template>
 
 <script>
 import MainSection from "~/components/main-section/MainSection.vue";
 import FiveBenefitsCardSection from "~/components/main-section/FiveBenefitsCardSection.vue";
+import ImgAndFourCard from "~/components/main-section/ImgAndFourRedCard.vue";
 
 
 export default {
   components: {
     MainSection,
     FiveBenefitsCardSection,
+    ImgAndFourCard,
   },
 
 };
