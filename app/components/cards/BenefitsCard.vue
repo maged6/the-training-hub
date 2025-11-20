@@ -1,9 +1,7 @@
 <template>
   <div class="block h-full w-full p-[32px] bg-white rounded-[16px] shadow-md">
     <component :is="iconMap[title]" aria-hidden="true" />
-    <h2
-      class="mb-[12px] mt-[32px] font-[900] text-[28px] tracking-tight text-primary-10"
-    >
+    <h2 class="mb-[12px] mt-[32px] font-[900] text-[28px] tracking-tight text-primary-10">
       {{ title }}
     </h2>
     <p class="text-gray-600 text-[20px]">{{ subtitle }}</p>
@@ -19,14 +17,19 @@ import library from '../svg/library.vue';
 import StatsUp from '../svg/StatsUp.vue';
 import UserSettings from '../svg/UserSettings.vue';
 import Team from '../svg/Team.vue';
-import Handshake  from '../svg/Handshake.vue';
-import AddUser  from '../svg/AddUser.vue';
-import RocketMoney  from '../svg/RocketMoney.vue';
-import MegaphoneAlt  from '../svg/MegaphoneAlt.vue';
-import Pyramids  from '../svg/Pyramids.vue';
-import GrowHelp  from '../svg/GrowHelp.vue';
-import Network  from '../svg/Network.vue';
-import History  from '../svg/History.vue';
+import Handshake from '../svg/Handshake.vue';
+import AddUser from '../svg/AddUser.vue';
+import RocketMoney from '../svg/RocketMoney.vue';
+import MegaphoneAlt from '../svg/MegaphoneAlt.vue';
+import Pyramids from '../svg/Pyramids.vue';
+import GrowHelp from '../svg/GrowHelp.vue';
+import Network from '../svg/Network.vue';
+import History from '../svg/History.vue';
+import HandChart from '../svg/HandChart.vue';
+import ChatAlt from '../svg/ChatAlt.vue';
+import BrainCheck from '../svg/BrainCheck.vue';
+import Users from '../svg/Users.vue';
+
 
 
 export default {
@@ -41,7 +44,7 @@ export default {
     },
   },
   computed: {
-    iconMap(): any{
+    iconMap(): any {
       return {
         'Wide Course Library': library,
         'Interactive Experience': VideoPlayback,
@@ -49,9 +52,12 @@ export default {
         'Flexible Access': TimerDesktop,
         'Expert-Led': UserStar,
         'Active Engagement': Handshake,
-        'Real-World Relevance': StatsUp ,
-        'Deep Retention': UserSettings ,
-        'Team & Personal Growth': Team ,
+
+        'Real-World Relevance': StatsUp,
+        'Immediate Feedback': StatsUp,
+        
+        'Deep Retention': UserSettings,
+        'Team & Personal Growth': Team,
         'HR Consultation': AddUser,
         'Sales Consultation': RocketMoney,
         'Online & Offline Marketing Consultation': MegaphoneAlt,
@@ -59,8 +65,12 @@ export default {
         'Professional Development': GrowHelp,
         'Networking Opportunities': Network,
         'Unique Venues': History,
+        'Hands-On Experience':HandChart,
+        'Team Collaboration':ChatAlt,
+        'Critical Thinking & Strategy':BrainCheck ,
+        'Engaging & Memorable':Users ,
       }
     }
-}
+  }
 };
 </script>

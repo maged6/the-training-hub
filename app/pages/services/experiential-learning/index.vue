@@ -1,5 +1,19 @@
 <template>
-  <ExperientialLearning />
+   <MainSection
+    :labelSection="'Services'"
+    :title="'Experiential Learning'"
+    :subtitle="'Hands-on programs that transform theory into action through immersive activities.'"
+    :breadcrumbSection="[
+        { name: 'Home', to: '/' },
+        { name: 'Experiential Learning', to: '/services/experiential-learning' },
+      ]"
+    :maxWidthofSubHeader="620"
+    :tileSection="'Transform Your Skills Through Experience'"
+    :subTitleSection="'“At The Training Hub, we believe that real learning happens when you do, not just observe. Inspired by the wisdom, ‘I hear and I forget. I see and I remember. I do and I understand,’ our experiential learning programs bring learning to life—engaging participants in hands-on, immersive activities that drive deeper understanding and lasting transformation.”'"
+    :imgSection="'images/layout-hero.jpg'"
+  />
+
+
   <VideoSection />
   <WhyExperiential
     :LableSection="'Key Features'"
@@ -19,7 +33,7 @@
 </template>
 
 <script>
-import ExperientialLearning from "~/components/experiential-learning/ExperientialLearning.vue";
+import MainSection from "~/components/main-section/MainSection.vue";
 import VideoSection from '~/components/main-section/VideoSection.vue';
 import WhyExperiential from "~/components/main-section/ImgAndBenefitsCard.vue";
 import HowItWorks from "~/components/experiential-learning/HowItWorks.vue";
@@ -30,7 +44,7 @@ import FrequentlyQuestions from "~/components/main-section/FrequentlyQuestions.v
 
 export default {
   components: {
-    ExperientialLearning,
+    MainSection,
     VideoSection,
     WhyExperiential,
     HowItWorks,

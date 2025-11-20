@@ -7,7 +7,7 @@
         :labelSection="labelSection"
         :labelBackgroundColor="'bg-primary-20'"
         :labelColor="'white'"
-        :maxWidthofHeader="499"
+        :maxWidthofHeader="maxWidthofHeader"
         :titleSection="titleSection"
         :headerColor="'black'"
         :hasBtn="false"
@@ -39,22 +39,20 @@ export default {
   props: {
     labelSection: {
       type: String,
-      default: 'Highlights',
+      default: '',
     },
     titleSection: {
       type: String,
-      default: 'E-Learning Benefits',
+      default: '',
+    },
+    maxWidthofHeader: {
+      type: Number,
+      default: 499,
     },
     BenefitsCardSection: {
       type: Array as PropType<BenefitCard[]>,
       required: true,
-       default: () => [
-        { title: 'Wide Course Library', subtitle: 'Access over 1000 courses across various industries.' },
-        { title: 'Interactive Experience', subtitle: 'Videos, quizzes, and case studies for active learning.' },
-        { title: 'Progress Tracking', subtitle: 'Monitor your achievements and completion rates.' },
-        { title: 'Flexible Access', subtitle: 'Learn at your own pace, anytime, anywhere.' },
-        { title: 'Expert-Led', subtitle: 'Courses developed by experienced trainers and industry professionals.' },
-       ],
+       default: () => [],
 
     },
   },
