@@ -23,6 +23,11 @@ import Handshake  from '../svg/Handshake.vue';
 import AddUser  from '../svg/AddUser.vue';
 import RocketMoney  from '../svg/RocketMoney.vue';
 import MegaphoneAlt  from '../svg/MegaphoneAlt.vue';
+import Pyramids  from '../svg/Pyramids.vue';
+import GrowHelp  from '../svg/GrowHelp.vue';
+import Network  from '../svg/Network.vue';
+import History  from '../svg/History.vue';
+
 
 export default {
   props: {
@@ -50,6 +55,10 @@ export default {
         'HR Consultation': AddUser,
         'Sales Consultation': RocketMoney,
         'Online & Offline Marketing Consultation': MegaphoneAlt,
+        'Cultural Immersion': Pyramids,
+        'Professional Development': GrowHelp,
+        'Networking Opportunities': Network,
+        'Unique Venues': History,
       }
     }
 }
