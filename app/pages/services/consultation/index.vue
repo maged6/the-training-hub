@@ -1,15 +1,36 @@
 <template>
-    <Consultation
+    <Consultation />
+    <ConsultationBenefits />
+    <ImgAndFourCard 
+      :LableSection="'Advantage'"
+      :TitleSection="'E-Learning Benefits'"
+      :SubTilteSection="'Work with experts who combine real-world insight and hands-on experience to deliver practical, results-driven solutions that create measurable impact.'"
+      :ImgSection="'/services/captions/request-team.png'"
+      :AltSection="'the training hub E-Learning Benefits image'"
+      :BoxOne="'Our consultants combine practical experience with training expertise.'"
+      :BoxTwo="'We offer end-to-end support, from diagnosis to implementation.'"
+      :BoxThree="'We don’t provide cookie-cutter solutions—every engagement is customized to your context.'"
+      :BoxFour="'Our approach is collaborative, we work with your team, not impose on it.'"
     />
+        <FrequentlyQuestions />
 </template>
 
 <script>
 import Consultation from "~/components/consultant/Consultation.vue";
+import ConsultationBenefits from "~/components/consultant/ConsultationBenefits.vue";
+import ImgAndFourCard from "~/components/main-section/ImgAndFourCard.vue";
+import FrequentlyQuestions from "~/components/main-section/FrequentlyQuestions.vue"; 
 
 export default {
   components: {
     Consultation,
+    ConsultationBenefits,
+    ImgAndFourCard,
+    FrequentlyQuestions,
   },
 
 };
 </script>
+
+
+    
