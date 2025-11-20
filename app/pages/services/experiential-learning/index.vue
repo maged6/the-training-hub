@@ -4,6 +4,8 @@
     <WhyExperiential />
     <HowItWorks />
     <OurPrograms />
+    <MomentsThatInspire />
+    <FrequentlyQuestions />
 </template>
 
 <script>
@@ -12,6 +14,8 @@ import VideoSection from '~/components/main-section/VideoSection.vue';
 import WhyExperiential from "~/components/experiential-learning/WhyExperiential.vue";
 import HowItWorks from "~/components/experiential-learning/HowItWorks.vue";
 import OurPrograms from "~/components/experiential-learning/OurPrograms.vue";
+import MomentsThatInspire from "~/components/experiential-learning/MomentsThatInspire.vue";
+import FrequentlyQuestions from "~/components/main-section/FrequentlyQuestions.vue"; 
 
 
 export default {
@@ -21,6 +25,8 @@ export default {
     WhyExperiential,
     HowItWorks,
     OurPrograms,
+    MomentsThatInspire,
+    FrequentlyQuestions
   },
 
 };

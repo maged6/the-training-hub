@@ -7,7 +7,7 @@
       {{ titleSection }}
     </h1>
 
-    <div class="flex gap-[16px]">
+    <div class="flex gap-[16px] pt-[32px]">
       <span v-for="(Program, index) in programSection" :key="index">
         <NewsCard
           :ImageCard="Program.ImageCard"
@@ -39,7 +39,23 @@ export default {
    },
    programSection: {
      type: Array as PropType<Program[]>,
-     default: () => [],
+     default: () => [
+       {
+         ImageCard: 'services/captions/request-team.png',
+         CardTitle: 'Lead Through Experience',
+         ButtonTitle: 'Request',
+       },
+       { 
+         ImageCard: 'services/captions/request-team.png',
+         CardTitle: 'Team Synergy Challenge',
+         ButtonTitle: 'Request',
+       },
+       {
+         ImageCard: 'services/captions/request-team.png',
+         CardTitle: 'The Innovation Quest',
+         ButtonTitle: 'Request',
+       },
+     ],
    },
  }
 }

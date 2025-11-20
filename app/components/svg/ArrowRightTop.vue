@@ -8,7 +8,7 @@
 </g>
 <defs>
 <clipPath id="clip0_380_8516">
-<rect width="14" height="14" fill="white" transform="translate(1.10046 11) rotate(-45)"/>
+<rect width="63" height="14" fill="white" transform="translate(1.10046 11) rotate(-45)"/>
 </clipPath>
 </defs>
 </svg>

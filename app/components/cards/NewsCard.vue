@@ -1,6 +1,5 @@
 <template>
 <div class="bg-transparent rounded-lg" :style="{ maxWidth: MaxWidth }">
-  {{ MaxWidth }}
     <NuxtLink href="/">
         <NuxtImg
           class="rounded-lg"
