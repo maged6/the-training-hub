@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="bg-tertiary-gray-5">
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 px-[60px] py-[32px]">
       <div 
         v-for="(column, colIndex) in gallery"

@@ -1,5 +1,5 @@
 <template>
-     <section>
+  <section class="bg-tertiary-gray-5">
     <div class="flex flex-wrap gap-[44px] px-[157px] py-[32px]">
       <span v-for="(Program, index) in programSection" :key="index">
         <NewsCard
