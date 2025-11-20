@@ -28,7 +28,10 @@
   />
   <HowItWorks />
   <OurPrograms />
-  <MomentsThatInspire />
+  <TestimonialsSection 
+    :lableSection="'Gallery'"
+    :titleSection="'Moments That Inspire'"
+  />
   <FrequentlyQuestions />
 </template>
 
@@ -38,7 +41,7 @@ import VideoSection from '~/components/main-section/VideoSection.vue';
 import WhyExperiential from "~/components/main-section/ImgAndBenefitsCard.vue";
 import HowItWorks from "~/components/experiential-learning/HowItWorks.vue";
 import OurPrograms from "~/components/experiential-learning/OurPrograms.vue";
-import MomentsThatInspire from "~/components/experiential-learning/MomentsThatInspire.vue";
+import TestimonialsSection from "~/components/main-section/TestimonialsSection.vue";
 import FrequentlyQuestions from "~/components/main-section/FrequentlyQuestions.vue";
 
 
@@ -49,7 +52,7 @@ export default {
     WhyExperiential,
     HowItWorks,
     OurPrograms,
-    MomentsThatInspire,
+    TestimonialsSection,
     FrequentlyQuestions
   },
 
