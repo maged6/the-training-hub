@@ -1,5 +1,13 @@
 <template>
-  <div class="text-center">
-      <div>Hub Facilities</div>
-  </div>
+  <HubFacilities />
 </template>
+
+<script>
+import HubFacilities from '~/components/hub-facilities/HubFacilities.vue';
+
+export default{
+  components: {
+    HubFacilities
+  },
+}
+</script>
