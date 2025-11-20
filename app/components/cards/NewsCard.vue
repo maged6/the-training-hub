@@ -1,25 +1,26 @@
 <template>
-<div class="max-w-sm bg-transparent rounded-lg">
+<div class="bg-transparent rounded-lg" :style="{ maxWidth: MaxWidth }">
+  {{ MaxWidth }}
     <NuxtLink href="/">
         <NuxtImg
           class="rounded-lg"
           :src="ImageCard"
           alt="Leadership article"
-          width="400"
+          width="370"
           height="250"
           format="webp"
         />
         <div class="p-5">
 
-        <p class="mb-3 mx-3 font-normal text-gray-500">
+        <p class="mb-3 mx-3 font-normal text-gray-500" v-if="DateCard">
           {{ DateCard }}
         </p>
-        <p class="mb-2 mx-3 text-2xl font-[600] tracking-tight text-primary-10 ">
+        <p class="mb-2 mx-3 text-2xl font-[600] tracking-tight text-primary-10 " v-if="CardTitle">
           {{ CardTitle }}
         </p>
        
         <MainBtn
-        :title="'Know More'"
+        :title="ButtonTitle"
         :colorTo="'transparent'"
         :colorFrom="'transparent'"
         :backgroundIcon="'#b22726'"
@@ -45,11 +46,19 @@ export default {
     },
     DateCard: {
       type: String,
-      default: 'feb 21, 2026 ',
+      default: '',
     },
     CardTitle: {
       type: String,
       default: '5 Soft Skills Every Leader Should Master',
+    },
+    ButtonTitle: {
+      type: String,
+      default: 'Know More',
+    },
+    MaxWidth: {
+      type: String,
+      default: '370px',
     },
   },
 
