@@ -2,69 +2,73 @@
   <div
     class="flex flex-col items-center justify-center rounded-[16px] w-full min-h-[40rem] bg-white p-10 shadow-sm"
   >
-    <!-- New Label -->
-    <div class="flex items-center justify-center mb-2">
-      <span
-        class="bg-primary-20 text-white text-[14px] font-[900] px-2 py-0.5 rounded-full"
+    <div class="flex flex-col w-full justify-start  px-5" :class="itemCenter ? 'items-start' : 'items-center' ">
+
+      <!-- Label -->
+      <div
+        class="rounded w-fit px-1 rotate-[-5deg] mb-2"
+        :class="`bg-${labelBackgroundColor}`"
+        v-if="labelComponent"
       >
-        {{ labelComponent }}
-      </span>
+        <span class="font-[700] md:text-[14px]" :class="`text-${labelColor}`">
+          {{ labelComponent }}
+        </span>
+      </div>
+
+      <!-- Title -->
+      <h1
+        class="text-center font-[900] md:text-[32px] mb-[8px] text-primary-10"
+        v-if="titleComponent"
+      >
+        {{ titleComponent }}
+      </h1>
     </div>
 
-    <!-- Title -->
-    <h2 class="text-2xl md:text-3xl font-semibold text-center mb-8">
-      {{ titleComponent }}
-    </h2>
-
     <!-- Form -->
-    <form
-      class="w-full max-w-xl flex flex-col gap-4"
-      @submit.prevent="submitForm"
-    >
-      <!-- Name Row -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <InputText v-model="form.firstName" label="First Name" type="text" />
-        <InputText v-model="form.lastName" label="Last Name" type="text" />
-      </div>
+    <form class="w-full flex flex-col gap-4 max-w-xl" @submit.prevent="submitForm">
 
-      <!-- Email -->
-      <InputText v-model="form.email" label="Email" type="email" />
+      <!-- LOOP SECTIONS -->
+      <template v-for="(section, index) in sections" :key="index">
 
-      <!-- Phone -->
-      <InputText v-model="form.phone" label="Phone" type="number" />
+        <!-- ROW (two items) -->
+        <div
+          v-if="section.type === 'row'"
+          class="grid grid-cols-1 md:grid-cols-2 gap-4"
+        >
+          <InputText
+            v-for="field in section.fields"
+            :key="field.model"
+            v-model="form[field.model]"
+            :label="field.label"
+            :type="field.type"
+          />
+        </div>
 
-      <!-- Government -->
-      <InputText v-model="form.government" label="Government" type="text" />
+        <!-- FULL WIDTH TEXT INPUT -->
+        <div v-if="section.type === 'full'">
+          <InputText
+            v-model="form[section.model]"
+            :label="section.label"
+            :type="section.typeInput"
+          />
+        </div>
 
-      <!-- Company & Position -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <InputText
-          v-model="form.company"
-          label="Company (Optional)"
-          type="text"
-        />
-        <InputText
-          v-model="form.position"
-          label="Position (Optional)"
-          type="text"
-        />
-      </div>
+        <!-- TEXTAREA -->
+        <div v-if="section.type === 'textarea'">
+          <FloatingTextarea
+            v-model="form[section.model]"
+            :label="section.label"
+            :rows="section.rows || 4"
+          />
+        </div>
 
-      <!-- Course Objectives -->
-      <FloatingTextarea
-        v-model="form.objectives"
-        label="Course Objectives"
-        type="text"
-        :rows="4"
-      />
+      </template>
 
-      <!-- Submit Button -->
+      <!-- Submit -->
       <button
         type="submit"
         class="mt-4 bg-gradient-to-r 
-        from-black 
-        to-gray-900 
-        text-white rounded-full 
+        from-black to-gray-900 text-white rounded-full 
         py-3 font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition"
       >
         {{ btnComponent }}
@@ -73,40 +77,52 @@
     </form>
   </div>
 </template>
-
 <script lang="ts">
-import ArrowRightTop from '../svg/ArrowRightTop.vue';
-import InputText from '../inputs/FloatingInput.vue';
-import FloatingTextarea from '../inputs/FloatingTextarea.vue';
+import ArrowRightTop from "../svg/ArrowRightTop.vue";
+import InputText from "../inputs/FloatingInput.vue";
+import FloatingTextarea from "../inputs/FloatingTextarea.vue";
+import type { PropType } from "vue";
+import type { FormSection } from "~/types/form-section";
 
 export default {
-  components: { ArrowRightTop , InputText, FloatingTextarea},
+  components: { ArrowRightTop, InputText, FloatingTextarea },
+
   props: {
-    labelComponent: { type: String, default: 'New' },
-    titleComponent: { type: String, default: 'Request a Tailored Course for Your Team' },
-    colorIcon: { type: String, default: 'black' },
-    btnComponent: { type: String, default: ' Submit Request' },
-  },
-  data() {
-    return {
-      form: {
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        government: '',
-        company: '',
-        position: '',
-        objectives: '',
-      },
-    };
-  },
-  methods: {
-    submitForm() {
-      // Handle form submission here
-      console.log(this.form);
+    sections: {
+      type: Array as PropType<readonly FormSection[]>,
+      required: true
     },
+    labelComponent: String,
+    titleComponent: String,
+    itemCenter: { type: Boolean, default: false },
+    labelBackgroundColor: { type: String, default: "bg-primary-20" },
+    labelColor: { type: String, default: "white" },
+    colorIcon: { type: String, default: "black" },
+    btnComponent: { type: String, default: "Submit" },
   },
 
+  data() {
+    return {
+      form: {} as Record<string, string>,
+    };
+  },
+
+  created() {
+    this.sections.forEach((section) => {
+      if (section.type === "row") {
+        section.fields.forEach((f) => (this.form[f.model] = ""));
+      } else {
+        this.form[section.model] = "";
+      }
+    });
+  },
+
+  methods: {
+    submitForm() {
+      console.log("FORM DATA:", this.form);
+      this.$emit("submit", this.form);
+    },
+  },
 };
 </script>
+
