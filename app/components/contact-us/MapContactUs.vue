@@ -1,52 +1,26 @@
 <template>
-  <section class="bg-tertiary-gray-5 py-[60px] flex justify-center">
-    <div class="bg-white w-fit rounded-[20px]">
-     <AskedQuestions
-         :faqsQuestion="faqsQuestion"
-         :hasBtn="false"
-         :darkBg="false"
-        />
-        </div>
+  <section>
+    <MapSection
+  :showContacts="true"
+  height="724px"
+  :contactItems="[
+    { icon: 'Envelope', text: 'info@thetraining-hub.com' },
+    { icon: 'Phone', text: '0222907369 .0222907369 .0222907369' },
+    { icon: 'MapMark', text: 'Egypt Office:22 Al Shahid Mohammed Qenaya Almaza , Cairo ,Egypt <span class=text-primary-20>Get Direction</span>' },
+    { icon: 'MapMark', text: 'KSA Office:2599 Unit 9 - South Ring Road- Riyadh-Saudi Arabia <span class=text-primary-20>Get Direction</span>' },
+  ]"
+/>
+
   </section>
 </template>
 
-<script lang="ts">
-import AskedQuestions from '../main-component/AskedQuestions.vue';
-import type { PropType } from 'vue'
+<script>
+import MapSection from "../main-section/MapSection.vue";
 
 export default {
   components: {
-    AskedQuestions,
+    MapSection,
   },
-   props: {
-    labelSection: { type: String, default: 'Have A Question?' },
-    titleSection: { type: String, default: 'Frequently asked questions' },
-    imageSection: { type: String, default: 'images/layout-hero.jpg' },
-    faqsQuestion: {
-        type: Array as PropType<{ question: string; answer: string }[]>,
-        default: () => [
-            {
-                question: 'What is the difference between a training and a program?',
-                answer: 'A training is a specific course or module, whereas a program is a series of training modules.',
-            },
-                {
-                question: 'What is the difference between a training and a program?',
-                answer: 'A training is a specific course or module, whereas a program is a series of training modules.',
-            },
-                {
-                question: 'What is the difference between a training and a program?',
-                answer: 'A training is a specific course or module, whereas a program is a series of training modules.',
-            },
-                {
-                question: 'What is the difference between a training and a program?',
-                answer: 'A training is a specific course or module, whereas a program is a series of training modules.',
-            },
-                {
-                question: 'What is the difference between a training and a program?',
-                answer: 'A training is a specific course or module, whereas a program is a series of training modules.',
-            },
-        ],
-    },
-  },
-}
+
+};
 </script>
