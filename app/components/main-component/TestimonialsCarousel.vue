@@ -54,6 +54,9 @@
 </template>
 
 <script lang="ts">
+
+// https://jsfiddle.net/sm0yqfhv/2/
+
 import { defineComponent } from "vue";
 import ArrowRightTopBtn from "~/components/svg/ArrowRightTop.vue";
 

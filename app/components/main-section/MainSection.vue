@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import HeaderOfSections from '../main-component/HeaderOfSections.vue';
-import MainServicesSection from '../main-component/MainServicesSection.vue';
+import MainServicesSection from './MainServicesSection.vue';
 import type { PropType } from 'vue'
 
 interface Breadcrumb {
