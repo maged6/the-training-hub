@@ -29,7 +29,7 @@
 
 <script>
 import MainSection from "~/components/main-section/MainSection.vue";
-import ConsultationBenefits from "~/components/consultant/ConsultationBenefits.vue";
+import ConsultationBenefits from "~/components/services-consultant/ConsultationBenefits.vue";
 import ImgAndFourCard from "~/components/main-section/ImgAndFourRedCard.vue";
 import FrequentlyQuestions from "~/components/main-section/FrequentlyQuestions.vue"; 
 

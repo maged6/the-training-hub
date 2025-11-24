@@ -10,7 +10,7 @@
          />
     </div>
    
-    <div>
+    <div v-if="hasServicesSection">
       <MainServicesSection 
         :title="tileSection"
         :subTitle="subTitleSection"
@@ -73,6 +73,10 @@ export default {
       type: String,
       default: '',
     },
+    hasServicesSection: {
+      type: Boolean,
+      default: true
+    }
   },
 
 }

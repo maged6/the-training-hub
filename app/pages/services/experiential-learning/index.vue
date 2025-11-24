@@ -39,8 +39,8 @@
 import MainSection from "~/components/main-section/MainSection.vue";
 import VideoSection from '~/components/main-section/VideoSection.vue';
 import WhyExperiential from "~/components/main-section/ImgAndBenefitsCard.vue";
-import HowItWorks from "~/components/experiential-learning/HowItWorks.vue";
-import OurPrograms from "~/components/experiential-learning/OurPrograms.vue";
+import HowItWorks from "~/components/services-experiential-learning/HowItWorks.vue";
+import OurPrograms from "~/components/services-experiential-learning/OurPrograms.vue";
 import TestimonialsSection from "~/components/main-section/TestimonialsSection.vue";
 import FrequentlyQuestions from "~/components/main-section/FrequentlyQuestions.vue";
 
