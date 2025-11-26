@@ -63,7 +63,9 @@
             </div>
 
             <div>
-              <MainBtn :title="'Register Now'" />
+              <NuxtLink :to="'/services/training-programs/single-training'">
+               <MainBtn :title="'Register Now'" />
+              </NuxtLink>
             </div>
           </div>
         </div>
