@@ -25,11 +25,7 @@
 import HeaderOfSections from '../main-component/HeaderOfSections.vue';
 import MainServicesSection from './MainServicesSection.vue';
 import type { PropType } from 'vue'
-
-interface Breadcrumb {
-  name: string;
-  to: string;
-}
+import type { Breadcrumb } from "~/types/breadcrumb";
 
 export default {
   components: {

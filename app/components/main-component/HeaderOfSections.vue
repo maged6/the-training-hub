@@ -6,19 +6,8 @@
         {{ labelSection }}
       </span>
     </div>
-    <!-- //// breadcrumb  -->
-
-    <nav class="flex pt-5" aria-label="Breadcrumb">
-      <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
-        <li class="inline-flex items-center cursor-pointer" v-for="(items, index) in breadcrumbSection" :key="index">
-          <NuxtLink :to="items.to"
-            class="inline-flex items-center text-lg font-[100] text-gray-200 hover:text-gray-600 mx-1">
-            {{ items.name }}
-          </NuxtLink>
-          <ChevronRight v-if="index !== breadcrumbSection.length - 1" :colorIcon="'#CFD1D2'" />
-        </li>
-      </ol>
-    </nav>
+ 
+    <BreadcrumbComponent :breadcrumbArray="breadcrumbSection"/>
     <!-- //// title  -->
 
     <h1 class="text-center text-white font-[900] md:text-[58px] w-full" v-if="titleSection">
@@ -38,16 +27,14 @@
 <script lang="ts">
 
 import { defineComponent, type PropType } from 'vue'
+import type { Breadcrumb } from "~/types/breadcrumb";
+import BreadcrumbComponent from "../breadcrumb/Breadcrumb.vue";
 import ChevronRight from '../svg/ChevronRight.vue'
-
-interface Breadcrumb {
-  name: string
-  to: string
-}
 
 export default defineComponent({
   components: {
     ChevronRight,
+    BreadcrumbComponent,
   },
   props: {
     labelSection: {

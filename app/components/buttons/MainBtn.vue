@@ -1,7 +1,8 @@
 <template>
   <button
-    class="group flex gap-2 text-violet-950 
-    justify-center items-center  font-bold 
+    class="group flex gap-2
+    justify-center items-center  
+    font-bold 
     xl:text-[16px] xl:px-[16px] xl:py-[10px] text-[11px] px-[10px] py-[6px]
     rounded-full cursor-pointer transition-all duration-300 ease-in-out"
     :style="{
