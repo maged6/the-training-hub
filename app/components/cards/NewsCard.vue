@@ -1,24 +1,25 @@
 <template>
-<div class="bg-transparent rounded-lg" :style="{ maxWidth: MaxWidth }">
-    <NuxtLink href="/">
-        <NuxtImg
-          class="rounded-lg"
-          :src="ImageCard"
-          alt="Leadership article"
-          width="370"
-          height="250"
-          format="webp"
-        />
-        <div class="p-5">
+  <div class="bg-transparent rounded-lg" :style="{ maxWidth: MaxWidth }">
+    <NuxtImg
+      class="rounded-lg"
+      :src="ImageCard"
+      alt="Leadership article"
+      width="370"
+      height="250"
+      format="webp"
+    />
+    <div class="p-5">
+      <p class="mb-3 mx-3 font-normal text-gray-500" v-if="DateCard">
+        {{ DateCard }}
+      </p>
+      <p
+        class="mb-2 mx-3 text-2xl font-[600] tracking-tight text-primary-10 "
+        v-if="CardTitle"
+      >
+        {{ CardTitle }}
+      </p>
 
-        <p class="mb-3 mx-3 font-normal text-gray-500" v-if="DateCard">
-          {{ DateCard }}
-        </p>
-        <p class="mb-2 mx-3 text-2xl font-[600] tracking-tight text-primary-10 " v-if="CardTitle">
-          {{ CardTitle }}
-        </p>
-       
-        <MainBtn
+      <MainBtn
         :title="ButtonTitle"
         :colorTo="'transparent'"
         :colorFrom="'transparent'"
@@ -26,12 +27,9 @@
         :textColor="'#b22726'"
         :colorIcon="'white'"
       />
-
     </div>
-        </NuxtLink>
-</div>
+  </div>
 </template>
-
 
 <script lang="ts">
 import MainBtn from '../buttons/MainBtn.vue';
