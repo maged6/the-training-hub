@@ -44,10 +44,11 @@
         <div
           v-for="(job, index) in jobs"
           :key="index"
-          class="flex items-center justify-between py-6 border-b border-gray-200"
+          
           @mouseenter="hoveredIndex = index"
           @mouseleave="hoveredIndex = null"
         >
+        <NuxtLink class="flex items-center justify-between py-6 border-b border-gray-200" :to="`/careers/${job.title}`">
           <div class="flex gap-[16px]">
             <div><Briefcase2 /></div>
             <div>
@@ -66,6 +67,7 @@
             :width="'42'"
             :height="'42'"
           />
+          </NuxtLink>
         </div>
       </div>
     </div>
