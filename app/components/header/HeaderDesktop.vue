@@ -59,9 +59,11 @@
         </li>
         <li><SearchBtn /></li>
         <li>
+          <NuxtLink :to="'/my-account'">
           <MainBtn 
           :title="'My Account'"
-           /></li>
+           />
+          </NuxtLink></li>
       </ul>
     </nav>
   </div>

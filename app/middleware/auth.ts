@@ -1,11 +1,16 @@
-import { useUserStore } from '~/stores/user'
+import { defineNuxtRouteMiddleware, navigateTo } from "#app";
+import { useUserStore } from "~/stores/user";
 
 export default defineNuxtRouteMiddleware(() => {
-  if (process.server) return
+  const userStore = useUserStore();
 
-  const userStore = useUserStore()
-
-  if (!userStore.token) {
-    return navigateTo('/login')
+  // Load from localStorage if needed
+  if (!userStore.user) {
+    userStore.loadUserFromLocalStorage();
   }
-})
+
+  // If not logged in → redirect to login
+  if (!userStore.token) {
+    return navigateTo("/my-account/login");
+  }
+});
