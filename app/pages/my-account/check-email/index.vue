@@ -1,11 +1,16 @@
 <template>
-  <div class="text-center">
-      <div>Check your email for password reset link</div>
-  </div>
+  <CheckYourEmail />
 </template>
 
 <script>
 definePageMeta({
   layout: 'login',
 })
+
+import CheckYourEmail from '~/components/login/CheckYourEmail.vue';
+ 
+export default {
+  components: { CheckYourEmail }
+}
+
 </script>
