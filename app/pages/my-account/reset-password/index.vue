@@ -1,11 +1,16 @@
 <template>
-  <div class="text-center">
-      <div>Reset Password</div>
-  </div>
+  <ResetPassword />
 </template>
 
 <script>
 definePageMeta({
   layout: 'login',
 })
+
+import ResetPassword from '~/components/login/ResetPassword.vue';
+ 
+export default {
+  components: { ResetPassword }
+}
+
 </script>
