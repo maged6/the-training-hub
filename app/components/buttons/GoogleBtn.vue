@@ -3,28 +3,30 @@
     class="
     group 
     font-[900]
-    text-[20px]
-    flex gap-[10px] text-primary-10 justify-center items-center  
+    text-[16px]
+    flex gap-[10px] text-secondary-40 justify-center items-center  
     cursor-pointer transition-all
     duration-300 ease-in-out
-    border-2 border-primary-10
     py-[13px]
-    px-[26px]
+    px-[23px]
     rounded-[100px]
+    bg-tertiary-gray-5
+    max-w-[240px]
+    max-h-[48px]
     "
   >
-    <Download v-if="hasIcon"/>
+    <Google v-if="hasIcon"/>
     <span>{{ title }}</span>
   </button>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Download from '@/components/svg/Download.vue'
+import Google from '@/components/svg/Google.vue'
 
 export default defineComponent({
   name: 'TransparentButton',
-  components: { Download },
+  components: { Google },
   props: {
     title: { type: String, default: 'Explore' },
     colorIcon: { type: String, default: '#b22726' },

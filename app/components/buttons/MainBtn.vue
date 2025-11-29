@@ -16,6 +16,7 @@
   >
     <span :style="{ color: textColor }">{{ title }}</span>
     <ArrowRightTop
+      v-if="hasIcon"
       class="transform transition-transform duration-500 ease-in-out group-hover:rotate-45"
       :colorIcon="colorIcon"
       :backgroundIcon="backgroundIcon"
@@ -38,6 +39,7 @@ export default defineComponent({
     colorFrom: { type: String, default: '#e20700' },
     colorBorder: { type: String, default: '' },
     backgroundIcon: { type: String, default: 'white' },
+    hasIcon: { type: Boolean, default: true },
   },
   setup() {
     const hovered = ref(false)
