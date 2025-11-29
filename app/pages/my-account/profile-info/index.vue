@@ -1,7 +1,5 @@
 <template>
-  <div class="text-center">
-      <div>Profile Info</div>
-  </div>
+  <ProfileInfo />
 </template>
 
 <script>
@@ -9,4 +7,8 @@ definePageMeta({
   layout: 'account',
   middleware: ['auth']
 })
+import ProfileInfo from '~/components/aside-bar/ProfileInfo.vue';
+export default {
+  components: { ProfileInfo }
+}
 </script>
