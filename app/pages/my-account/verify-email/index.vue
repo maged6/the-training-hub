@@ -1,11 +1,16 @@
 <template>
-  <div class="text-center">
-      <div>Verify Email Address</div>
-  </div>
+  <VerifyEmail />
 </template>
 
 <script>
 definePageMeta({
   layout: 'login',
 })
+
+import VerifyEmail from '~/components/login/VerifyEmail.vue';
+ 
+export default {
+  components: { VerifyEmail }
+}
+
 </script>

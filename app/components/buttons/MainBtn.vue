@@ -9,7 +9,7 @@
       background: hovered
         ? `linear-gradient(to top, ${colorTo}, ${colorFrom})`
         : `linear-gradient(to top, ${colorFrom}, ${colorTo})`,
-      border: colorBorder ? `1px solid ${colorBorder}` : 'none'
+      border: colorBorder ? `1px solid ${colorBorder}` : 'none',
     }"
     @mouseenter="hovered = true"
     @mouseleave="hovered = false"

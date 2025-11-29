@@ -1,8 +1,6 @@
 import { defineStore } from "pinia";
 import api from "~/composables/useApi";
 
-// https://tailwindflex.com/@Shariar-Hasan/simple-otp-box-form
-
 export const useUserStore = defineStore("user", {
   state: () => ({
     user: null as any,

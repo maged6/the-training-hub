@@ -1,11 +1,16 @@
 <template>
-  <div class="text-center">
-      <div>create accuot</div>
-  </div>
+  <CreateAccount />
 </template>
 
 <script>
 definePageMeta({
   layout: 'login',
 })
+
+import CreateAccount from '~/components/login/CreateAccount.vue';
+ 
+export default {
+  components: { CreateAccount }
+}
+
 </script>

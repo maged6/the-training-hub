@@ -61,7 +61,7 @@
         </div>
 
         <!-- RIGHT SIDE IMAGE -->
-        <div class="max-w-[788px] max-h-[861px] w-full">
+        <div class="max-w-[788px] max-h-[750px] w-full">
           <NuxtImg
             class="rounded-[12px] object-cover w-full h-full"
             src="/images/login.png"
