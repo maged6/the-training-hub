@@ -1,7 +1,7 @@
 <template>
 <section class="bg-tertiary-gray-5 flex flex-col items-center justify-center h-[70vh] w-full ">
   <div class="w-full max-w-md px-8 py-10 bg-white rounded-lg shadow-md ">
-    <h1 class="text-2xl font-semibold text-center mb-6">Verify Email Address</h1>
+    <h1 class="text-[32px] font-[900] text-center mb-6">Verify Email Address</h1>
     <p class="text-gray-600 text-center mb-4">A verification code has been sent to your email addressmarkelmallakh@gmail.com</p>
     <p class="text-gray-600 text-center mb-4">Ener Code</p>
     <div class="grid grid-cols-6 gap-x-4 my-2">
