@@ -14,8 +14,10 @@
             </div>
         </div>
 
-        <div class="pt-[32px]">
-           <MyProgramsCard />
+        <div class="pt-[32px] flex flex-col gap-[24px]">
+          <div v-for="(item, index) in 5" :key="index">
+            <MyProgramsCard />
+          </div>
         </div>
         </div>
     </section>
