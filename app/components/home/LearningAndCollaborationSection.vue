@@ -73,13 +73,14 @@
           />
         </div>
       </div>
-
-      <MainBtn
-        :title="'Know More'"
-        :colorIcon="'#10171F'"
-        :colorTo="'#10171F'"
-        :colorFrom="'#4B4A5C'"
-      />
+      <NuxtLink :to="'/hub-facilities'">
+        <MainBtn
+          :title="'Know More'"
+          :colorIcon="'#10171F'"
+          :colorTo="'#10171F'"
+          :colorFrom="'#4B4A5C'"
+        />
+      </NuxtLink>
     </div>
   </section>
 </template>

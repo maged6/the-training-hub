@@ -21,22 +21,26 @@
           <div v-for="(program, index) in programs" :key="index" class="flex-shrink-0">
             <ProgramsCard
               :imgSection="program.image"
+              :linkTo="program.slug"
               :hoverImgSection="''"
-              :lableText="program.title"
-              :lableColor="'primary-20'"
+              :seatsAvailable="program.seats_available"
+              :limitedOffer="program.limited_offer"
               :programName="''"
-              :titleProgram="''"
+              :titleProgram="program.title"
               :daysPerWeek="program.days_per_week"
               :durationInWeeks="program.duration_in_weeks"
               :startFrom="program.start_from"
-              :programPrice="'8,000 EGP'"
+              :programPrice="''"
+              :programOffer="''"
             />
           </div>
         </div>
       </div>
 
       <div class="flex justify-center mt-8">
-        <MainBtn :title="'Explore All Programs'" />
+        <RouterLink :to="'/services/training-programs'">
+          <MainBtn :title="'Explore All Programs'" />
+        </RouterLink>
       </div>
     </div>
   </section>

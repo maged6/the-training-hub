@@ -20,7 +20,7 @@
       <div
        v-if="ServicesCard.length > 0"
         ref="scrollContainer"
-        class="col-span-1 flex flex-col gap-[32px] max-h-[90vh] overflow-y-auto hide-scrollbar"
+        class="col-span-1 flex flex-col gap-[32px] max-h-[90vh] pb-1 overflow-y-auto hide-scrollbar"
       >
       <div   
        v-for="(card, index) in ServicesCard" 
@@ -79,7 +79,7 @@ export default defineComponent({
 
       const { scrollTop, scrollHeight, clientHeight } = container
       const isAtTop = scrollTop <= 0
-      const isAtBottom = scrollTop + clientHeight >= scrollHeight
+      const isAtBottom = (scrollTop + clientHeight + 2) >= scrollHeight
 
       if ((event.deltaY < 0 && isAtTop) || (event.deltaY > 0 && isAtBottom)) {
         return

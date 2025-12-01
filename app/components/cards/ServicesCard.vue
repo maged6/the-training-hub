@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="'/'">
+  <NuxtLink :to="`/services/${cardButton}`">
     <div
       class="w-full bg-white border border-gray-200 rounded-[32px] p-5 shadow-sm 
       flex flex-col items-center overflow-hidden transition-all duration-300"
@@ -44,14 +44,14 @@ export default {
     SecondaryBtn
   },
   props: {
-    cardTitle: { type: String, default: 'E - Learning ' },
+    cardTitle: { type: String, default: '' },
     cardSubtitle: {
       type: String,
       default:
-        'Learn anytime, anywhere with interactive online courses designed for busy professionals seeking flexible, self-paced growth.'
+        ''
     },
     cardImg: { type: String, default: '' },
-    cardButton: { type: String, default: 'Explore' }
+    cardButton: { type: String, default: '' }
   }
 }
 </script>

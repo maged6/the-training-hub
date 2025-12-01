@@ -17,6 +17,7 @@
       :subtitleSection="generalData.explore?.subtitle"
       :programs="generalData.explore?.programs"
     />
+    
     <OverviewSection
       :titleSection="generalData.overview?.title"
       :descriptionSection="generalData.overview?.description"

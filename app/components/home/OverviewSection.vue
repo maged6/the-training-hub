@@ -29,14 +29,15 @@
         />
         {{ subtitleParts[3] }}
       </p>
-
-      <MainBtn
-        :title="'About Us'"
-        :colorIcon="'black'"
-        :colorFrom="'transparent'"
-        :colorTo="'transparent'"
-        :colorBorder="'white'"
-      />
+      <RouterLink :to="'/about'">
+        <MainBtn
+              :title="'About Us'"
+              :colorIcon="'black'"
+              :colorFrom="'transparent'"
+              :colorTo="'transparent'"
+              :colorBorder="'white'"
+            />
+      </RouterLink>
     </div>
 
     <!-- Auto-scrolling list -->

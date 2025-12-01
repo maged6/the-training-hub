@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="'/about'">
+  <NuxtLink :to="`/services/training-programs/${linkTo}`">
     <div
       class="rounded-[20px] h-[560px] w-[500px] shadow-sm border border-gray-200 overflow-hidden relative group bg-cover bg-center transition-all duration-500 "
       @mouseenter="isHovered = true"
@@ -31,31 +31,35 @@
       >
         <div class="flex justify-end">
           <p
-            class="font-normal rounded-[4px] px-2 py-1 text-white w-fit"
-            :class="`bg-${lableColor}`"
+             v-if="limitedOffer"
+            class="font-normal rounded-[4px] px-2 py-1 text-primary-10 w-fit bg-secondary-50"
           >
-            {{ lableText }}
+            LIMITED OFFER
+          </p>
+          <p
+            v-else
+            class="font-normal rounded-[4px] px-2 py-1 text-white w-fit bg-primary-20"
+          >
+            {{ seatsAvailable }} SEATS LEFT
           </p>
         </div>
 
         <div class="flex justify-between">
           <div>
             <p
+             v-if="programName"
               class="font-[500] text-[14px] rounded-[4px] px-2 py-1 text-black bg-white w-fit"
             >
               {{ programName }}
             </p>
-            <p class="font-[600] text-[28px] text-white">
+            <p    v-if="titleProgram" class="font-[600] text-[28px] text-white">
               {{ titleProgram }}
             </p>
             <p class="font-[400] text-[14px] text-white">
-              {{ programDate }}
 
               {{ daysPerWeek }} Days/ Week - {{ durationInWeeks }} Weeks - Start at {{ startFrom }}
             </p>
-            <p class="font-[500] text-[20px] text-secondary-10">
-              {{ programPrice }}
-            </p>
+           <PriceAndOffer :price="programPrice" :offer="programOffer"  :textPriceColor="'secondary-10'" :textOfferColor="'white'"/>
           </div>
 
           <div class="flex items-end ">
@@ -73,20 +77,29 @@
 
 <script>
 import ArrowRightTop from '~/components/svg/ArrowRightTopBtn.vue'
+import PriceAndOffer from '~/components/main-component/PriceAndOffer.vue'
+
+
 
 export default {
-  components: { ArrowRightTop },
+  components: { ArrowRightTop, PriceAndOffer },
   props: {
     imgSection: { type: String, default: '' },
     hoverImgSection: { type: String, default: '' },
-    lableText: { type: String, default: '' },
-    lableColor: { type: String, default: 'primary-20' },
+
+    seatsAvailable: { type: Number, default: 0 },
+    limitedOffer: { type: Boolean, default: false},
+
     programName: { type: String, default: '' },
     titleProgram: { type: String, default: '' },
+
     daysPerWeek: { type: String, default: '' },
     durationInWeeks: { type: String, default: '' },
     startFrom: { type: String, default: '' },
+
     programPrice: { type: String, default: '' },
+    programOffer: { type: String, default: '' },
+    linkTo: { type: String, default: '' },
   },
   data() {
     return {
