@@ -11,12 +11,12 @@
       <slot /> <!-- Page content renders here -->
     </main>
  
-    <FooterIndex />
+    <LoginFooter />
 </template>
 
 <script setup lang="ts">
 import HeaderIndex from '~/components/header/index.vue'
-import FooterIndex from '~/components/footer/index.vue'
+import LoginFooter from '~/components/footer/LoginFooter.vue'
 import AsideBar from '~/components/aside-bar/AsideBar.vue'
 
 </script>

@@ -53,22 +53,35 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
+import { defineComponent } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useUserStore } from '~/stores/user'
 
-const route = useRoute()
-const router = useRouter()
-const userStore = useUserStore()
+export default defineComponent({
+  setup() {
+    const route = useRoute()
+    const router = useRouter()
+    const userStore = useUserStore()
 
-// ACTIVE CLASS CHECKER
-const isActive = (path: string) => {
-  return route.path === path
-}
+    // ACTIVE CLASS CHECKER
+    const isActive = (path: string) => {
+      return route.path === path
+    }
 
-// LOGOUT
-const handleLogout = async () => {
-  await userStore.logout()
-  router.push('/')
-}
+    // LOGOUT
+    const handleLogout = async () => {
+      await userStore.logout()
+      router.push('/')
+    }
+
+    return {
+      route,
+      router,
+      userStore,
+      isActive,
+      handleLogout,
+    }
+  },
+})
 </script>

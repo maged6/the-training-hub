@@ -41,9 +41,13 @@
         </div>
       </div>
       <div class="flex flex-col justify-between items-end h-full">
-        <p class="bg-tertiary-gray-10 rounded-[4px] px-4 py-1 font-[900] w-fit">
+        <div>
+          <Favorite v-if="isFavoriteCard" />
+        <p v-else class="bg-tertiary-gray-10 rounded-[4px] px-4 py-1 font-[900] w-fit" >
           Active
         </p>
+        </div>
+
         <div class="flex items-end">
           <ArrowRightTop
             :backgroundColorIcon="'#b22726'"
@@ -59,12 +63,14 @@
 
 <script lang="ts">
 import ArrowRightTop from '~/components/svg/ArrowRightTopBtn.vue'
+import Favorite from '~/components/svg/Favorite.vue'
+
 
 export default {
-  components: { ArrowRightTop },
+  components: { ArrowRightTop , Favorite},
 
   props: {
-
+    isFavoriteCard: { type: Boolean, default: false },
   }
 };
 </script>

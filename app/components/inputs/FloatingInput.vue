@@ -1,5 +1,5 @@
 <template>
-  <div class="relative max-h-[55px]">
+  <div class="relative max-h-[55px] bg-white">
     <input
       :type="type"
       class="peer p-4 block w-full border border-gray-600 rounded-lg placeholder:text-transparent disabled:pointer-events-none focus:pt-6 focus:pb-2 not-placeholder-shown:pt-6 not-placeholder-shown:pb-2 autofill:pt-6 autofill:pb-2"
