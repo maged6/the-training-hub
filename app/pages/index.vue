@@ -1,80 +1,73 @@
 <template>
-  <div v-if="isLoading" class="flex justify-center items-center min-h-screen">
-    <Loadingskeleton />
-  </div>
-  <div v-else>
-    <HeroSection
-      :labelSection="generalData.hero?.label"
-      :titleSection="generalData.hero?.title"
-      :subtitleSection="generalData.hero?.subtitle"
-      :imageSection="generalData.hero?.image"
-      :videoSection="generalData.hero?.video"
-    />
+  <HeroSection
+    :labelSection="generalData.hero?.label"
+    :titleSection="generalData.hero?.title"
+    :subtitleSection="generalData.hero?.subtitle"
+    :imageSection="generalData.hero?.image"
+    :videoSection="generalData.hero?.video"
+  />
 
-    <ExploreSection
-      :labelSection="generalData.explore?.label"
-      :titleSection="generalData.explore?.title"
-      :subtitleSection="generalData.explore?.subtitle"
-      :programs="generalData.explore?.programs"
-    />
-    
-    <OverviewSection
-      :titleSection="generalData.overview?.title"
-      :descriptionSection="generalData.overview?.description"
-      :image1Section="generalData.overview?.first_small_image"
-      :image2Section="generalData.overview?.second_small_image"
-      :listSection="generalData.overview?.red_line_text"
-    />
+  <ExploreSection
+    :labelSection="generalData.explore?.label"
+    :titleSection="generalData.explore?.title"
+    :subtitleSection="generalData.explore?.subtitle"
+    :programs="generalData.explore?.programs"
+  />
 
-    <RangeServicesSection
-      :labelSection="generalData.discover?.label"
-      :titleSection="generalData.discover?.second_title"
-      :subtitleSection="generalData.discover?.second_description"
-      :ServicesCard="generalData.discover?.pages"
-    />
+  <OverviewSection
+    :titleSection="generalData.overview?.title"
+    :descriptionSection="generalData.overview?.description"
+    :image1Section="generalData.overview?.first_small_image"
+    :image2Section="generalData.overview?.second_small_image"
+    :listSection="generalData.overview?.red_line_text"
+  />
 
-    <LearningAndCollaborationSection
-      :labelSection="generalData.facilities?.label"
-      :titleSection="generalData.facilities?.title"
-      :facilities="generalData.facilities?.facilities"
-      :smallImage="generalData.facilities?.small_image"
-      :largeImage="generalData.facilities?.large_image"
-    />
+  <RangeServicesSection
+    :labelSection="generalData.discover?.label"
+    :titleSection="generalData.discover?.second_title"
+    :subtitleSection="generalData.discover?.second_description"
+    :ServicesCard="generalData.discover?.pages"
+  />
 
-    <OurNewsSection
-      :labelSection="generalData.news?.label"
-      :titleSection="generalData.news?.title"
-      :posts="generalData.news?.posts"
-    />
+  <LearningAndCollaborationSection
+    :labelSection="generalData.facilities?.label"
+    :titleSection="generalData.facilities?.title"
+    :facilities="generalData.facilities?.facilities"
+    :smallImage="generalData.facilities?.small_image"
+    :largeImage="generalData.facilities?.large_image"
+  />
 
-    <SupportClientsSection
-      :labelSection="generalData.partners?.label"
-      :titleSection="generalData.partners?.title"
-      :OurClients="generalData.partners?.logos"
-    />
+  <OurNewsSection
+    :labelSection="generalData.news?.label"
+    :titleSection="generalData.news?.title"
+    :posts="generalData.news?.posts"
+  />
 
-    <ClientStories
-      :labelSection="successStoriesData?.title"
-      :userSection="successStoriesData?.stories"
-    />
+  <SupportClientsSection
+    :labelSection="generalData.partners?.label"
+    :titleSection="generalData.partners?.title"
+    :OurClients="generalData.partners?.logos"
+  />
 
-    <FrequentlyQuestions
-      :labelSection="faqsData?.red_label_text"
-      :titleSection="faqsData?.title"
-      :imageSection="faqsData?.image"
-      :faqsQuestion="faqsData?.faqs"
-    />
+  <ClientStories
+    :labelSection="successStoriesData?.title"
+    :userSection="successStoriesData?.stories"
+  />
 
-    <RequestTeam />
-    <TouchOurTeam />
-    
-  </div>
+  <FrequentlyQuestions
+    :labelSection="faqsData?.red_label_text"
+    :titleSection="faqsData?.title"
+    :imageSection="faqsData?.image"
+    :faqsQuestion="faqsData?.faqs"
+  />
+
+  <RequestTeam />
+  <TouchOurTeam />
 </template>
 
 <script>
 import { useGeneralStore } from "~/stores/general";
 
-import Loadingskeleton from "~/components/main-component/LoadingSkeleton.vue";
 import HeroSection from "~/components/home/HeroSection.vue";
 import ExploreSection from "~/components/home/ExploreSection.vue";
 import OverviewSection from "~/components/home/OverviewSection.vue";
@@ -100,13 +93,12 @@ export default {
     ClientStories,
     FrequentlyQuestions,
     RequestTeam,
-    Loadingskeleton,
     TouchOurTeam,
   },
   setup() {
     const generalStore = useGeneralStore();
 
-    onMounted(async () => {
+    onBeforeMount(async () => {
       if (!generalStore.home || generalStore.home.length === 0) {
         await generalStore.fetchHomeData();
       }
@@ -116,8 +108,7 @@ export default {
     const successStoriesData = computed(() => generalStore.successStories);
     const faqsData = computed(() => generalStore.faqs);
 
-    const isLoading = computed(() => generalStore.loading);
-    return { generalData, successStoriesData, faqsData, isLoading };
+    return { generalData, successStoriesData, faqsData };
   },
 };
 </script>

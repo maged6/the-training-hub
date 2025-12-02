@@ -31,14 +31,22 @@ export default{
     TouchOurTeam
   },
 
-  mounted() {
-    const generalStore = useGeneralStore()
+  setup() {
+    const generalStore = useGeneralStore();
 
-    if (!generalStore.about) {
-      generalStore.fetchAbout()
-    }
+    onBeforeMount(async () => {
+      if (!generalStore.about || generalStore.about.length === 0) {
+        await generalStore.fetchAboutData();
+      }
+    });
 
-    console.log('about data:', generalStore.about)
+    const generalData = computed(() => generalStore.about);
+    const successStoriesData = computed(() => generalStore.successStories);
+
+    console.log('successStoriesData.value',successStoriesData.value);
+    console.log( 'generalData.value',generalData.value);
+
+    return { generalData, successStoriesData };
   },
 
 }
