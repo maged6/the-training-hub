@@ -6,7 +6,6 @@
         :labelSection="labelSection"
         :titleSection="titleSection"
         :subtitleSection="subtitleSection"
-        :hasBtn="false"
       />
 
       <!-- Wrapper that centers the scrollable area -->

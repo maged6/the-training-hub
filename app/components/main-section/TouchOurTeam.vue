@@ -16,6 +16,7 @@
       :subtitleColor="'gray-300'"
       :buttonTitle="'Contact Us'"
       :maxWidthofSubHeader="550"
+      :Linkto="'/contact-us'"
     />
     </div>
   </div>

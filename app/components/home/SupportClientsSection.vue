@@ -5,7 +5,6 @@
         <IntroSection
           :labelSection="labelSection"
           :titleSection="titleSection"
-          :hasBtn="false"
         />
         <div v-if="OurClients.length > 0" class="grid grid-cols-7 gap-[52px]  px-[120px] py-[80px]">
           <div

@@ -10,7 +10,6 @@
         :maxWidthofHeader="300  "
         :titleSection="titleSection"
         :headerColor="'black  '"
-        :hasBtn="false"
       />
 
       <!-- Grid Layout -->

@@ -25,7 +25,9 @@
       </p>
     </div>
     <div class="mt-8" v-if="hasBtn">
+      <NuxtLink :to="Linkto">
       <MainBtn :title="buttonTitle" />
+      </NuxtLink>
     </div>
   </div>
 </template>
@@ -81,6 +83,10 @@ export default{
     buttonTitle: {
       type: String,
       default: 'Explore Programs',
+    },
+    Linkto: {
+      type: String,
+      default: '/',
     },
   },
 }

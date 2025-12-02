@@ -5,7 +5,6 @@
       <IntroSection
         :labelSection="labelSection"
         :titleSection="titleSection"
-        :hasBtn="false"
         :maxWidthofHeader="600"
         :backgroundLable="'bg-secondary-10'"
       />
