@@ -1,47 +1,50 @@
 <template>
-        <div class="flex flex-col w-full gap-10 p-[60px] rounded-[20px]" 
-        :class="darkBg ? 'bg-transparent text-white' : 'bg-white text-primary-10'">
-          <div v-for="(faq, index) in faqsQuestion" :key="index" class="py-4 ">
-            <button
-              @click="toggleFAQ(index)"
-              class="flex justify-start gap-3 items-start w-full text-left focus:outline-none cursor-pointer"
-            >
-              <span v-if="activeIndex === index">
-                <ChevronDown />
-              </span>
-              <span v-else>
-                <ChevronRight />
-              </span>
-              <span class="text-[16px] font-[900]">
-                {{ faq.question }}
-              </span>
-            </button>
+  <div
+    class="flex flex-col w-full gap-10 p-[60px] rounded-[20px]"
+    :class="darkBg ? 'bg-transparent text-white' : 'bg-white text-primary-10'"
+  >
+    <div v-for="(faq, index) in faqsQuestion" :key="index" class="py-4 ">
+      <button
+        @click="toggleFAQ(index)"
+        class="flex justify-start gap-3 items-start w-full text-left focus:outline-none cursor-pointer"
+      >
+        <span v-if="activeIndex === index">
+          <ChevronDown />
+        </span>
+        <span v-else>
+          <ChevronRight />
+        </span>
+        <span class="text-[16px] font-[900]">
+          {{ faq.question }}
+        </span>
+      </button>
 
-            <!-- ✅ Transition for answer -->
-            <transition name="faq-toggle">
-              <p
-                v-if="activeIndex === index"
-                class="mt-2 text-[16px] font-[900] leading-relaxed overflow-hidden"
-                :class="darkBg ? 'text-gray-300' : 'text-gray-500'"
-              >
-                {{ faq.answer }}
-              </p>
-            </transition>
-          </div>
+      <!-- ✅ Transition for answer -->
+      <transition name="faq-toggle">
+        <p
+          v-if="activeIndex === index"
+          class="mt-2 text-[16px] font-[900] leading-relaxed overflow-hidden"
+          :class="darkBg ? 'text-gray-300' : 'text-gray-500'"
+        >
+          {{ faq.answer }}
+        </p>
+      </transition>
+    </div>
 
-          <div class="mt-6 max-w-[200px]" v-if="hasBtn">
-            <MainBtn
-              :title="'View All FAQs'"
-              :colorIcon="'#b22726'"
-              :colorFrom="'transparent'"
-              :colorTo="'transparent'"
-              :colorBorder="'transparent'"
-              :backgroundIcon="'white'"
-            />
-          </div>
-        </div>
+    <div class="mt-6 max-w-[200px]" v-if="hasBtn">
+      <NuxtLink to="/faqs">
+        <MainBtn
+          :title="'View All FAQs'"
+          :colorIcon="'#b22726'"
+          :colorFrom="'transparent'"
+          :colorTo="'transparent'"
+          :colorBorder="'transparent'"
+          :backgroundIcon="'white'"
+        />
+      </NuxtLink>
+    </div>
+  </div>
 </template>
-
 
 <script lang="ts">
 import type { PropType } from 'vue'

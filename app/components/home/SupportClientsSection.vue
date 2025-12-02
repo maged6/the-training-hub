@@ -8,7 +8,6 @@
           :hasBtn="false"
         />
         <div v-if="OurClients.length > 0" class="grid grid-cols-7 gap-[52px]  px-[120px] py-[80px]">
-      
           <div
             v-for=" (client, index) in OurClients"
             :key="index"
