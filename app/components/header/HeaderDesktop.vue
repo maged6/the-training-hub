@@ -16,7 +16,7 @@
         >
           <component
             :is="link.icon ? 'button' : 'NuxtLink'"
-            :to="!link.icon ? link.to : undefined"
+            v-bind="link.to ? { to: link.to } : {}"
             class="focus:outline-none"
           >
             <div
@@ -89,7 +89,7 @@ import SubLinks from './header-content/SubLinks.vue'
 
 type NavLink = {
   name: string
-  to: string
+  to: string | null
   icon: boolean
   links?: { name: string; to: string; rotate?: number }[]
 }
@@ -112,7 +112,7 @@ export default {
         { name: 'About', to: '/about', icon: false },
         {
           name: 'Services',
-          to: '',
+          to: null,
           icon: true,
           links: [
             { name: 'Training Programs', to: '/services/training-programs', rotate: -4.25 },
@@ -127,7 +127,7 @@ export default {
         { name: 'Hub Facilities', to: '/hub-facilities', icon: false },
         {
           name: 'Media Center',
-          to: '',
+          to: null,
           icon: true,
           links: [
             { name: 'Blog', to: '/media-center/blog', rotate: -4.25 },

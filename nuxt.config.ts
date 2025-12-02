@@ -20,9 +20,9 @@ export default defineNuxtConfig({
       },
       link: [
         // 🔹 Favicon and icons
-        { rel: "icon", type: "image/svg+xml", href: "/favicon.ico" },
-        { rel: "shortcut icon", href: "/favicon.ico" },
-        { rel: "apple-touch-icon", href: "/favicon.ico", sizes: "180x180" },
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+        { rel: "shortcut icon", href: "/favicon.svg" },
+        { rel: "apple-touch-icon", href: "/favicon.svg", sizes: "180x180" },
 
         // 🔹 Google Fonts (still okay if not self-hosting)
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -33,8 +33,7 @@ export default defineNuxtConfig({
         },
         {
           rel: "stylesheet",
-          href:
-            "https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700&display=swap"
+          href: "https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700&display=swap"
         },
 
         // 🔹 Preload self-hosted font (works only if font file exists in /public or /assets/fonts/)
@@ -57,7 +56,7 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()]
   },
   modules: ["motion-v/nuxt", "@nuxt/image"],
-   // ✅ Nuxt Image configuration
+  // ✅ Nuxt Image configuration
   image: {
     // Use the static provider to optimize local images
     format: ["webp", "jpg"], // Output optimized formats
@@ -66,9 +65,9 @@ export default defineNuxtConfig({
       md: 640,
       lg: 1024,
       xl: 1280,
-      xxl: 1536,
+      xxl: 1536
     },
     quality: 80,
-    provider: "ipx", // default Nuxt image provider
-  },
+    provider: "ipx" // default Nuxt image provider
+  }
 });
