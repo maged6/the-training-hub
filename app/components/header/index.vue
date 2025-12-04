@@ -1,7 +1,7 @@
 <template>
   <header>
-    <HeaderDesktop class="hidden md:flex" />
-    <HeaderMobile class="flex md:hidden" />
+    <HeaderDesktop />
+    <HeaderMobile  />
   </header>
 </template>
 

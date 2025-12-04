@@ -1,10 +1,10 @@
 <template>
   <div
-    class="bg-primary-10 text-white py-[9px] px-[30px] flex justify-between items-center relative"
+    class="bg-primary-10 text-white py-[9px] px-[30px] justify-between items-center relative md:flex hidden"
   >
     <NuxtLink to="/" aria-label="Go to homepage of The Training Hub">
       <LogoHeader />
-    </NuxtLink>
+    </NuxtLink> 
 
     <nav aria-label="Main Navigation of The Training Hub">
       <ul class="flex flex-wrap gap-[2px] relative">
