@@ -1,9 +1,9 @@
 <template>
   <div
-    class="flex flex-col w-full gap-10 p-[60px] rounded-[20px]"
+    class="flex flex-col w-full md:gap-10 gap-[32px] md:p-[60px] p-[16px] rounded-[20px]"
     :class="darkBg ? 'bg-transparent text-white' : 'bg-white text-primary-10'"
   >
-    <div v-for="(faq, index) in faqsQuestion" :key="index" class="py-4 ">
+    <div v-for="(faq, index) in faqsQuestion" :key="index" class="md:py-4">
       <button
         @click="toggleFAQ(index)"
         class="flex justify-start gap-3 items-start w-full text-left focus:outline-none cursor-pointer"
@@ -14,7 +14,7 @@
         <span v-else>
           <ChevronRight />
         </span>
-        <span class="text-[16px] font-[900]">
+        <span class="md:text-[16px] text-[14px] font-[900]">
           {{ faq.question }}
         </span>
       </button>
@@ -23,7 +23,7 @@
       <transition name="faq-toggle">
         <p
           v-if="activeIndex === index"
-          class="mt-2 text-[16px] font-[900] leading-relaxed overflow-hidden"
+          class="mt-2 md:text-[16px] text-[12px] font-[900] leading-relaxed overflow-hidden"
           :class="darkBg ? 'text-gray-300' : 'text-gray-500'"
         >
           {{ faq.answer }}
@@ -31,7 +31,7 @@
       </transition>
     </div>
 
-    <div class="mt-6 max-w-[200px]" v-if="hasBtn">
+    <div class="mt-6 w-full md:flex"  v-if="hasBtn">
       <NuxtLink to="/faqs">
         <MainBtn
           :title="'View All FAQs'"

@@ -1,12 +1,14 @@
 <template>
   <section>
-    <div class="bg-primary-10 py-[40px] px-[60px]">
+    <div class="md:bg-primary-10 bg-transparent md:py-[40px] py-[60px] md:px-[60px] px-[16px]">
       <div class="w-full h-full bg-white rounded-[32px]">
+        <div class="pb-[42px] md:pb-0">
         <IntroSection
           :labelSection="labelSection"
           :titleSection="titleSection"
         />
-        <div v-if="OurClients.length > 0" class="grid grid-cols-7 gap-[52px]  px-[120px] py-[80px]">
+        </div>
+        <div v-if="OurClients.length > 0" class="grid md:grid-cols-7 grid-cols-2 md:gap-[52px] gap-[61px] md:px-[120px] md:*:py-[80px]">
           <div
             v-for=" (client, index) in OurClients"
             :key="index"

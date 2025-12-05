@@ -1,7 +1,7 @@
 <template>
   <section>
     <div
-      class="flex flex-col items-center justify-start bg-white md:py-[80px] py-[60px]"
+      class="flex flex-col items-center justify-start bg-gray-100 md:bg-white md:py-[80px] py-[60px]"
     >
     <div class="py-[32px] md:py-0">
       <IntroSection

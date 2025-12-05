@@ -1,11 +1,11 @@
 <template>
   <section>
-    <div class="bg-tertiary-gray-5 p-[60px]">
+    <div class="bg-tertiary-gray-5 md:p-[60px]">
       <div
-        class="w-full h-full bg-black rounded-[32px] grid grid-cols-2  p-[40px] gap-1"
+        class="w-full h-full bg-black md:rounded-[32px] grid grid-cols-4  p-[40px] gap-1"
       >
         <div
-          class="flex flex-col items-start justify-center gap-10 w-full min-h-[40rem] text-white"
+          class="col-span-4 md:col-span-2 flex flex-col items-start justify-center gap-10 w-full md:min-h-[40rem] text-white"
         >
           <IntroSection
             :labelSection="labelSection"
@@ -16,7 +16,7 @@
           />
           <NuxtImg
             class="rounded-[16px] w-full h-auto object-contain object-top"
-            :src="imageSection"
+            :src="'images/layout-hero.jpg'"
             alt="the training hub faqs image"
             width="800"
             height="300"
@@ -26,10 +26,12 @@
           />
         </div>
 
-        <!-- Right Side -->
+        <!-- Right Side --> 
+         <div class="col-span-4 md:col-span-2"  >
         <AskedQuestions
          :faqsQuestion="faqsQuestion"
         />
+        </div>
         
       </div>
     </div>

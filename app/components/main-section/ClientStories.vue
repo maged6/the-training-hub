@@ -1,15 +1,15 @@
 <template>
   <section>
-    <div class="py-[136px] bg-tertiary-gray-10">
+    <div class="md:py-[136px] py-[60px] bg-tertiary-gray-10">
       <!-- Section Title -->
-      <h1 class="text-center font-[600] md:text-[42px] mb-12">
+      <h1 class="text-center font-[900] md:text-[42px] text-[24px] mb-12">
         {{ firstWord }}
         <span class="text-primary-20"> {{ highlightWord }} </span>
         {{ lastWord }}
       </h1>
 
       <!-- Slider Container -->
-      <div class="relative w-full mx-auto overflow-hidden px-[60px]">
+      <div class="relative w-full mx-auto overflow-hidden md:px-[60px] px-[16px]">
         <div
           ref="slider"
           class="flex gap-4 transition-transform duration-500 ease-in-out"
