@@ -1,10 +1,29 @@
 <template>
-  <InfoAboutUs />
-  <VideoSection />
-  <AboutNumbers />
-  <OurVisionAndMission />
-  <OurCommitment />
-  <ClientStories />
+  <InfoAboutUs
+    :labelSection="generalData?.hero?.label"
+    :titleSection="generalData?.hero?.title"
+    :subtitleSection="generalData?.hero?.description"
+    :firstImage="generalData?.hero?.first_image?.url"
+    :secondImage="generalData?.hero?.second_image"
+  />
+  <VideoSection :videoScr="generalData?.video_section?.video" />
+  <AboutNumbers :AboutNumber="generalData?.video_section?.numbers" />
+  <OurVisionAndMission
+    :labelSection="generalData?.mission_vision_section?.vision_label"
+    :subtitleSection="generalData?.mission_vision_section?.vision_description"
+    :labelSection2="generalData?.mission_vision_section?.mission_label"
+    :subtitleSection2="generalData?.mission_vision_section?.mission_description"
+    :imageSection="generalData?.mission_vision_section?.mission_vision_image"
+  />
+  <OurCommitment
+    :labelSection="generalData?.values_section?.values_label"
+    :titleSection="generalData?.values_section?.values_title"
+    :commitmentItems="generalData?.values_section?.values"
+  />
+  <ClientStories
+    :labelSection="successStoriesData?.title"
+    :userSection="successStoriesData?.stories"
+  />
   <TouchOurTeam />
 </template>
 
@@ -40,11 +59,8 @@ export default{
       }
     });
 
-    const generalData = computed(() => generalStore.about);
+    const generalData = computed(() => generalStore.about.data);
     const successStoriesData = computed(() => generalStore.successStories);
-
-    console.log('successStoriesData.value',successStoriesData.value);
-    console.log( 'generalData.value',generalData.value);
 
     return { generalData, successStoriesData };
   },

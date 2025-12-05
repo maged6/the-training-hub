@@ -1,10 +1,9 @@
 <template>
   <section class="bg-primary-20">
     <div class="grid grid-cols-4 gap-[22px] p-[60px]">
-      
       <!-- Left section -->
       <div class="col-span-2 flex items-center justify-center md:justify-start">
-        <IntroSection 
+        <IntroSection
           :labelSection="labelSection"
           :titleSection="titleSection"
           :subtitleSection="subtitleSection"
@@ -14,9 +13,9 @@
       </div>
 
       <!-- Right section -->
-      <TwoImgWithDotAndCircle 
-      :imageSectionOne="imageSection"
-      :imageSectionTwo="imageSection"
+      <TwoImgWithDotAndCircle
+        :imageSectionOne="firstImage"
+        :imageSectionTwo="secondImage"
       />
     </div>
   </section>
@@ -41,9 +40,13 @@ export default {
       type: String,
       default: 'Our training, led by experienced mentors, emphasizes practical knowledge over theory, making our slogan “Sharing knowledge” truly relatable. This approach adds significant value to employees skills, enhancing their success and productivity.',
     },
-    imageSection: {
+    firstImage: {
       type: String,
-      default: 'images/layout-hero.jpg',
+      default: '',
+    },
+    secondImage: {
+      type: String,
+      default: '',
     },
   }
 };

@@ -1,10 +1,19 @@
 <template>
   <section>
     <div class="bg-about-us flex justify-between items-center px-[183px]">
-      <div class="flex flex-col justify-center items-center" v-for="(about , index) in AboutNumber" :key="index">
-        <p class="text-primary-20 font-[100] text-[60px] "> + {{  about.number }}</p>
-        <p class=" font-[100] text-[20px] text-gray-500 max-w-[120px] text-center leading-tight">
-            {{ about.text }}</p>
+      <div
+        class="flex flex-col justify-center items-center"
+        v-for="(about , index) in AboutNumber"
+        :key="index"
+      >
+        <p class="text-primary-20 font-[100] text-[60px] ">
+          + {{  about.number }}
+        </p>
+        <p
+          class=" font-[100] text-[20px] text-gray-500 max-w-[120px] text-center leading-tight"
+        >
+          {{ about.text }}
+        </p>
       </div>
     </div>
   </section>
@@ -22,29 +31,11 @@ export default {
   props: {
    AboutNumber: {
      type: Array as PropType<AboutNumber[]>,
-     default: () => [
-               {
-          "number": 1000,
-          "text": "Professionals Trained"
-        },
-               {
-          "number": 10,
-          "text": "Years of Experience"
-        },
-               {
-          "number": 200,
-          "text": "Specialized Programs"
-        },
-               {
-          "number": 50,
-          "text": "Expert Trainers"
-        }
-     ],
+     default: () => [],
    }
   }
 };
 </script>
-
 
 <style scoped>
 .bg-about-us {
