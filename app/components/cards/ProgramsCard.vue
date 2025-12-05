@@ -97,8 +97,8 @@ export default {
     durationInWeeks: { type: String, default: '' },
     startFrom: { type: String, default: '' },
 
-    programPrice: { type: String, default: '' },
-    programOffer: { type: String, default: '' },
+    programPrice: { type: Number, default: 0 },
+    programOffer: { type: Number, default: 0 },
     linkTo: { type: String, default: '' },
   },
   data() {

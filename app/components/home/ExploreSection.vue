@@ -21,16 +21,16 @@
             <ProgramsCard
               :imgSection="program.image"
               :linkTo="program.slug"
-              :hoverImgSection="''"
+              :hoverImgSection="program.hover_thumbnail"
               :seatsAvailable="program.seats_available"
               :limitedOffer="program.limited_offer"
-              :programName="''"
+              :programName="program.category"
               :titleProgram="program.title"
               :daysPerWeek="program.days_per_week"
               :durationInWeeks="program.duration_in_weeks"
               :startFrom="program.start_from"
-              :programPrice="''"
-              :programOffer="''"
+              :programPrice="program.price"
+              :programOffer="program.sale_price"
             />
           </div>
         </div>
@@ -48,20 +48,11 @@
 <script lang="ts">
 import { ref } from 'vue';
 import type { PropType } from 'vue'
+import type { Program } from "~/types/program";
 import IntroSection from '../main-component/IntroCenterSection.vue';
 import ProgramsCard from '../cards/ProgramsCard.vue';
 import MainBtn from '../buttons/MainBtn.vue';
 
-interface Program {
-  title: string;
-  slug: string;
-  days_per_week: string;
-  duration_in_weeks: string;
-  start_from: string;
-  image: string;
-  seats_available: number;
-  limited_offer: boolean;
-}
 
 export default {
   components: { IntroSection, ProgramsCard, MainBtn },
