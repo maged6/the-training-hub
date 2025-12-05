@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col items-center justify-center rounded-[16px] w-full min-h-[40rem] bg-white p-10 shadow-sm"
+    class="flex flex-col items-center justify-center rounded-[16px] w-full min-h-[40rem] bg-white md:p-10 p-[24px] shadow-sm"
   >
     <div class="flex flex-col w-full justify-start  px-5" :class="itemCenter ? 'items-start' : 'items-center' ">
 
@@ -17,7 +17,7 @@
 
       <!-- Title -->
       <h1
-        class="text-center font-[900] md:text-[32px] mb-[8px] text-primary-10"
+        class="text-center font-[900] md:text-[32px] text-[20px] mb-[8px] text-primary-10"
         v-if="titleComponent"
       >
         {{ titleComponent }}

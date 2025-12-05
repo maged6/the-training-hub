@@ -1,11 +1,11 @@
 <template>
     <div class="bg-black w-full p-4 md:flex md:items-center md:justify-between">
-      <span class="text-sm text-tertiary-gray-50 sm:text-center">
+      <div class="text-sm text-tertiary-gray-50 text-center">
             © Copyright 2025 - The Training Hub.
-    </span>
+    </div>
 
-        <span class="text-sm text-tertiary-gray-50 sm:text-center">
+      <div class="text-sm text-tertiary-gray-50 text-center">
           Designed & Developed by Doubleten
-    </span>
+    </div>
     </div>
 </template>

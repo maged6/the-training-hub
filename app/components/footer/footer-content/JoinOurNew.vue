@@ -1,8 +1,8 @@
 <template>
   <div
-    class="bg-primary-20 text-white p-4 flex justify-between items-center px-[60px] py-[43px]"
+    class="bg-primary-20 text-white p-4 flex flex-wrap justify-between items-center md:px-[60px] px-[16px] md:py-[43px] py-[32px]"
   >
-    <p class="font-[600] text-[24px]">Join Our Newsletter</p>
+    <p class="font-[600] text-[24px] mb-[16px] md:mb-0">Join Our Newsletter</p>
     <div
       class="flex items-center bg-[#F8DCDC] rounded-full overflow-hidden shadow-md p-2"
     >
