@@ -1,12 +1,12 @@
 <template>
   <section>
-    <div class="bg-black py-[80px] flex flex-col items-center justify-center text-center">
+    <div class="bg-black md:py-[80px] py-[60px] px-[16px] flex flex-col items-center justify-center text-center">
       <!-- Title -->
-      <h1 class="text-white text-[18px] font-[500] mb-6">{{ titleSection }}</h1>
+      <h1 class="text-white md:text-[18px] text-[20px] font-[500] mb-6">{{ titleSection }}</h1>
 
       <!-- Paragraph -->
       <p
-        class="text-tertiary-gray-50 text-[32px] md:text-[38px] font-light leading-[1.5] md:w-[58vw] mx-auto pb-[80px]"
+        class="text-tertiary-gray-50 text-[16px] md:text-[38px] font-light leading-[1.5] md:w-[58vw] mx-auto md:pb-[80px] pb-[32px]"
       >
         <strong class="text-white">{{ subtitleParts[0] }}</strong>
         <NuxtImg
@@ -29,7 +29,8 @@
         />
         {{ subtitleParts[3] }}
       </p>
-      <RouterLink :to="'/about'">
+
+      <NuxtLink :to="'/about'">
         <MainBtn
               :title="'About Us'"
               :colorIcon="'black'"
@@ -37,16 +38,17 @@
               :colorTo="'transparent'"
               :colorBorder="'white'"
             />
-      </RouterLink>
+      </NuxtLink>
     </div>
 
     <!-- Auto-scrolling list -->
     <div class="bg-primary-20 overflow-hidden">
       <div class="overflow-hidden group relative w-full">
-        <ul
-          class="flex text-white text-[38px] font-[300] list-disc space-x-10 whitespace-nowrap
-                 transition-transform duration-[15s] ease-linear group-hover:animate-scroll-x-bounce"
-        >
+<ul
+  class="flex text-white md:text-[38px] text-[16px] font-[300] list-disc space-x-10 whitespace-nowrap
+         transition-transform duration-[15s] ease-linear 
+         auto-scroll md:hover:animate-scroll-x-bounce px-2"
+>
           <li v-for="(list, index) in listSection" :key="index">{{ list.word }}</li>
         </ul>
       </div>
@@ -98,8 +100,19 @@ export default {
     transform: translateX(0);
   }
 }
-
-.group-hover\:animate-scroll-x-bounce:hover {
+/* Default = mobile (auto play) */
+.auto-scroll {
   animation: scroll-x-bounce 8s ease-in-out infinite;
+}
+
+/* Desktop (md and up) — disable auto animation */
+@media (min-width: 768px) {
+  .auto-scroll {
+    animation: none;
+  }
+    .auto-scroll:hover {
+    animation: scroll-x-bounce 8s ease-in-out infinite;
+  }
+  
 }
 </style>
