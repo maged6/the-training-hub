@@ -3,7 +3,12 @@
     class="group flex gap-2
     justify-center items-center  
     font-bold 
-    xl:text-[16px] xl:px-[16px] xl:py-[10px] text-[11px] px-[10px] py-[6px]
+    md:text-[16px] 
+    md:py-[10px] 
+    text-[20px] 
+    px-[16px] 
+    py-[13px]
+    w-full
     rounded-full cursor-pointer transition-all duration-300 ease-in-out"
     :style="{
       background: hovered

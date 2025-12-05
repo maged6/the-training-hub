@@ -1,9 +1,9 @@
 <template>
   <section class="bg-home">
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-[22px] px-[20px] md:px-[60px] py-[36px]">
+    <div class="grid grid-cols-1 md:grid-cols-5 md:gap-[22px] gap-[32px] px-[20px] md:px-[60px] py-[36px]">
       
       <!-- Left section -->
-      <div class="col-span-2 flex items-center justify-center md:justify-start">
+      <div class="col-span-2 flex items-center order-2 sm:order-1 justify-center md:justify-start md:mt-0 mt-5">
         <IntroSection 
           :labelSection="labelSection"
           :titleSection="titleSection"
@@ -14,11 +14,11 @@
       </div>
 
       <!-- Right section -->
-      <div class="col-span-3 relative w-full">
+      <div class="col-span-3 relative w-full order-1 sm:order-2">
         <!-- Masked image background -->
-        <div class="w-full h-0 pb-[79%] md:pb-[80%] rounded-[30px] relative overflow-hidden">
+        <div class="w-full sm:h-[60vh] pb-[100%] md:pb-[80%] md:rounded-[30px] rounded-[15px] relative overflow-hidden">
          <NuxtImg
-          class="mask1 absolute top-0 left-0 w-full h-full object-cover rounded-[30px]"
+          class="mask1 absolute top-0 left-0 w-full h-full object-cover md:rounded-[30px] rounded-[15px]"
           :src="imageSection"
           alt="the training hub image"
          sizes="(max-width: 480px) 100vw,
@@ -31,10 +31,10 @@
 
           <!-- Bottom-right video -->
           <div
-            class="absolute bottom-[0%] right-[0%] w-[45.5%] md:w-[42.5%] h-[38.5%] md:h-[37%]"
+            class="absolute bottom-[0%] right-[0%] w-[40.5%] md:w-[42.5%] h-[37%] md:h-[37%]"
           >
             <video
-              class="w-full h-full object-cover rounded-[30px]"
+              class="w-full h-full object-cover md:rounded-[30px] rounded-[15px]"
               autoplay
               muted
               loop
@@ -89,13 +89,19 @@ export default {
   min-height: 90vh;
 }
 
+@media (max-width: 644px) {
+  .bg-home {
+    min-height: 75vh;
+  }
+}
+
 .mask1 {
   -webkit-mask-image: url('@/assets/images/layout-mask.svg');
   mask-image: url('@/assets/images/layout-mask.svg');
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  mask-size: contain;
+  -webkit-mask-size: cover;
+  mask-size: cover;
   -webkit-mask-position: center;
   mask-position: center;
 }

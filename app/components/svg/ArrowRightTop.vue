@@ -1,5 +1,5 @@
 <template>
-  <span class="xl:w-[22px] xl:h-[22px] w-[16px] h-[16px]">
+  <span class="xl:w-[22px] xl:h-[22px] w-[22px] h-[22px]">
     <svg width="100%" height="100%" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="22" height="22" rx="11" :fill="backgroundIcon"/>
 <g clip-path="url(#clip0_380_8516)">
