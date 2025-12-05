@@ -1,7 +1,10 @@
 <template>
   <NuxtLink :to="`/services/training-programs/${linkTo}`">
     <div
-      class="rounded-[20px] h-[560px] w-[500px] shadow-sm border border-gray-200 overflow-hidden relative group bg-cover bg-center transition-all duration-500 "
+      class="
+      rounded-[16px] h-[387px] w-[90vw] 
+      md:rounded-[20px] md:h-[560px] md:w-[500px] 
+      shadow-sm border border-gray-200 overflow-hidden relative group bg-cover bg-center transition-all duration-500 "
       @mouseenter="isHovered = true"
       @mouseleave="isHovered = false"
     >
@@ -48,15 +51,14 @@
           <div>
             <p
              v-if="programName"
-              class="font-[500] text-[14px] rounded-[4px] px-2 py-1 text-black bg-white w-fit"
+              class="font-[500] md:text-[14px] text-[11px] rounded-[4px] px-2 py-1 text-black bg-white w-fit"
             >
               {{ programName }}
             </p>
-            <p    v-if="titleProgram" class="font-[600] text-[28px] text-white">
+            <p    v-if="titleProgram" class="font-[600] text-[20px] md:text-[28px] text-white">
               {{ titleProgram }}
             </p>
-            <p class="font-[400] text-[14px] text-white">
-
+            <p class="font-[400] md:text-[14px] text-[10px] text-white">
               {{ daysPerWeek }} Days/ Week - {{ durationInWeeks }} Weeks - Start at {{ startFrom }}
             </p>
            <PriceAndOffer :price="programPrice" :offer="programOffer"  :textPriceColor="'secondary-10'" :textOfferColor="'white'"/>
@@ -67,6 +69,8 @@
               :isHovered="isHovered"
               :colorIcon="isHovered ? 'white' : 'black'"
               :backgroundColorIcon="isHovered ? '#b22726' : 'white'"
+              :width="'57'"
+              :height="'57'"
             />
           </div>
         </div>

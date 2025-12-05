@@ -1,16 +1,16 @@
 <template>
-  <div class="min-h-[197px] flex flex-col justify-center items-center">
+  <div class="md:min-h-[197px] flex flex-col justify-center items-center px-[16px]">
     <div
       class="rounded w-fit px-1 rotate-[-5deg] mb-2 "
       :class="`${labelBackgroundColor}`"
       v-if="labelSection"
     >
-      <span class="font-[700] md:text-[14px]" :class="`text-${labelColor}`">
+      <span class="font-[900] text-[14px]" :class="`text-${labelColor}`">
         {{ labelSection }}
       </span>
     </div>
     <h1
-      class="text-center font-[900] md:text-[42px]"
+      class="text-center font-[900] md:text-[42px] text-[24px]"
       :class="`text-${headerColor}`"
       :style="{ maxWidth: maxWidthofHeader + 'px' }"
       v-if="titleSection"
@@ -18,7 +18,7 @@
       {{ titleSection }}
     </h1>
     <div :style="{ maxWidth: maxWidthofSubHeader + 'px' }">
-      <p class="font-[400] md:text-[20px]" v-if="subtitleSection">
+      <p class="font-[100] md:text-[20px] text-[14px]" v-if="subtitleSection">
         <span :class="`text-${subtitleColor}`">
         {{ subtitleSection }}
       </span>

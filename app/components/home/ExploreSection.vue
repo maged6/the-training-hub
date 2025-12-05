@@ -1,7 +1,7 @@
 <template>
   <section>
     <!-- Left section -->
-    <div class="flex flex-col items-center justify-start bg-tertiary-gray-10 py-[80px]">
+    <div class="flex flex-col items-center justify-start bg-tertiary-gray-10 md:py-[80px] py-[60px]">
       <IntroSection
         :labelSection="labelSection"
         :titleSection="titleSection"
@@ -15,7 +15,7 @@
         @mouseleave="disableHorizontalScroll">
         <div
           ref="scrollContent"
-          class="flex gap-4 my-[60px] inner-scrollbar w-full overflow-x-auto"
+          class="flex gap-4 md:my-[60px] my-[32px] inner-scrollbar w-full overflow-x-auto"
         >
           <div v-for="(program, index) in programs" :key="index" class="flex-shrink-0">
             <ProgramsCard
@@ -36,8 +36,8 @@
         </div>
       </div>
 
-      <div class="flex justify-center mt-8">
-        <RouterLink :to="'/services/training-programs'">
+      <div class="w-full flex justify-center md:mt-8 mt-4 px-4">
+        <RouterLink :to="'/services/training-programs'" class="md:w-[250px] w-full">
           <MainBtn :title="'Explore All Programs'" />
         </RouterLink>
       </div>
