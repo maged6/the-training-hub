@@ -24,7 +24,7 @@
       </span>
       </p>
     </div>
-    <div class="mt-8" v-if="hasBtn">
+    <div class="mt-8 w-full md:w-[230px]" v-if="hasBtn">
       <NuxtLink :to="Linkto">
       <MainBtn :title="buttonTitle" />
       </NuxtLink>

@@ -1,11 +1,12 @@
 <template>
   <section>
-    <div class="bg-tertiary-gray-5 py-[40px] px-[60px]">
+    <div class="bg-tertiary-gray-5 py-[40px] px-[16px] md:px-[60px]">
       <div
-        class="w-full h-full bg-transparent grid grid-cols-2  p-[40px] gap-[32px]"
+        class="w-full h-full bg-transparent grid grid-cols-4  md:p-[40px] gap-[32px]"
       >
         <!-- Left Side -->
-        <MainForm 
+        <div class="col-span-4 md:col-span-2 order-2 md:order-1">
+          <MainForm
             :sections="formData"
             :labelComponent="'New'"
             :titleComponent="'Request a Tailored Course for Your Team'"
@@ -13,19 +14,21 @@
             :labelColor="'white'"
             :colorIcon="'black'"
             :btnComponent="'Submit'"
-            />
+          />
+        </div>
+
         <!-- Right Side -->
-        <div class="w-full bg-white rounded-[16px] relative">
-         <NuxtImg 
+        <div class="col-span-4 md:col-span-2 order-1 md:order-2 w-full min-h-[381px] bg-white rounded-[16px] relative">
+          <NuxtImg
             class="absolute top-0 left-0 w-full h-full object-cover rounded-[16px]"
-            :src="imageSection"
+            :src="'images/request-team.png'"
             alt="the training hub team image"
             width="100%"
             height="100%"
             format="webp"
             quality="80"
             loading="lazy"
-         />
+          />
         </div>
       </div>
     </div>
