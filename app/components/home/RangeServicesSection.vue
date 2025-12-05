@@ -4,8 +4,8 @@
     @mouseleave="isHovering = false"
     @wheel="onSectionWheel"
   >
-    <div class="bg-primary-10 pt-[60px] px-[60px] grid grid-cols-2 gap-[60px]">
-      <div class="col-span-1 flex flex-col items-center justify-center gap-10 max-w-[600px] min-h-[40rem]">
+    <div class="bg-primary-10 pt-[60px] md:px-[60px] px-[16px] grid grid-cols-4 md:gap-[60px] gap-[32px]">
+      <div class="col-span-4 md:col-span-2 flex flex-col items-center justify-center gap-10 max-w-[600px] md:min-h-[40rem]">
         <IntroLeftSection 
         :backgroundLable="'bg-primary-20'"
         :colorLable="'white'"
@@ -20,7 +20,7 @@
       <div
        v-if="ServicesCard.length > 0"
         ref="scrollContainer"
-        class="col-span-1 flex flex-col gap-[32px] max-h-[90vh] pb-1 overflow-y-auto hide-scrollbar"
+        class="col-span-4 md:col-span-2 flex flex-col gap-[32px] max-h-[90vh] pb-1 overflow-y-auto hide-scrollbar"
       >
       <div   
        v-for="(card, index) in ServicesCard" 

@@ -3,7 +3,8 @@
     class="
     group 
     font-[300]
-    text-[38px]
+    md:text-[38px]
+    text-[24px]
     flex gap-2 text-primary-20 justify-center items-center  
     cursor-pointer transition-all
     duration-300 ease-in-out"

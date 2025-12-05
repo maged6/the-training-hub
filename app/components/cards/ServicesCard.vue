@@ -1,13 +1,13 @@
 <template>
   <NuxtLink :to="`/services/${cardButton}`">
     <div
-      class="w-full bg-white border border-gray-200 rounded-[32px] p-5 shadow-sm 
+      class="w-full bg-white border border-gray-200 rounded-[32px] md:p-5 p-[16px] shadow-sm 
       flex flex-col items-center overflow-hidden transition-all duration-300"
     >
       <!-- Responsive image wrapper -->
       <div class="w-full h-auto">
        <NuxtImg
-          class="rounded-[24px] w-full object-cover max-h-[300px] md:max-h-[400px]"
+          class="md:rounded-[24px] rounded-[30px] w-full object-cover h-[391px] md:h-[400px]"
           :src="cardImg"
           alt="the training hub image"
           loading="lazy"
@@ -20,10 +20,10 @@
 
       <!-- Text content -->
       <div class="py-4 text-start w-full">
-        <p class="text-[22px] md:text-[28px] lg:text-[32px] font-[600] leading-snug">
+        <p class="text-[32px] md:text-[28px] lg:text-[32px] font-[600] leading-snug">
           {{ cardTitle }}
         </p>
-        <p class="text-gray-500 text-[14px] md:text-[16px] mt-2 leading-relaxed">
+        <p class="text-gray-500 text-[16px] mt-2 leading-relaxed">
           {{ cardSubtitle }}
         </p>
       </div>
