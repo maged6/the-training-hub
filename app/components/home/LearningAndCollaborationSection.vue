@@ -1,7 +1,7 @@
 <template>
   <section>
     <div
-      class="flex flex-col items-center justify-start bg-primary-20 py-[80px]"
+      class="flex flex-col items-center justify-start bg-primary-20 md:py-[80px] py-[60px]"
     >
       <IntroSection
         :labelSection="labelSection"
@@ -14,10 +14,15 @@
 
       <!-- Grid Layout -->
       <div
-        class="grid grid-flow-col grid-cols-6 gap-1 grid-rows-[200px_200px_200px] max-w-[1200px] mb-8 px-4"
+        class="md:grid md:grid-flow-col md:grid-cols-6 md:grid-rows-[200px_200px_200px] max-w-[1200px] 
+        my-8 
+        px-4 
+        md:gap-1
+        gap-4 
+        flex flex-col "
       >
         <!-- Card 1 -->
-        <div class="row-span-2 col-span-2">
+        <div class="md:row-span-2 md:col-span-2 order-1">
           <!-- 
             -->
           <BaseCard
@@ -28,7 +33,7 @@
           />
         </div>
 
-        <div class="row-span-1 col-span-2">
+       <div class="md:row-span-1 md:col-span-2  order-2">
           <NuxtImg
             class="rounded-2xl w-full h-full object-cover"
             :src="smallImage"
@@ -40,7 +45,7 @@
           />
         </div>
 
-        <div class="row-span-1 col-span-4 ">
+         <div class="md:row-span-1 md:col-span-4 md:order-3 order-4">
           <NuxtImg
             class="rounded-2xl w-full h-full object-cover"
             :src="largeImage"
@@ -53,7 +58,7 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="row-span-2 col-span-2 ">
+        <div class="md:row-span-2 md:col-span-2 md:order-4 order-3">
           <BaseCard
             :titleCard="facilities[1]?.title"
             :contentCard="facilities[1]?.description"
@@ -63,7 +68,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="row-span-2 col-span-2 ">
+        <div class="md:row-span-2 md:col-span-2  order-5">
           <BaseCard
             :titleCard="facilities[2]?.title"
             :contentCard="facilities[2]?.description"
@@ -72,7 +77,7 @@
           />
         </div>
       </div>
-      <NuxtLink :to="'/hub-facilities'">
+      <NuxtLink :to="'/hub-facilities'" class="w-full md:w-[250px]  px-4 "  >
         <MainBtn
           :title="'Know More'"
           :colorIcon="'#10171F'"
