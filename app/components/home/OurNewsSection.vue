@@ -1,8 +1,9 @@
 <template>
   <section>
     <div
-      class="flex flex-col items-center justify-start bg-white py-[80px]"
+      class="flex flex-col items-center justify-start bg-white md:py-[80px] py-[60px]"
     >
+    <div class="py-[32px] md:py-0">
       <IntroSection
         :labelSection="labelSection"
         :labelBackgroundColor="'bg-primary-20'"
@@ -11,13 +12,15 @@
         :titleSection="titleSection"
         :headerColor="'black  '"
       />
+      </div>
 
       <!-- Grid Layout -->
-      <div class="grid grid-cols-3 gap-3  max-w-[1200px] mb-8">
-        <div v-for="(post, index) in posts" :key="index">
+      <div class="flex gap-3 max-w-[90vw] mb-8 overflow-x-auto ">
+            <div v-for="(post, index) in posts" :key="index">
             <NuxtLink :to="`/media-center/blog/${post.slug}`">
+                <!-- :ImageCard="post.image" -->
               <NewsCard 
-                :ImageCard="post.image"
+                :ImageCard="'/images/layout-hero.jpg'"
                 :DateCard="post.date"
                 :CardTitle="post.title"
               />
@@ -25,7 +28,7 @@
           </div>
       </div>
 
-      <NuxtLink :to="'/media-center/blog'">
+      <NuxtLink :to="'/media-center/blog'" class="w-full md:w-[350px] px-[60px]">
         <MainBtn
           :title="'Explore More'"
           :colorIcon="'#10171F'"

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-transparent rounded-lg" :style="{ maxWidth: MaxWidth }">
+  <div class="bg-transparent rounded-lg" :style="{ width: MaxWidth }">
     <NuxtImg
       class="rounded-lg"
       :src="ImageCard"
@@ -8,7 +8,7 @@
       height="250"
       format="webp"
     />
-    <div class="p-5">
+    <div class="py-5">
       <p class="mb-3 mx-3 font-normal text-gray-500" v-if="DateCard">
         {{ DateCard }}
       </p>
@@ -19,6 +19,7 @@
         {{ CardTitle }}
       </p>
 
+      <div class="w-[170px]">
       <MainBtn
         :title="ButtonTitle"
         :colorTo="'transparent'"
@@ -27,6 +28,7 @@
         :textColor="'#b22726'"
         :colorIcon="'white'"
       />
+      </div>
     </div>
   </div>
 </template>

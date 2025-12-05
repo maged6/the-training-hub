@@ -1,7 +1,8 @@
 <template>
   <button
     class="group flex gap-2
-    justify-center items-center  
+    justify-center 
+    items-center  
     font-bold 
     md:text-[16px] 
     md:py-[10px] 
