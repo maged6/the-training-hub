@@ -1,8 +1,12 @@
 <template>
   <section>
-    <div class="bg-black md:py-[80px] py-[60px] px-[16px] flex flex-col items-center justify-center text-center">
+    <div
+      class="bg-black md:py-[80px] py-[60px] px-[16px] flex flex-col items-center justify-center text-center"
+    >
       <!-- Title -->
-      <h1 class="text-white md:text-[18px] text-[20px] font-[500] mb-6">{{ titleSection }}</h1>
+      <h1 class="text-white md:text-[18px] text-[20px] font-[500] mb-6">
+        {{ titleSection }}
+      </h1>
 
       <!-- Paragraph -->
       <p
@@ -32,24 +36,26 @@
 
       <NuxtLink :to="'/about'">
         <MainBtn
-              :title="'About Us'"
-              :colorIcon="'black'"
-              :colorFrom="'transparent'"
-              :colorTo="'transparent'"
-              :colorBorder="'white'"
-            />
+          :title="'About Us'"
+          :colorIcon="'black'"
+          :colorFrom="'transparent'"
+          :colorTo="'transparent'"
+          :colorBorder="'white'"
+        />
       </NuxtLink>
     </div>
 
     <!-- Auto-scrolling list -->
     <div class="bg-primary-20 overflow-hidden">
       <div class="overflow-hidden group relative w-full">
-<ul
-  class="flex text-white md:text-[38px] text-[16px] font-[300] list-disc space-x-10 whitespace-nowrap
+        <ul
+          class="flex text-white md:text-[38px] text-[16px] font-[300] list-disc space-x-10 whitespace-nowrap
          transition-transform duration-[15s] ease-linear 
          auto-scroll md:hover:animate-scroll-x-bounce px-2"
->
-          <li v-for="(list, index) in listSection" :key="index">{{ list.word }}</li>
+        >
+          <li v-for="(list, index) in listSection" :key="index">
+            {{ list.word }}
+          </li>
         </ul>
       </div>
     </div>
@@ -113,6 +119,6 @@ export default {
     .auto-scroll:hover {
     animation: scroll-x-bounce 8s ease-in-out infinite;
   }
-  
+
 }
 </style>
