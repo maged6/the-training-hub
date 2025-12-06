@@ -10,6 +10,7 @@
     px-[16px] 
     py-[13px]
     w-full
+    h-full
     rounded-full cursor-pointer transition-all duration-300 ease-in-out"
     :style="{
       background: hovered

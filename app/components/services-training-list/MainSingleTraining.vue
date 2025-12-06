@@ -1,9 +1,10 @@
 <template>
   <section>
-    <div class="bg-tertiary-gray-5 p-[60px]">
-      <div class="grid grid-cols-2 gap-[92px]">
-        <div class="flex flex-col gap-[16px]">
+    <div class="bg-tertiary-gray-5 md:p-[60px] px-[16px] py-[60px]">
+      <div class="grid grid-cols-4 md:gap-[92px] gap-[120px]">
+        <div class="col-span-4 md:col-span-2 md:order-1 order-2 flex flex-col gap-[16px]">
           <BreadcrumbComponent
+            class="md:block hidden"
             :breadcrumb-array="breadcrumbsSection"
             :fontSize="12"
             :textColor="'gray-700'"
@@ -77,13 +78,23 @@
 
           <PriceAndOffer :price="8000" :offer="9500" :lableOffer="'LIMITED OFFER'"/>
 
-          <div class="flex gap-[16px]">
+          <div class="grid grid-cols-4 gap-[16px]">
+            <div class="col-span-4 md:col-span-2">
               <MainBtn :title="'Register Now'" />
+            </div>
+            <div class="col-span-4 md:col-span-2">
               <DownloadBtn :title="'Download PDF Brief'" />
+            </div>
           </div>
         </div>
 
-        <div class="h-full z-10">
+        <div class="col-span-4 md:col-span-2 md:order-2 order-1 h-full z-10">
+          <BreadcrumbComponent
+            class="md:hidden block"
+            :breadcrumb-array="breadcrumbsSection"
+            :fontSize="12"
+            :textColor="'gray-700'"
+          />
           <NuxtImg
             class="rounded-[24px] w-full h-full object-cover"
             :src="imagesSection"

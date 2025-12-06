@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-tertiary-gray-5 p-[60px]">
+  <section class="bg-tertiary-gray-5 md:p-[60px] px-[16px] py-[60px]">
     <div class="flex justify-between items-center">   
 
       <!-- Replace old buttons here -->

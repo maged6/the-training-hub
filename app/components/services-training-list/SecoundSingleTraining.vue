@@ -1,6 +1,6 @@
 <template>
-  <section class="py-[24px] px-[60px]">
-    <div class="flex justify-between pb-[24px] border-b-2 border-gray-200">
+  <section class="py-[24px] md:px-[60px] px-[16px]">
+    <div class="flex flex-col md:flex-row gap-[16px] justify-between pb-[24px] border-b-2 border-gray-200">
       <div class="flex flex-col gap-[8px]">
         <p class="text-[32px] font-[900] text-primary-10">
           {{ titleSection }}
@@ -10,7 +10,7 @@
         </p>
       </div>
 
-      <div>
+      <div class="h-12">
         <MainBtn :title="'Register Now'" />
       </div>
     </div>

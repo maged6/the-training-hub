@@ -10,6 +10,8 @@
     border-2 border-primary-10
     py-[13px]
     px-[26px]
+    w-full
+    h-full
     rounded-[100px]
     "
   >

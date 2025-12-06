@@ -1,13 +1,13 @@
 <template>
   <div class="bg-primary-10 relative">
     <div class="z-0">
-      <DottedShape class="absolute top-[33px] left-0 " />
+      <DottedShape class="absolute md:top-[33px] top-[20px] left-0 " />
     </div>
     <div class="z-0">
-      <EllipseCircle class="absolute top-0 right-0" />
+      <EllipseCircle class="absolute md:top-0 bottom-0 rotate-90 md:rotate-0 right-[5px]" />
     </div>
-    <div class="grid grid-cols-2 py-[80px] mx-[60px] gap-[87px]">
-      <div class=" z-10 flex flex-col justify-center gap-[16px]">
+    <div class="grid grid-cols-4 py-[120px] md:py-[80px] md:mx-[60px] mx-[16px] gap-[32px] md:gap-[87px]">
+      <div class=" z-10 col-span-4 md:col-span-2 order-2 md:order-1 flex flex-col justify-center gap-[16px]">
         <p class="text-white font-[900] text-[32px] max-w-[340px]">
           {{ title }}
         </p>
@@ -19,7 +19,7 @@
         </div>
       </div>
 
-      <div class="h-full z-10">
+      <div class="min-h-[355px] z-10 col-span-4 md:col-span-2 order-1 md:order-2">
         <NuxtImg
           class="rounded-[24px] w-full h-full object-cover"
           :src="images"

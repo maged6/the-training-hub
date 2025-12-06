@@ -10,13 +10,13 @@
     <BreadcrumbComponent :breadcrumbArray="breadcrumbSection"/>
     <!-- //// title  -->
 
-    <h1 class="text-center text-white font-[900] md:text-[58px] w-full" v-if="titleSection">
+    <h1 class="text-center text-white font-[900] md:text-[58px] text-[32px] w-full" v-if="titleSection">
       {{ titleSection }}
     </h1>
     <!-- //// sub title  -->
 
     <div :style="{ maxWidth: maxWidthofSubHeader + 'px' }" class="px-6">
-      <p class="font-[100] text-[20px] text-gray-200 py-[16px] text-center" v-if="subtitleSection">
+      <p class="font-[100] text-[16px] md:text-[20px] text-gray-300 py-[16px] text-center" v-if="subtitleSection">
         {{ subtitleSection }}
       </p>
     </div>

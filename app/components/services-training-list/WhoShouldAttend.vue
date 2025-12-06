@@ -1,5 +1,5 @@
 <template>
-  <section class="p-[60px] bg-primary-10">
+  <section class="p-[16px] md:p-[60px] bg-primary-10">
     <div class="bg-black rounded-[32px] flex flex-col justify-center items-center py-[80px]">
       <IntroCenterSection
         :labelSection="'Audience'"
@@ -10,7 +10,7 @@
         :maxWidthofHeader="508"
       />
       <div class="pt-[60px]">
-        <p class="font-[100] text-[38px] text-white flex gap-[8px] items-center">
+        <p class="font-[100] md:text-[38px] text-white flex gap-[8px] items-center">
             <User /> 
             Employees at all levels
         </p>

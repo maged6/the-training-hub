@@ -1,8 +1,8 @@
 <template>
   <div class="bg-white">
-    <div class="flex py-[80px] mx-[60px] gap-[87px]"
+    <div class="md:flex grid grid-cols-4 md:py-[80px] py-[60px] md:mx-[60px] mx-[16px] md:gap-[87px] gap-[32px]"
     :class="reverseSection ? 'justify-end flex-row-reverse' : 'justify-between'">
-      <div class="flex flex-col justify-center gap-[16px] max-w-[604px]">
+      <div class="col-span-4 order-2 flex flex-col justify-center gap-[16px] max-w-[604px]">
          <div class="rounded w-fit px-1 rotate-[-5deg] mb-2" 
         :class="backgroundLable"
         v-if="labelSection"> 
@@ -17,7 +17,7 @@
         <ListOfCheckmark :list="sectionList"/>
       </div>
 
-      <div class="w-full h-full max-w-[668px] max-h-[599px]">
+      <div class="col-span-4 order-1 w-full h-full max-w-[668px] max-h-[599px]">
         <NuxtImg
           class="rounded-[24px] w-full h-full object-cover"
           :src="images"

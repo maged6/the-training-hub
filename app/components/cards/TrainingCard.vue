@@ -1,9 +1,9 @@
 <template>
-        <div class="grid grid-cols-2 items-stretch">
-          <div class="relative h-full">
+        <div class="grid grid-cols-4 items-stretch">
+          <div class="col-span-4 md:col-span-2 relative h-full"> 
             <div class="h-full">
               <NuxtImg
-                class="rounded-l-[16px] w-full h-full object-cover"
+                class="md:rounded-l-[16px] rounded-t-[16px] w-full h-full object-cover"
                 :src="'images/layout-hero.jpg'"
                 alt="the training hub faqs image"
                 width="100%"
@@ -24,7 +24,7 @@
             </div>
           </div>
 
-          <div class="flex flex-col px-[37px] py-[24px] gap-[39px]">
+          <div class="col-span-4 md:col-span-2 flex flex-col px-[37px] py-[24px] gap-[39px]">
             <!-- {{ dataToShow }} -->
             <div class="flex flex-col gap-[8px]">
               <div class="flex justify-between">
@@ -59,7 +59,7 @@
               <p class="font-[100] text-[14px] text-gray-900">
                 Start From 25th Oct 2025
               </p>
-              <p class="font-[900] text-[20px] text-primary-20">8,000 EGP</p>
+           <PriceAndOffer :price="8000" :offer="8000"  :textPriceColor="'primary-20'" :textOfferColor="'primary-10'"/>
             </div>
 
             <div>
@@ -75,9 +75,10 @@
 <script lang="ts">
 import Heart from '~/components/svg/Heart.vue';
 import MainBtn from '~/components/buttons/MainBtn.vue';
+import PriceAndOffer from '~/components/main-component/PriceAndOffer.vue'
 
 export default {
-  components: { Heart, MainBtn},
+  components: { Heart, MainBtn, PriceAndOffer},
   props: {
   },
 }
