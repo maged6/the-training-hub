@@ -1,9 +1,9 @@
 <template>
   <section v-if="videoScr">
-    <div class="p-[60px] bg-primary-10 h-[95vh]">
+    <div class="md:p-[60px] px-[16px] py-[60px] bg-primary-10 md:h-[95vh] h-[50vh]">
       <video
         v-if="isVideo"
-        class="w-full h-full object-cover rounded-[30px]"
+        class="w-full h-full object-cover md:rounded-[30px] rounded-[24px]"
         autoplay
         muted
         loop
@@ -15,7 +15,7 @@
         v-if="isImage"
         :src="videoScr"
         alt="mask"
-        class="w-full h-full object-cover rounded-[30px]"
+        class="w-full h-full object-cover md:rounded-[30px] rounded-[24px]"
       />
     </div>
   </section>

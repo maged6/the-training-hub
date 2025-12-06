@@ -1,6 +1,6 @@
 <template>
-     <div class="col-span-2 relative w-full h-[75vh] ">
-       <div class="bg-amber-700 h-[82%] w-[62%] absolute top-0 left-0 rounded-[24px] z-30">
+     <div class="md:col-span-2 col-span-4 order-1 md:order-2 relative w-full md:h-[75vh] h-[40vh] ">
+       <div class=" md:h-[82%] md:w-[62%] h-[79%] w-[57%] absolute top-0 left-0 rounded-[24px] z-30">
         <NuxtImg 
           class="absolute top-0 left-0 w-full h-full object-cover rounded-[24px]"
           :src="imageSectionOne"
@@ -18,7 +18,7 @@
         <div class="absolute bottom-[6%] left-[23.7%] rounded-[24px] z-10">
         <EllipseCircle />
        </div>
-       <div class="bg-amber-900 h-[82%] w-[62%] absolute bottom-0 right-0 rounded-[24px] z-20">
+       <div class=" md:h-[82%] md:w-[62%] h-[79%] w-[57%] absolute bottom-0 right-0 rounded-[24px] z-20">
         <NuxtImg 
           class="absolute top-0 left-0 w-full h-full object-cover rounded-[24px]"
           :src="imageSectionTwo"

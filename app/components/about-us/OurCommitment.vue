@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-white p-[60px]">
+  <section class="bg-white md:p-[60px] px-[16px] py-[60px]">
     <!-- Left section -->
     <div class="col-span-2 flex items-center justify-center">
       <IntroSection
@@ -11,11 +11,11 @@
     </div>
 
     <div>
-      <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700" />
+      <hr class="h-px md:mt-0 mt-[32px] bg-gray-200 border-0 dark:bg-gray-700" />
 
       <div v-for="(items , index) in commitmentItems" :key="index">
-        <div class="flex justify-between items-center py-[32px]">
-          <div class="max-w-[243px] max-h-[144px]">
+        <div class="flex md:flex-row flex-col justify-between md:items-center py-[32px]">
+          <div class="w-[243px] h-[144px]">
             <NuxtImg
               class="rounded-2xl object-cover w-full h-full"
               :src="items.image"

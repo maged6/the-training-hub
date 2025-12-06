@@ -1,8 +1,8 @@
 <template>
   <section class="bg-primary-20">
-    <div class="grid grid-cols-4 gap-[22px] p-[60px]">
+    <div class="grid grid-cols-4 gap-[22px] md:p-[60px] px-[16px] py-[60px]">
       <!-- Left section -->
-      <div class="col-span-2 flex items-center justify-center md:justify-start">
+      <div class="md:col-span-2 col-span-4 order-2 md:order-1 flex items-center justify-center md:justify-start">
         <IntroSection
           :labelSection="labelSection"
           :titleSection="titleSection"

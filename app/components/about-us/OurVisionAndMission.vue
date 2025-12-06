@@ -1,7 +1,7 @@
 <template>
-  <section class="bg-primary-10 p-[60px]">
+  <section class="bg-primary-10 md:p-[60px] px-[16px] py-[60px]">
     <!-- Left section -->
-    <div class="col-span-2 flex items-center justify-center md:justify-start">
+    <div class="flex items-center justify-center md:justify-start">
       <IntroSection
         :labelSection="labelSection"
         :subtitleSection="subtitleSection"
@@ -10,9 +10,9 @@
       />
     </div>
 
-    <div class="w-full min-h-[391px] py-[40px]">
+    <div class="w-full h-[391px] md:py-[40px] py-[32px]">
       <NuxtImg
-        class="rounded-2xl object-cover w-full max-h-[391px]"
+        class="rounded-2xl object-cover w-full h-full"
         :src="imageSection"
         alt="Our Vision and Mission"
         width="600"
@@ -22,7 +22,7 @@
       />
     </div>
 
-    <div class="col-span-2 flex items-center justify-end md:justify-end">
+    <div class="flex items-center justify-end md:justify-end">
       <IntroSection
         :labelSection="labelSection2"
         :subtitleSection="subtitleSection2"
