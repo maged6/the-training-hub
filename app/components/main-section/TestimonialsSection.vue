@@ -1,6 +1,6 @@
 <template>
   <section class=" bg-tertiary-gray-5 py-[80px]">
-    <div>
+    <div class="mb-[60px] md:mb-0">
       <IntroCenterSection
       :labelBackgroundColor="'bg-primary-20'"
       :maxWidthofHeader="499"

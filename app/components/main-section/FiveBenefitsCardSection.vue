@@ -1,7 +1,7 @@
 <template>
   <section>
     <div
-      class="flex flex-col items-center justify-start bg-gray-100  py-[60px] px-[83px]"
+      class="flex flex-col items-center justify-start bg-gray-100  md:py-[60px] md:px-[83px] px-[16px] py-[32px]"
     >
       <IntroSection
         :labelSection="labelSection"
@@ -13,7 +13,7 @@
       />
 
       <!-- Grid Layout -->
-      <div class="flex flex-wrap justify-center gap-[32px] px-[53px]">
+      <div class="flex flex-wrap justify-center gap-[32px] md:px-[53px] mt-[32px] md:mt-0">
         <div v-for="(item, index) in BenefitsCardSection" :key="index" class="max-w-[392px]">
           <BenefitsCard :title="item.title" :subtitle="item.subtitle" />
         </div>

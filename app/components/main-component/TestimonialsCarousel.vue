@@ -2,7 +2,7 @@
   <div class="w-full relative">
     <!-- Navigation -->
     <div
-      class="flex items-center justify-center gap-3 absolute bottom-[-6px] right-[60px] z-10"
+      class="flex items-center justify-center gap-3 absolute bottom-[-6px] md:right-[60px] right-[calc(50%-35px)] z-10"
     >
       <div
         class="flex items-center justify-center rotate-[-135deg] cursor-pointer"
@@ -20,7 +20,7 @@
     </div>
 
 <div
-  class="absolute bottom-[0px] left-[60px] w-[80%] bg-gray-300 rounded-full h-2 overflow-hidden"
+  class="absolute top-[-25px] md:top-auto md:bottom-[0px] md:left-[60px] left-[16px] w-[94%] md:w-[80%] bg-gray-300 rounded-full h-2 overflow-hidden"
 >
   <div
     class="bg-primary-20 h-2 rounded-full transition-all duration-300"
@@ -29,14 +29,14 @@
 </div>
 
     <!-- Slider -->
-    <div class="relative pb-[32px] ml-[41px]">
+    <div class="relative pb-[32px] md:ml-[41px] ml-[16px]">
       <!-- SCROLL AREA -->
       <div ref="wrapper" class="overflow-hidden">
         <div class="flex gap-[16px] min-w-max pb-[32px]">
           <div
             v-for="(item, index) in testimonials"
             :key="index"
-            class="flex-shrink-0 w-[547px] h-[403px] rounded-[24px]"
+            class="flex-shrink-0 md:w-[547px] w-[350px] md:h-[403px] h-[350px] rounded-[24px]"
           >
             <div class="rounded-[24px] w-full h-full overflow-hidden">
               <NuxtImg

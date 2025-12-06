@@ -14,7 +14,7 @@
   />
 
 
-  <VideoSection />
+  <VideoSection :videoScr="'/images/learning-home-2.png'"/>
   <WhyExperiential
     :LableSection="'Key Features'"
     :TitleSection="'Why Experiential Learning?'"

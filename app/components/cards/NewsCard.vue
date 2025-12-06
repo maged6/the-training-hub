@@ -1,13 +1,15 @@
 <template>
-  <div class="bg-transparent rounded-lg" :style="{ width: MaxWidth }">
-    <NuxtImg
-      class="rounded-lg"
-      :src="ImageCard"
-      alt="Leadership article"
-      width="370"
-      height="250"
-      format="webp"
-    />
+  <div class="rounded-lg w-full">
+    <div class="w-full max-h-[220px]">
+        <NuxtImg
+          class="rounded-lg object-cover w-full h-full"
+          :src="ImageCard"
+          alt="Leadership article"
+          width="370"
+          height="250"
+          format="webp"
+        />
+    </div>
     <div class="py-5">
       <p class="mb-3 mx-3 font-normal text-gray-500" v-if="DateCard">
         {{ DateCard }}
@@ -19,7 +21,7 @@
         {{ CardTitle }}
       </p>
 
-      <div class="w-[170px]">
+      <div class="md:w-[120px] w-[140px]">
       <MainBtn
         :title="ButtonTitle"
         :colorTo="'transparent'"
@@ -54,10 +56,6 @@ export default {
     ButtonTitle: {
       type: String,
       default: 'Know More',
-    },
-    MaxWidth: {
-      type: String,
-      default: '370px',
     },
   },
 

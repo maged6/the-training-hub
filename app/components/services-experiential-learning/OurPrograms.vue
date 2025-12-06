@@ -1,19 +1,18 @@
 <template>
   <section
-    class=" bg-white px-[41px] py-[80px] "
+    class=" bg-white md:px-[41px] px-[16px] py-[80px] "
     v-if="programSection.length > 0"
   >
     <h1 class="text-center text-primary-10 font-[900] text-[32px]">
       {{ titleSection }}
     </h1>
 
-    <div class="flex gap-[16px] pt-[32px]">
-      <span v-for="(Program, index) in programSection" :key="index">
+    <div class="grid grid-cols-6 md:gap-[16px] gap-[14px] pt-[32px]">
+      <span class="col-span-3 md:col-span-1" v-for="(Program, index) in programSection" :key="index">
         <NewsCard
           :ImageCard="Program.ImageCard"
           :CardTitle="Program.CardTitle"
           :ButtonTitle="Program.ButtonTitle"
-          :MaxWidth="'225px'"
         />
       </span>
     </div>
@@ -51,6 +50,21 @@ export default {
          ButtonTitle: 'Request',
        },
        {
+         ImageCard: 'services/captions/request-team.png',
+         CardTitle: 'The Innovation Quest',
+         ButtonTitle: 'Request',
+       },
+         {
+         ImageCard: 'services/captions/request-team.png',
+         CardTitle: 'The Innovation Quest',
+         ButtonTitle: 'Request',
+       },
+         {
+         ImageCard: 'services/captions/request-team.png',
+         CardTitle: 'The Innovation Quest',
+         ButtonTitle: 'Request',
+       },
+         {
          ImageCard: 'services/captions/request-team.png',
          CardTitle: 'The Innovation Quest',
          ButtonTitle: 'Request',

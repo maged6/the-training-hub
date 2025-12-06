@@ -1,6 +1,6 @@
 <template>
-  <section class=" bg-tertiary-gray-5 px-[60px] py-[40px] ">
-    <div>
+  <section class=" bg-tertiary-gray-5 md:px-[60px] md:py-[40px] px-[16px] py-[60px]">
+    <div class="mb-[32px] md:mb-0">
       <IntroCenterSection
       :labelBackgroundColor="'bg-primary-20'"
       :maxWidthofHeader="550"
@@ -12,7 +12,7 @@
     </div>
 
     <div class="grid grid-cols-7 gap-[32px]">
-      <div class="col-span-3">
+      <div class="md:col-span-3 col-span-7 md:h-full  h-[437px]">
         <NuxtImg
           class="rounded-2xl object-cover w-full h-full"
           :src="ImageSection"
@@ -24,10 +24,10 @@
         />
       </div>
       <div
-        class="col-span-4 flex flex-wrap items-stretch gap-[32px]"
+        class="md:col-span-4 col-span-7 flex flex-wrap items-stretch gap-[32px]"
       >
         <div
-          class="w-[calc(50%-16px)] "
+          class="md:w-[calc(50%-16px)] w-full"
           v-for="(item, index) in BenefitsCardSection"
           :key="index"
         >

@@ -1,5 +1,5 @@
 <template>
-  <section class=" bg-primary-10 px-[60px] py-[80px] ">
+  <section class=" bg-primary-10 md:px-[60px] px-[16px] py-[80px] ">
     <div>
       <IntroCenterSection
         :labelSection="'Process'"
@@ -11,12 +11,13 @@
       />
     </div>
 
-    <div class="flex justify-center pb-[80px]">
+    <div class="flex justify-center md:pb-[80px]">
       <div
-        class="absolute left-1/2 transform -translate-x-1/2 h-full w-[3px] bg-white"
+        class="absolute left-5 md:left-1/2 transform -translate-x-1/2 h-full w-[3px] bg-white"
       ></div>
+     
       <ol
-        class="relative text-body border-s-0 border-e-0 border-white"
+        class="relative text-body"
         role="list"
       >
         <li
@@ -24,18 +25,18 @@
           :key="index"
           class="relative mb-10 ms-7 mt-5 max-w-[592px]"
           :class="[
-                index % 2 === 0 ? 'transform translate-x-1/2 mr-2' : 'transform -translate-x-1/2 ml-2 text-end'
+                index % 2 === 0 ? 'transform md:translate-x-1/2 translate-x-[-0.5rem]  mr-2' : 'transform md:-translate-x-1/2 translate-x-[0.5rem] ml-2 md:text-end'
             ]"
         >
           <span
-            :class="index % 2 === 0 ? '-start-[1.5rem]' : '-end-[1.5rem]'"
+            :class="index % 2 === 0 ? 'md:-start-[1.5rem] -start-[1.8rem]' : 'md:-end-[1.5rem] -end-[-24.2rem]'"
             class="absolute flex items-center justify-center w-7 h-8 text-fg-success-strong bg-primary-10 "
           >
             <Circle />
           </span>
 
           <!-- Auto number -->
-          <div class="px-[10px]">
+          <div class="md:px-[10px]">
             <span
               class="font-[100] text-[38px] text-red-500"
               aria-hidden="true"
@@ -43,7 +44,7 @@
               {{ String(index + 1).padStart(2, '0') }}.
             </span>
 
-            <p class="font-[900] text-[28px] text-white">{{ item.title }}</p>
+            <p class="font-[900] text-[28px] text-white py-2">{{ item.title }}</p>
             <p class="font-[100] text-[16px] text-white">
               {{ item.description }}
             </p>
