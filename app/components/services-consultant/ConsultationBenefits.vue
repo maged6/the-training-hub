@@ -1,5 +1,5 @@
 <template>
-  <section class=" bg-tertiary-gray-5 px-[60px] py-[40px] ">
+  <section class=" bg-tertiary-gray-5 md:px-[60px] px-[16px] py-[40px] ">
     <div>
       <IntroCenterSection
         :labelSection="'Highlights'"
@@ -13,10 +13,10 @@
 
      
       <div
-        class="flex  gap-[32px]"
+        class="flex flex-wrap mt-[32px] md:mt-0 gap-[32px]"
       >
         <div
-          class="max-w-[474px]"
+          class="max-w-[440px]"
           v-for="(item, index) in BenefitsCardSection"
           :key="index"
         >

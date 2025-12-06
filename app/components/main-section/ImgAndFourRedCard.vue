@@ -13,19 +13,19 @@
       />
     </div>
 
-    <div class="container mx-auto text-center">
+    <div class="container md:mx-auto md:px-0 px-[16px] text-center">
       <!-- Image + Cards -->
-      <div class="relative flex justify-center mt-3">
+      <div class="relative flex flex-col gap-[18px] md:flex-row justify-center mt-3">
         <!-- Left Cards -->
         <div
-          class="absolute right-[calc(90%-420px)] space-y-20 h-full flex flex-col items-center justify-center"
+          class="md:absolute order-2 right-[calc(90%-420px)] md:space-y-20 space-y-[18px] h-full flex flex-col items-center justify-center"
         >
           <SmallRedCard :text="BoxOne" />
           <SmallRedCard :text="BoxTwo" />
         </div>
 
         <!-- Center Image -->
-        <div class="rounded-xl overflow-hidden shadow-xl">
+        <div class="rounded-xl order-1 overflow-hidden shadow-xl">
           <NuxtImg
             class="object-cover"
             :src="ImgSection"
@@ -40,7 +40,7 @@
 
         <!-- Right Cards -->
         <div
-          class="absolute left-[calc(90%-420px)] space-y-20 h-full flex flex-col items-center justify-center"
+          class="md:absolute order-3 left-[calc(90%-420px)] md:space-y-20 space-y-[18px] h-full flex flex-col items-center justify-center"
         >
           <SmallRedCard :text="BoxThree" />
           <SmallRedCard :text="BoxFour" />
