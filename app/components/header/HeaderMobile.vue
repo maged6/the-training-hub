@@ -60,7 +60,6 @@
               
               <!-- Sub accordion -->
               <button
-                @click="toggle('sub1')"
                 class="flex items-center justify-between w-full py-2 px-3 rounded-lg text-white"
               >
                 Training Programs
